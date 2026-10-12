@@ -37,7 +37,7 @@ SYSTEM_PROMPT = "You are a precise Scrum tutor for the PSPO I exam."
 MAX_PROMPT_CHARS = 60_000
 MAX_DB_BYTES = 2 * 1024 * 1024
 DB_PATH_RE = re.compile(r"^[a-z0-9_-]+/[a-z0-9_-]+$")
-RUNTIME_TAG = b'<script src="/runtime.js"></script>'
+RUNTIME_TAG = b'<script src="runtime.js"></script>'
 
 log = logging.getLogger("pspo")
 slots = threading.BoundedSemaphore(MAX_CONCURRENT)

@@ -16,7 +16,7 @@ from pathlib import Path
 TESTS = Path(__file__).resolve().parent
 SERVER = TESTS.parent
 REPO = SERVER.parent
-RUNTIME_TAG = '<script src="/runtime.js"></script>'
+RUNTIME_TAG = '<script src="runtime.js"></script>'
 
 
 def free_port():

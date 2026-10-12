@@ -12,7 +12,7 @@
     var body = { prompt: prompt };
     if (opts && opts.modelTier != null) body.modelTier = opts.modelTier;
 
-    return fetch("/api/sample", {
+    return fetch("api/sample", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body)
@@ -68,7 +68,7 @@
   }
 
   function dbUrl(path) {
-    return "/api/db?path=" + encodeURIComponent(path);
+    return "api/db?path=" + encodeURIComponent(path);
   }
 
   var db = {
