@@ -420,7 +420,7 @@
     {
       "id": "m02c8",
       "front": "Timeboxes for a one-month Sprint",
-      "back": "Sprint Planning 8 hours maximum, Sprint Review 4 hours maximum, Sprint Retrospective 3 hours maximum, Daily Scrum 15 minutes. For shorter Sprints the events are usually shorter.",
+      "back": "Sprint Planning 8 hours maximum, Sprint Review 4 hours maximum, Sprint Retrospective 3 hours maximum. For shorter Sprints these three are usually shorter. The Daily Scrum is always a 15-minute event, whatever the Sprint length.",
       "tag": "events"
     },
     {
