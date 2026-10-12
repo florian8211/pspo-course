@@ -1,0 +1,23 @@
+# systemd --user unit for the self-hosted PSPO course.
+# Install:  cp server/pspo-course.service ~/.config/systemd/user/
+#           systemctl --user daemon-reload && systemctl --user enable --now pspo-course
+# Only bind to loopback or a private (e.g. Tailscale) address: every coach and
+# grading request spends the operator's model quota.
+
+[Unit]
+Description=PSPO course (self-hosted, with AI coach and progress sync)
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/workspace/pspo/pspo-course
+ExecStart=/usr/bin/python3 %h/workspace/pspo/pspo-course/server/serve.py
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+Environment=PSPO_PORT=3140
+Environment=PSPO_BIND=127.0.0.1
+Environment=PSPO_CLAUDE_MODEL=sonnet
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

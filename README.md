@@ -72,3 +72,25 @@ Northfield is fictional. The course was originally written against my own compan
 ## License
 
 Code and course content: [MIT](LICENSE). See [NOTICE.md](NOTICE.md) for how third-party material is handled. Not affiliated with Scrum.org or Scrum Alliance.
+
+## Self-hosting the full version
+
+`server/serve.py` serves the course together with a small runtime (`server/runtime.js`) that switches on the AI coach, grading of written answers and progress sync across devices. It needs Python 3.12+ (standard library only) and a logged-in [`claude` CLI](https://docs.claude.com/en/docs/claude-code) on the `PATH`; the course files themselves are not changed.
+
+```sh
+python3 server/serve.py        # then open http://127.0.0.1:3140
+```
+
+| Variable | Default | Meaning |
+|---|---|---|
+| `PSPO_PORT` | `3140` | Port to listen on |
+| `PSPO_BIND` | `127.0.0.1` | Address to bind |
+| `PSPO_DATA_DIR` | `~/.local/share/pspo-course` | Where progress is stored (one JSON file per document) |
+| `PSPO_CLAUDE_MODEL` | `sonnet` | Model passed to `claude -p --model` |
+| `PSPO_TIMEOUT` | `180` | Seconds before a model call is killed |
+| `PSPO_MAX_CONCURRENT` | `2` | Parallel model calls; more get HTTP 429 |
+| `PSPO_MODEL_CMD` | unset | Replace the whole model command (used by the tests) |
+
+`server/pspo-course.service` is a `systemd --user` unit for running it permanently. Tests: `python3 -m unittest discover -s server/tests -v`.
+
+**Only expose this server on a private network** (loopback, a VPN, Tailscale). There is no login: anyone who can reach it can spend the operator's model quota and overwrite the stored progress.
