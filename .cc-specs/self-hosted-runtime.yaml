@@ -1,0 +1,92 @@
+spec: |
+  Make the course's model features (AI coach, grading of written answers) and cross-device progress sync work
+  when self-hosted, WITHOUT changing the course engine. The engine (app/04-engine.js, app/05-tools.js) already
+  talks to a runtime via `window.claude.use(name)`:
+    - use("sample") resolves to a function SAMPLE(prompt, {onText, modelTier}) returning a Promise that resolves
+      to {text}; onText({text}) is called with the ACCUMULATED text while streaming; on failure it rejects with an
+      object that may carry err.code === "rate_limited" or "not_granted".
+    - use("db") resolves to an object with doc("progress/state").get() -> Promise<snap> where snap.exists (bool)
+      and snap.data() (object), and doc(path).set(obj) -> Promise.
+    - use("downloads") may resolve to null.
+    - isDemo() is synchronous: window.claude must exist BEFORE the engine script runs.
+  Build a thin self-hosting layer under server/ that provides exactly this runtime. Python standard library only
+  (no pip packages), Python >= 3.12.
+
+  1. server/serve.py - HTTP server (http.server.ThreadingHTTPServer). Config via env vars:
+     PSPO_PORT (default 3140), PSPO_BIND (default 127.0.0.1), PSPO_DATA_DIR (default ~/.local/share/pspo-course),
+     PSPO_MODEL_CMD (optional; full command line, split with shlex; used by tests), PSPO_CLAUDE_MODEL (default
+     "sonnet"), PSPO_TIMEOUT (seconds, default 180), PSPO_MAX_CONCURRENT (default 2).
+     Default model command when PSPO_MODEL_CMD is unset (verified working on this host):
+       claude -p --model <PSPO_CLAUDE_MODEL> --system-prompt "You are a precise Scrum tutor for the PSPO I exam."
+              --tools "" --strict-mcp-config --setting-sources "" --output-format stream-json --verbose
+              --include-partial-messages
+     The prompt is written to the command's STDIN. The command runs in a fresh empty temporary directory as cwd.
+     Its stdout is newline-delimited JSON. Text arrives in lines shaped like
+       {"type":"stream_event","event":{"type":"content_block_delta","delta":{"type":"text_delta","text":"..."}}}
+     and a final line {"type":"result","subtype":"success","is_error":false,"result":"<full text>"} (is_error true
+     or a non-zero exit code means failure). Ignore all other line types.
+     Routes:
+       GET / and GET /index.html -> the repo's index.html (path relative to serve.py: ../index.html) with
+         `<script src="/runtime.js"></script>` inserted immediately after the opening <head ...> tag so it runs
+         before every other script. Header Cache-Control: no-store.
+       GET /runtime.js -> server/runtime.js (application/javascript).
+       GET /og-image.png -> repo file. Every other GET path -> 404.
+       GET /api/health -> {"ok": true}.
+       POST /api/sample, JSON body {"prompt": str, "modelTier": optional}. Prompt missing/empty/not a string -> 400.
+         Body or prompt larger than 60000 characters -> 413. More than PSPO_MAX_CONCURRENT running model calls ->
+         429 with JSON {"code":"rate_limited"}. Otherwise respond 200 with Content-Type application/x-ndjson and
+         stream one JSON object per line: {"t": "<delta text>"} for every text delta as it arrives (flush each
+         line), then exactly one final line: {"done": true, "text": "<full text>"} on success or
+         {"error": "<short message>"} on failure (non-zero exit, is_error result, timeout -> kill the process,
+         or no text at all). If the model emitted no deltas but the result line has text, send that text as one
+         {"t": ...} line before done. Never log prompt contents (length only).
+       GET /api/db?path=<p> -> {"exists": bool, "data": object|null}.
+       PUT /api/db?path=<p> with a JSON object body (max 2 MB, else 413; non-object -> 400) -> stores it, returns
+         {"ok": true}. <p> must match ^[a-z0-9_-]+/[a-z0-9_-]+$ else 400 (blocks traversal). Storage: one file per
+         path in PSPO_DATA_DIR ("progress/state" -> "progress__state.json"), written atomically (temp + os.replace).
+  2. server/runtime.js - plain browser JavaScript, no build step, no dependencies. Defines window.claude with
+     use(name) returning a Promise: "sample" -> the SAMPLE function described above, implemented with fetch to
+     /api/sample and a ReadableStream reader parsing the NDJSON lines (handle lines split across chunks), calling
+     opts.onText({text: accumulated}) after each delta, resolving {text} on done, rejecting {code:"rate_limited"}
+     on HTTP 429 and {code:"error", message} on any other failure or an {"error"} line. "db" -> object with
+     doc(path) returning {get(), set(obj)} backed by GET/PUT /api/db (get resolves {exists, data: function(){...}});
+     set rejects on non-2xx. Any other name -> Promise resolving null.
+  3. server/tests/fake_model.py - stand-in for the claude CLI used by the tests: reads the prompt from stdin and
+     prints stream-json lines in the exact format above. Behaviour keyed on the prompt: contains "FAIL" -> print a
+     result line with is_error true and exit 1; contains "SLOW" -> sleep 3 s before answering; contains
+     "RESULTONLY" -> no deltas, only a success result line with text; otherwise stream the deltas "Hello ", "from ",
+     "fake" and a success result "Hello from fake".
+  4. server/tests/test_serve.py - unittest suite that starts serve.py as a subprocess on a free port with
+     PSPO_MODEL_CMD pointing to fake_model.py (via sys.executable), a temporary PSPO_DATA_DIR and
+     PSPO_MAX_CONCURRENT=1, and waits for /api/health. Tests: index injection (the runtime script tag appears
+     before any other "<script" in the served HTML, and the rest of index.html is unchanged); /runtime.js served
+     and defines window.claude; unknown path 404; sample streaming (several {"t"} lines that concatenate to
+     "Hello from fake" and a final done line); RESULTONLY case; FAIL case ends with an error line; empty prompt
+     400; 60001-char prompt 413; concurrency (a SLOW request in a thread plus a second request -> 429); db get on
+     missing path -> exists false; db put then get roundtrip; invalid db paths ("../x", "progress", "a/b/c") -> 400;
+     non-object db body -> 400.
+  5. server/pspo-course.service - systemd --user unit template that runs serve.py with python3 (ExecStart using
+     %h for the home directory and the repo path /home/florian/workspace/pspo/pspo-course), Restart=on-failure,
+     and Environment=PATH including %h/.local/bin so the claude CLI is found.
+  6. README.md - append a short section "Self-hosting the full version" explaining serve.py, the env vars and that
+     the server must only be exposed on a private network (it spends the operator's model quota).
+  7. .gitignore - add .cc-work/ and __pycache__/ (create the file if missing).
+  Do NOT modify app/*, content/*, build.py or index.html. Do not add any dependency.
+affected_paths:
+  - server/serve.py
+  - server/runtime.js
+  - server/tests/fake_model.py
+  - server/tests/test_serve.py
+  - server/pspo-course.service
+  - README.md
+  - .gitignore
+acceptance:
+  - "python3 -m unittest discover -s server/tests -v passes"
+  - "index.html served with runtime script injected before any other script; file on disk unchanged"
+  - "POST /api/sample streams NDJSON deltas and ends with done or error; 400/413/429 as specified"
+  - "db GET/PUT roundtrip with path whitelist and atomic writes"
+  - "runtime.js implements window.claude.use for sample, db, and null for other names"
+  - "no changes under app/, content/, build.py, index.html; stdlib only"
+gate: "python3 -m unittest discover -s server/tests -v"
+trivial: false
+max_repair_rounds: 1
