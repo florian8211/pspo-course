@@ -1047,7 +1047,7 @@ function renderBeat(b, key){
     case "guide":
       return '<div class="beat b-guide"><div class="src">'+bookIcon()+'Scrum Guide 2020 &middot; '+esc(b.cite||"")+'</div>'
            + '<blockquote>'+esc(b.quote)+'</blockquote>'
-           + (b.gloss?'<div class="gloss"><strong>In plain English:</strong> '+inl(b.gloss)+'</div>':'')+'</div>';
+           + (b.gloss?'<div class="gloss"><strong>'+L("In plain English:","Kurz gesagt:")+'</strong> '+inl(b.gloss)+'</div>':'')+'</div>';
     case "trap":
       return '<div class="beat b-trap"><div class="th">'
            + '<div class="cell myth"><div class="lbl">'+xIcon()+'What people assume</div>'+md(b.myth)+'</div>'
