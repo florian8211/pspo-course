@@ -787,10 +787,16 @@ function applyTheme(){
   if(t) document.documentElement.setAttribute("data-theme", t);
   else document.documentElement.removeAttribute("data-theme");
 }
+function applyLang(){
+  var b=$("#langbtn"); if(!b) return;
+  b.hidden=!hasDE();
+  b.textContent=langLabel();
+  document.documentElement.setAttribute("lang", lang());
+}
 function boot(){
   indexQuestions();
   loadLocal();
-  applyTheme();
+  applyTheme(); applyLang();
   renderRail(); render(); setSync();
 
   $("#menubtn").addEventListener("click", function(){
@@ -805,6 +811,12 @@ function boot(){
     P.settings.theme = cur==="dark" ? "light" : (cur==="light" ? null : "dark");
     save(); applyTheme();
   });
+  /* #langbtn in the rail and .langtoggle in the module header do the same thing */
+  document.addEventListener("click", function(e){
+    if(!e.target.closest("#langbtn, .langtoggle")) return;
+    P.settings.lang = lang()==="de" ? "en" : "de";
+    save(); applyLang(); renderRail(); render();
+  });
   $("#resetbtn").addEventListener("click", function(){
     if(!confirm("Clear every module completion, quiz answer, flashcard box and exam attempt? This cannot be undone.")) return;
     P.done={};P.quiz={};P.sim={};P.write={};P.cards={};P.exams={attempts:[],missed:{}};P.coach=[];
@@ -818,7 +830,7 @@ function boot(){
       DB=d;
       return d.doc("progress/state").get().then(function(snap){
         var data = snap && snap.exists ? snap.data() : null;
-        if(data){ merge(P, data); applyTheme(); FC.queue=[]; renderRail(); render(); }
+        if(data){ merge(P, data); applyTheme(); applyLang(); FC.queue=[]; renderRail(); render(); }
         DBOK=true; setSync();
       });
     }).catch(function(){ DBOK=false; setSync(); });

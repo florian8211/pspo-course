@@ -93,7 +93,106 @@ if os.path.exists(gp):
     except Exception as e:
         problems.append("BAD JSON glossary: %s" % e)
 
-data = {"modules": modules, "exams": exams, "glossary": glossary}
+# ---- German ("Denglisch") module texts ----
+# content/de/<mid>.json is a full copy of the EN module where only the text
+# fields below are translated. Everything else must match EN exactly, so the
+# engine can swap texts without touching progress keys, quizzes or cards.
+DE = os.path.join(CON, "de")
+MOD_TEXT = ["title", "subtitle", "why", "objectives"]
+BEAT_TEXT = {
+    "hook":      ["body"],
+    "teach":     ["title", "body", "callout.text"],
+    "analogy":   ["title", "body", "callout.text"],
+    "guide":     ["gloss"],
+    "trap":      ["myth", "truth", "why"],
+    "civic":     ["title", "body"],
+    "sim":       ["title", "setup", "choices[].label", "choices[].outcome", "choices[].lesson"],
+    "keypoints": ["points"],
+    "write":     ["prompt", "starter", "rubric", "model"],
+}
+MARKERS = ["[[PRACTICE]]", "______"]
+
+def text_slots(obj, path):
+    """Yield (container, key, label) for every string a text path points at.
+    "a.b" walks dicts, "a[].b" walks every list item, a list leaf yields each item."""
+    head, _, rest = path.partition(".")
+    if head.endswith("[]"):
+        for i, it in enumerate(obj.get(head[:-2]) or []):
+            if isinstance(it, dict):
+                for c, k, lab in text_slots(it, rest):
+                    yield c, k, "%s[%d].%s" % (head[:-2], i, lab)
+        return
+    if head not in obj:
+        return
+    if rest:
+        if isinstance(obj[head], dict):
+            for c, k, lab in text_slots(obj[head], rest):
+                yield c, k, head + "." + lab
+    elif isinstance(obj[head], list):
+        for i in range(len(obj[head])):
+            yield obj[head], i, "%s[%d]" % (head, i)
+    else:
+        yield obj, head, head
+
+def module_slots(m):
+    for p in MOD_TEXT:
+        for c, k, lab in text_slots(m, p):
+            yield c, k, lab
+    for i, b in enumerate(m.get("beats") or []):
+        if not isinstance(b, dict):
+            continue
+        for p in BEAT_TEXT.get(b.get("type"), []):
+            for c, k, lab in text_slots(b, p):
+                yield c, k, "beats[%d].%s" % (i, lab)
+
+def masked(m):
+    m = json.loads(json.dumps(m))
+    for c, k, _ in module_slots(m):
+        c[k] = "<text>"
+    return m
+
+def validate_de(en, de):
+    out = []
+    if masked(de) != masked(en):
+        out.append("structure differs from EN once text fields are masked")
+    for k in ("quiz", "cards"):
+        if de.get(k) != en.get(k):
+            out.append("%s differs from EN" % k)
+    eb, db = en.get("beats") or [], de.get("beats") or []
+    if len(eb) != len(db):
+        out.append("beat count %d, EN has %d" % (len(db), len(eb)))
+    for i, b in enumerate(eb):
+        if b.get("type") == "check" and (i >= len(db) or db[i] != b):
+            out.append("check beat %d differs from EN" % i)
+    de_text = {lab: c[k] for c, k, lab in module_slots(de)}
+    for c, k, lab in module_slots(en):
+        if not isinstance(c[k], str):
+            continue
+        d = de_text.get(lab)
+        d = d if isinstance(d, str) else ""
+        for mk in MARKERS:
+            if c[k].count(mk) != d.count(mk):
+                out.append("%s: %r count %d, EN has %d" % (lab, mk, d.count(mk), c[k].count(mk)))
+    return out
+
+modules_de = {}
+de_errs = []
+for m in modules:
+    p = os.path.join(DE, m["id"] + ".json")
+    if not os.path.exists(p):
+        continue
+    try:
+        de = jload(p)
+    except Exception as e:
+        de_errs.append("BAD JSON de/%s: %s" % (m["id"], e))
+        continue
+    errs_m = validate_de(m, de)
+    if errs_m:
+        de_errs.extend("de/%s: %s" % (m["id"], e) for e in errs_m)
+        continue
+    modules_de[m["id"]] = {k: de[k] for k in ("title", "subtitle", "why", "objectives", "beats") if k in de}
+
+data = {"modules": modules, "exams": exams, "glossary": glossary, "modules_de": modules_de}
 blob = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
 # keep the JSON safe inside a <script> tag
 blob = blob.replace("</script", "<\\/script").replace("<!--", "<\\!--")
@@ -121,6 +220,7 @@ size = os.path.getsize(OUT)
 print("built %s" % OUT)
 print("  %.2f MB  (artifact limit is 16 MB)" % (size / 1048576.0))
 print("  modules: %d of %d" % (len(modules), len(EXPECTED)))
+print("  german modules: %d of %d" % (len(modules_de), len(EXPECTED)))
 print("  beats: %d | module questions: %d" % (nb, nq))
 print("  exams: %d  (%d questions)" % (len(exams), ne))
 print("  flashcards: %d | glossary: %d" % (nc, len(glossary)))
@@ -209,6 +309,15 @@ if errs:
     if len(errs) > 40: print("  ... and %d more" % (len(errs) - 40))
 else:
     print("content integrity: all questions well formed")
+
+if de_errs:
+    print()
+    print("!!! GERMAN MODULE ERRORS (%d):" % len(de_errs))
+    for e in de_errs[:40]: print("  ! " + e)
+    if len(de_errs) > 40: print("  ... and %d more" % (len(de_errs) - 40))
+    os.remove(OUT)
+    print("    %s deleted so a build with a broken German module cannot be served." % os.path.basename(OUT))
+    sys.exit(1)
 
 if leaks:
     print()

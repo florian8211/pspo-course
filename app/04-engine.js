@@ -17,9 +17,32 @@ var P = {
   cards:{},     // cardId -> {box:1..5, due:epochDay, lapses:n}
   exams:{attempts:[], missed:{}},  // attempts:[{id,score,total,at,tags}] ; missed: qid -> {examId, picked}
   coach:[],
-  settings:{theme:null}
+  settings:{theme:null, lang:null}   // lang: "de" | "en", null = default
 };
 var DB=null, SAMPLE=null, DL=null, saveT=null, DBOK=false;
+
+/* German ("Denglisch") module texts. Only title/subtitle/why/objectives/beats
+   are swapped; quiz and cards always come from the English module, and beat
+   keys stay m.id+"_b"+i so sim/write progress is shared between languages. */
+function hasDE(){ return !!(D.modules_de && Object.keys(D.modules_de).length); }
+function lang(){
+  if(!hasDE()) return "en";
+  var l=P.settings.lang;
+  return (l==="de"||l==="en") ? l : "de";
+}
+function LM(m){
+  var de = lang()==="de" && m && D.modules_de[m.id];
+  if(!de) return m;
+  var o={};
+  Object.keys(m).forEach(function(k){ o[k]=m[k]; });
+  ["title","subtitle","why","objectives","beats"].forEach(function(k){ if(k in de) o[k]=de[k]; });
+  return o;
+}
+function L(en, de){ return lang()==="de" ? de : en; }   // module-view chrome labels only
+function langLabel(){ return lang()==="de" ? "English" : "Deutsch"; }
+function langToggleHtml(){
+  return hasDE() ? '<button class="btn btn-sm btn-ghost langtoggle" title="Switch module language">'+langLabel()+'</button>' : '';
+}
 
 function today(){ return Math.floor(Date.now()/86400000); }
 /* No claude runtime at all means this is the public demo build, not the hosted
@@ -123,7 +146,7 @@ function renderRail(){
       var d=moduleDone(m);
       html+='<button class="navitem" data-go="module" data-arg="'+esc(m.id)+'" aria-current="'+(VIEW.name==="module"&&VIEW.arg===m.id)+'">'
           + '<span class="no">M'+String(m.num).padStart(2,"0")+'</span>'
-          + '<span>'+esc(m.title)+'</span>'
+          + '<span>'+esc(LM(m).title)+'</span>'
           + (d?TICK:DOT)+'</button>';
     });
   });
@@ -157,7 +180,7 @@ function render(){
     case "module":
       m=MODS.filter(function(x){return x.id===VIEW.arg;})[0];
       if(!m){ v.innerHTML=empty("That module is not here yet."); c.textContent="Dashboard"; return; }
-      c.textContent="Module "+String(m.num).padStart(2,"0")+" / "+m.title;
+      c.textContent="Module "+String(m.num).padStart(2,"0")+" / "+LM(m).title;
       v.innerHTML=viewModule(m); wireModule(m); break;
     case "cards":  c.textContent="Flashcards";      v.innerHTML=viewCards();  wireCards();  break;
     case "exams":  c.textContent="Mock exams";      v.innerHTML=viewExams();  break;
@@ -226,7 +249,7 @@ function viewHome(){
     s+='<div class="sec-h"><h2>Pick up here</h2><span class="rule"></span></div>';
     s+='<button class="mcard" data-go="module" data-arg="'+esc(nx.id)+'" style="max-width:520px">'
       + '<div class="top"><span class="no">M'+String(nx.num).padStart(2,"0")+'</span><span class="chip chip-spark">next</span></div>'
-      + '<div class="ttl">'+esc(nx.title)+'</div><div class="sub">'+esc(nx.subtitle||"")+'</div>'
+      + '<div class="ttl">'+esc(LM(nx).title)+'</div><div class="sub">'+esc(LM(nx).subtitle||"")+'</div>'
       + '<div class="foot"><span class="chip">'+(nx.minutes||25)+' min</span><span class="chip">'+((nx.quiz||[]).length)+' questions</span></div></button>';
   } else {
     s+='<div class="sec-h"><h2>All modules done</h2><span class="rule"></span></div>';
@@ -242,7 +265,7 @@ function viewHome(){
       var d=moduleDone(m);
       s+='<button class="mcard" data-done="'+(d?1:0)+'" data-go="module" data-arg="'+esc(m.id)+'">'
         + '<div class="top"><span class="no">M'+String(m.num).padStart(2,"0")+'</span>'+(d?'<span class="chip chip-ok">done</span>':'')+'</div>'
-        + '<div class="ttl">'+esc(m.title)+'</div><div class="sub">'+esc(m.subtitle||"")+'</div>'
+        + '<div class="ttl">'+esc(LM(m).title)+'</div><div class="sub">'+esc(LM(m).subtitle||"")+'</div>'
         + '<div class="foot"><span class="chip">'+(m.minutes||25)+' min</span></div></button>';
     });
     s+='</div></div>';
@@ -261,17 +284,18 @@ function viewHome(){
    MODULE
    ============================================================ */
 function viewModule(m){
+  var t=LM(m), nn=String(m.num).padStart(2,"0"), wk=(m.week||1), mins=(m.minutes||25);
   var s='<div class="wrap">';
-  s+='<div class="mhead"><div class="no">Module '+String(m.num).padStart(2,"0")+' &middot; Week '+(m.week||1)+' &middot; about '+(m.minutes||25)+' minutes</div>';
-  s+='<h1>'+esc(m.title)+'</h1>';
-  s+='<p class="sub">'+esc(m.subtitle||"")+'</p>';
-  if(m.why) s+='<div class="why"><b>Why this matters</b>'+md(m.why)+'</div>';
-  if(m.objectives && m.objectives.length){
-    s+='<div class="objs"><div class="ol">By the end you can</div><ul>'+m.objectives.map(function(o){return "<li>"+inl(o)+"</li>";}).join("")+'</ul></div>';
+  s+='<div class="mhead">'+langToggleHtml()+'<div class="no">'+L('Module '+nn+' &middot; Week '+wk+' &middot; about '+mins+' minutes', 'Modul '+nn+' &middot; Woche '+wk+' &middot; ca. '+mins+' Minuten')+'</div>';
+  s+='<h1>'+esc(t.title)+'</h1>';
+  s+='<p class="sub">'+esc(t.subtitle||"")+'</p>';
+  if(t.why) s+='<div class="why"><b>'+L("Why this matters","Warum das zählt")+'</b>'+md(t.why)+'</div>';
+  if(t.objectives && t.objectives.length){
+    s+='<div class="objs"><div class="ol">'+L("By the end you can","Am Ende kannst du")+'</div><ul>'+t.objectives.map(function(o){return "<li>"+inl(o)+"</li>";}).join("")+'</ul></div>';
   }
   s+='</div>';
   s+='<div class="beats">';
-  (m.beats||[]).forEach(function(b,i){ s+=renderBeat(b, m.id+"_b"+i); });
+  (t.beats||[]).forEach(function(b,i){ s+=renderBeat(b, m.id+"_b"+i); });
   s+='</div>';
 
   if((m.quiz||[]).length){
@@ -284,7 +308,7 @@ function viewModule(m){
   s+='<div class="modfoot">';
   s+='<button class="btn btn-primary" id="donebtn">'+(moduleDone(m)?"Mark as not done":"Mark module complete")+'</button>';
   var idx=MODS.indexOf(m);
-  if(idx<MODS.length-1) s+='<button class="btn" data-go="module" data-arg="'+esc(MODS[idx+1].id)+'">Next: '+esc(MODS[idx+1].title)+'</button>';
+  if(idx<MODS.length-1) s+='<button class="btn" data-go="module" data-arg="'+esc(MODS[idx+1].id)+'">Next: '+esc(LM(MODS[idx+1]).title)+'</button>';
   s+='<button class="btn btn-ghost" data-go="home">Back to dashboard</button>';
   s+='</div></div>';
   return s;
@@ -386,7 +410,7 @@ function wireSim(el){
     P.sim[key]=i; save();
     var mod=MODS.filter(function(x){return VIEW.arg===x.id;})[0];
     var beat=null;
-    if(mod){ var n=+key.split("_b")[1]; beat=mod.beats[n]; }
+    if(mod){ var n=+key.split("_b")[1]; beat=LM(mod).beats[n]; }
     $$(".simchoice",el).forEach(function(x){ x.disabled=true; x.setAttribute("data-picked", (+x.getAttribute("data-i")===i)?1:0); });
     if(beat) $(".simout",el).innerHTML=simOutcome(beat.choices[i]);
   });
@@ -396,14 +420,14 @@ function wireSim(el){
 function renderWrite(b, key){
   var st=P.write[key]||{};
   var s='<div class="beat b-write" data-write="'+esc(key)+'">';
-  s+='<div class="lbl">'+penIcon()+'Write it yourself</div>';
+  s+='<div class="lbl">'+penIcon()+L("Write it yourself","Schreib es selbst")+'</div>';
   s+=md(b.prompt);
   s+='<div style="margin-top:14px"><textarea class="ta" placeholder="Take a real swing at it. Rough is fine.">'+esc(st.text||b.starter||"")+'</textarea></div>';
   if(b.rubric && b.rubric.length){
-    s+='<div class="rubric"><div class="rl">What a strong answer does</div><ul>'+b.rubric.map(function(r){return "<li>"+inl(r)+"</li>";}).join("")+'</ul></div>';
+    s+='<div class="rubric"><div class="rl">'+L("What a strong answer does","Was eine starke Antwort ausmacht")+'</div><ul>'+b.rubric.map(function(r){return "<li>"+inl(r)+"</li>";}).join("")+'</ul></div>';
   }
-  s+='<div class="q-actions"><button class="btn btn-primary" data-act="grade">Get feedback</button>'
-    +'<button class="btn" data-act="model">Show a strong answer</button></div>';
+  s+='<div class="q-actions"><button class="btn btn-primary" data-act="grade">'+L("Get feedback","Feedback holen")+'</button>'
+    +'<button class="btn" data-act="model">'+L("Show a strong answer","Starke Antwort zeigen")+'</button></div>';
   s+='<div class="gradeout">'+(st.grade?gradeBox(st.grade):"")+'</div>';
   s+='<div class="modelout"></div>';
   s+='</div>';
@@ -414,7 +438,7 @@ function gradeBox(t){ return '<div class="grade reveal"><div class="gh">'+checkI
 function wireWrite(el){
   var key=el.getAttribute("data-write");
   var mod=MODS.filter(function(x){return VIEW.arg===x.id;})[0];
-  var beat=null; if(mod){ var n=+key.split("_b")[1]; beat=mod.beats[n]; }
+  var beat=null; if(mod){ var n=+key.split("_b")[1]; beat=LM(mod).beats[n]; }
   var ta=$("textarea",el);
   ta.addEventListener("input", function(){ P.write[key]=P.write[key]||{}; P.write[key].text=ta.value; save(); });
   el.addEventListener("click", function(e){
@@ -422,7 +446,7 @@ function wireWrite(el){
     var act=b.getAttribute("data-act");
     if(act==="model"){
       $(".modelout",el).innerHTML = beat && beat.model
-        ? '<div class="model-ans reveal"><div class="mh">One strong answer</div>'+md(beat.model)+'</div>'
+        ? '<div class="model-ans reveal"><div class="mh">'+L("One strong answer","Eine starke Antwort")+'</div>'+md(beat.model)+'</div>'
         : '<div class="model-ans reveal"><div class="mh">No sample provided</div><p>Compare your answer against the criteria above.</p></div>';
       return;
     }
@@ -440,7 +464,8 @@ function wireWrite(el){
         + "THE EXERCISE:\n" + (beat?beat.prompt:"") + "\n\n"
         + "WHAT A STRONG ANSWER DOES:\n" + ((beat&&beat.rubric)?beat.rubric.map(function(r){return "- "+r;}).join("\n"):"") + "\n\n"
         + "HIS ANSWER:\n" + txt + "\n\n"
-        + "Give feedback in under 200 words. Structure it as: one sentence on what genuinely works, then the single most valuable improvement stated concretely, then a rewritten version of his answer that shows the improvement. Be direct and specific, never generic praise. Judge against the Scrum Guide 2020, and if he has stated a common practice as if it were Scrum, say so. Do not use em dashes anywhere in your reply.";
+        + "Give feedback in under 200 words. Structure it as: one sentence on what genuinely works, then the single most valuable improvement stated concretely, then a rewritten version of his answer that shows the improvement. Be direct and specific, never generic praise. Judge against the Scrum Guide 2020, and if he has stated a common practice as if it were Scrum, say so. Do not use em dashes anywhere in your reply."
+        + (lang()==="de" ? " Reply in German, but keep Scrum terms and fixed Scrum Guide phrases in English. Use Swiss spelling (ss, never ß)." : "");
       SAMPLE(prompt, {onText:function(u){ target.innerHTML=md(u.text); }, modelTier:"default"})
         .then(function(r){
           P.write[key]=P.write[key]||{}; P.write[key].text=txt; P.write[key].grade=r.text; save();
