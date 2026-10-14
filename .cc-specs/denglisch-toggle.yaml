@@ -1,0 +1,65 @@
+spec: |
+  Add a German ("Denglisch") reading mode for the MODULE TEXT, switchable DE/EN at any time, without
+  touching progress, quizzes, flashcards, glossary or mock exams.
+
+  Data: German module files live in content/de/<mid>.json (e.g. content/de/m01.json). Each is a FULL copy of
+  content/<mid>.json with the same structure; only these text fields differ: module title, subtitle, why,
+  objectives[]; beats: hook.body; teach/analogy title, body, callout.text; guide.gloss; trap myth/truth/why;
+  civic title/body; sim title, setup, choices[].label/outcome/lesson; keypoints.points[]; write prompt,
+  starter, rubric[], model. Everything else (ids, beat order/count/types, check beats, guide.quote and
+  guide.cite, visual, callout.kind, sim verdicts, quiz, cards, num, week, minutes) MUST be identical to EN.
+  Not every module has a DE file; missing ones fall back to English.
+
+  1. build.py
+     - For every module, if content/de/<mid>.json exists, load it and VALIDATE it against the EN module:
+       structure identical once the text fields listed above are masked; quiz, cards and all check beats
+       deep-equal to EN; for every translated field the count of "[[PRACTICE]]" and of "______" equals EN.
+       Any violation is a build problem (same handling as other build errors: non-zero exit, no output file).
+     - Embed only what the engine needs: data["modules_de"] = {mid: {"title","subtitle","why","objectives",
+       "beats"}} for valid DE modules (do NOT duplicate quiz/cards). Report line: "  german modules: N of 14".
+  2. Engine (app/04-engine.js, app/05-tools.js, app/03-body.html)
+     - New setting P.settings.lang, values "de" | "en". Default: "de" if D.modules_de has at least one entry,
+       else "en". Persisted like theme (localStorage + DB sync via existing save()).
+     - Helper LM(m): when lang is "de" and D.modules_de[m.id] exists, return an object with m's fields but
+       title/subtitle/why/objectives/beats taken from the DE entry; otherwise return m. quiz and cards always
+       come from m (English).
+     - Use LM(m) wherever module text is shown: viewModule header + beats, rail module titles, crumb, the
+       "Next: <title>" button, and the beat lookups in wireSim and wireWrite (mod.beats[n] must come from
+       LM(mod), so the sim outcome and the write model answer/rubric show in the active language).
+       Beat keys stay m.id+"_b"+i, so P.sim / P.write progress is shared between languages.
+     - Toggle button id="langbtn" in the rail footer next to Theme, label shows the OTHER language
+       ("English" when DE is active, "Deutsch" when EN is active); click flips lang, save(), re-render rail and
+       current view. Also a small toggle with the same behaviour inside the module header (.mhead), class
+       "langtoggle", so it is reachable on mobile without opening the rail. Hide both when D.modules_de is empty.
+     - In DE mode translate only the module-view chrome labels: "Why this matters" -> "Warum das zählt",
+       "By the end you can" -> "Am Ende kannst du", "Write it yourself"
+       -> "Schreib es selbst", "What a strong answer does" -> "Was eine starke Antwort ausmacht", "Get feedback"
+       -> "Feedback holen", "Show a strong answer" -> "Starke Antwort zeigen", "One strong answer" -> "Eine
+       starke Antwort". Module header line "Module NN · Week W · about M minutes" -> "Modul NN · Woche W · ca. M
+       Minuten". Leave every other label (quiz, cards, exams, coach, dashboard) English.
+     - Write grading in DE mode: append to the grading prompt "Reply in German, but keep Scrum terms and
+       fixed Scrum Guide phrases in English. Use Swiss spelling (ss, never ß)."
+     - Re-merging progress from the DB must re-apply the language (like applyTheme after merge).
+  3. Tests: tests/test_i18n.py (python3.12, unittest, may use playwright which is installed for python3.12):
+     - build runs green on the repo as is.
+     - falsification: in a temp copy of the repo, tamper a DE file (change one quiz id; remove a beat; drop a
+       [[PRACTICE]] marker if the module has one, else change a check beat) -> build exits non-zero each time.
+     - browser test on file:// index.html with headless chromium: with no localStorage the module m01 renders
+       the DE title from content/de/m01.json; clicking #langbtn shows the EN title; reload keeps EN (persisted);
+       m02 (no DE file unless one exists) falls back to English without errors; picking a sim choice in DE then
+       switching to EN keeps the choice selected (shared key); no console errors.
+affected_paths:
+  - build.py
+  - app/03-body.html
+  - app/04-engine.js
+  - app/05-tools.js
+  - tests/test_i18n.py
+acceptance:
+  - "python3 build.py exits 0 and prints 'german modules: N of 14' with N = number of files in content/de"
+  - "tampered DE file (quiz id / beat count / PRACTICE marker) makes build.py exit non-zero"
+  - "m01 shows German by default, #langbtn switches to English, choice persists across reload"
+  - "progress keys (P.sim/P.write/P.quiz/P.done) unchanged; quiz/cards/exams stay English"
+  - "server/tests/test_serve.py still passes"
+gate: "python3 build.py && python3.12 -m unittest tests.test_i18n -v && python3.12 -m unittest discover -s server/tests -v"
+trivial: false
+max_repair_rounds: 2

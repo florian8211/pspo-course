@@ -1,0 +1,423 @@
+{
+  "id": "m01",
+  "num": 1,
+  "week": 1,
+  "title": "Warum Raten scheitert",
+  "subtitle": "Warum sich die Arbeit vor dir nicht bis zur Ziellinie durchplanen lässt - und was du statt Raten tun kannst.",
+  "minutes": 25,
+  "why": "Wer als Product Owner das überspringt, behandelt eine Vermutung wie ein Versprechen. Danach verbringt man die nächsten sechs Monate damit, die Vermutung zu verteidigen, statt das Produkt zu verbessern.",
+  "objectives": [
+    "Ein complicated Problem von einem complex Problem unterscheiden - mit einem Test, den du in zehn Sekunden anwenden kannst",
+    "Empiricism in einem einfachen Satz erklären, ohne das Wort agile zu verwenden",
+    "Die three pillars nennen und genau sagen, was kaputtgeht, wenn einer davon fehlt",
+    "Einen Plan erkennen, der in Wahrheit eine ungetestete Annahme im Kostüm eines Plans ist",
+    "Sagen, warum Scrum absichtlich unfertig gelassen ist - und warum das kein Fehler ist"
+  ],
+  "beats": [
+    {
+      "type": "hook",
+      "body": "Du kannst gut planen. Du zerlegst die Arbeit, bringst sie in eine Reihenfolge, entscheidest Dinge einmal und hältst fest, was fertig ist. Mit genau diesem Instinkt kommt ein Founder von einer Idee zu einem Produkt, auf das jemand tatsächlich klicken kann.\n\nDieses Modul wird dir nicht sagen, dass du mit Planen aufhören sollst. Es zeigt dir die eine Art von Problem, bei der härteres Planen die Sache aktiv schlimmer macht.\n\nUnd es zeigt dir, warum fast alles, was noch auf deiner Roadmap steht, genau in diese Kategorie fällt."
+    },
+    {
+      "type": "teach",
+      "title": "Zwei Arten von schwierig",
+      "body": "Manche Probleme sind **complicated**. Schwierig, aber wissbar. Jemand kennt die Antwort schon. Mit genug Expertise bekommst du einen Plan, dem du bis zum Ende folgen kannst.\n\nAndere Probleme sind **complex**. Niemand kennt die Antwort bisher, auch die Experten nicht. Denn die Antwort hängt von Dingen ab, die sich erst zeigen, wenn du anfängst.\n\nDer Zehn-Sekunden-Test: Wenn du genau das Gleiche zweimal machst, bekommst du dann das gleiche Ergebnis? Lohnabrechnung machen: ja. Ein Spend-Monitoring-Tool an einen Gemeindeschreiber verkaufen, der so etwas noch nie benutzt hat: nein. Der zweite Versuch passiert in einer Welt, die der erste Versuch verändert hat.\n\n[[PRACTICE]] Das Vokabular complicated versus complex stammt aus Cynefin, einem Sense-Making-Framework. Nützlich, weit verbreitet gelehrt - und nicht im Scrum Guide."
+    },
+    {
+      "type": "analogy",
+      "title": "Der Motor und der Teenager",
+      "body": "Ein Automotor ist complicated. Tausende Teile, aber keine Meinungen. Nimm ihn auseinander, studier ihn, bau ihn wieder zusammen - und er verhält sich morgen genau gleich. Man kann ein Handbuch dafür schreiben, und es gibt auch eins.\n\nEinen Teenager grossziehen ist complex. Es gibt kein Handbuch. Und alle Eltern, die behaupten, eins zu haben, beschreiben genau einen einzigen Teenager.\n\nEinen Teenager löst du nicht. Du probierst etwas Kleines aus, schaust genau hin, passt an. Was du im dritten Monat lernst, wäre im ersten Monat unsichtbar gewesen.\n\nDeine Roadmap ist ein Teenager. Behandelst du sie wie einen Motor, bist du extrem überzeugt und extrem falsch - in genau dieser Reihenfolge."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m01k1",
+        "kind": "mcq",
+        "stem": "Ledgerline needs to integrate with Corvus Financials, an ERP with a documented data model that other vendors have connected to before. Separately, it needs to decide which three screens to put in front of a town finance office first. Which statement is true?",
+        "options": [
+          "Both are complex problems, because both involve software",
+          "The Corvus integration is complicated and the screen ordering is complex",
+          "The Corvus integration is complex and the screen ordering is complicated",
+          "Both are complicated, because expertise exists that could answer either one"
+        ],
+        "answer": 1,
+        "explain": "The integration has a knowable answer: the schema exists, people have done it, and expertise closes the gap. Ordering the screens depends on how ten municipal roles react to something none of them has used, which is only learnable by putting it in front of them. Option A collapses the distinction, which is the most common mistake, since software is not automatically complex. Option C inverts them. Option D assumes an expert exists who already knows which screens a small town finance office will adopt. Nobody does, including you.",
+        "cite": "Scrum Guide 2020, Scrum Definition",
+        "tag": "empiricism"
+      }
+    },
+    {
+      "type": "teach",
+      "title": "Zwei Arten, einen Prozess zu steuern",
+      "body": "[[PRACTICE]] Dieses Vokabular kommt aus der industriellen Prozesssteuerung, nicht aus dem Scrum Guide. Aber so siehst du am klarsten, was Scrum eigentlich macht.\n\n**Defined process control:** Du kennst das Rezept. Du legst die Schritte vorab fest, führst sie aus und bekommst den erwarteten Output. Das funktioniert, wenn sowohl die Inputs als auch der Prozess gut verstanden sind.\n\n**Empirical process control:** Du kennst das Rezept nicht. Also baust du stattdessen einen kurzen Feedback Loop. Mach eine kleine Menge echter Arbeit. Schau dir das tatsächliche Ergebnis genau an. Ändere, was du als Nächstes tust, basierend auf dem, was du gesehen hast. Wiederholen.\n\nEin Plan ist eine Wette. Empiricism ist eine Art, kleine Wetten so oft zu platzieren, dass Falschliegen billig bleibt.",
+      "visual": "empirical-loop",
+      "callout": {
+        "kind": "why",
+        "text": "Scrum ist keine Planungsmethode mit kürzerem Horizont. Scrum ist eine Maschine, die Vermutungen in einer festen Cadence in Evidenz umwandelt."
+      }
+    },
+    {
+      "type": "guide",
+      "quote": "Scrum is founded on empiricism and lean thinking. Empiricism asserts that knowledge comes from experience and making decisions based on what is observed. Lean thinking reduces waste and focuses on the essentials.",
+      "cite": "Scrum Theory",
+      "gloss": "Wissen entsteht durch Machen und Hinschauen. Alles, was dir weder beim Machen noch beim Hinschauen hilft, ist Waste."
+    },
+    {
+      "type": "trap",
+      "myth": "Empiricism heisst, du hörst auf zu planen und reagierst einfach auf alles, was gerade auftaucht.",
+      "truth": "Scrum plant ständig. Es plant jeden Sprint, jeden Tag und jedes Mal, wenn ein Item refined wird. Was Scrum verweigert: einen Plan, der gemacht wurde, bevor es Evidenz gab, als Commitment zu behandeln.",
+      "why": "PSPO I liebt das Wort only. Achte auf Antworten mit 'no planning is done', 'plans are not needed' oder 'the Product Backlog is fixed at the start'. Jede davon ist falsch. Häufiges Neuplanen anhand echter Beobachtungen ist genau der Punkt."
+    },
+    {
+      "type": "teach",
+      "title": "Three pillars - und sie sind eine Kette",
+      "body": "Scrum ruht auf three pillars: **transparency**, **inspection**, **adaptation**. Die meisten Kurse zählen sie auf und machen weiter. Das Interessante ist: Sie funktionieren nur in dieser Reihenfolge. Und jede ist wertlos ohne die nächste.\n\n**Transparency** heisst: Die Arbeit und der Prozess sind tatsächlich sichtbar - für die Leute, die die Arbeit machen, und für die Leute, die sie bekommen. Nicht berichtet. Sichtbar.\n\n**Inspection** heisst: Jemand schaut sich häufig und bewusst das echte Ding an und sucht nach Abweichungen.\n\n**Adaptation** heisst: Als Folge davon ändert sich etwas, und zwar schnell.\n\nBrich die Kette an irgendeiner Stelle, und der ganze Apparat wird zum Theater. Das ist die Behauptung. Jetzt schau, was der Guide dazu sagt - die Formulierung ist ungewöhnlich direkt."
+    },
+    {
+      "type": "guide",
+      "quote": "Transparency enables inspection. Inspection without transparency is misleading and wasteful.",
+      "cite": "Transparency",
+      "gloss": "Wenn das, was du anschaust, nicht der echte Stand der Dinge ist, macht dich genaueres Hinschauen nur überzeugter - und falscher."
+    },
+    {
+      "type": "civic",
+      "title": "Das Band, das nie auslösen konnte",
+      "body": "Über alle zwölf Departemente von Northfield hinweg zeigte die Executive Overview \"0 watch\" an - egal, was die Daten machten. Die Legende zeigte drei Zustände. Nur zwei davon konnten je eintreten.\n\nDie Ursache waren zwei verschiedene Skalen. Watch wurde an Jahresend-Auslastungsbändern von 85 und 100 Prozent gemessen. At risk wurde an einer Prognose über 1.02 gemessen. Bei 75 Prozent abgelaufener Zeit löst At risk schon über 76.5 Prozent Auslastung aus. Also war jeder mögliche Watch-Kandidat bereits von At risk geschluckt.\n\nNiemand hat gelogen. Alle, die diesen Screen geöffnet haben, sahen eine Legende, die live wirkte, und einen Roll-up, der ruhig aussah. Die Zahl war sichtbar. Das Verhalten nicht.\n\nDas ist ein Versagen der Transparency - und jede Inspection, die darauf aufbaute, war wertlos."
+    },
+    {
+      "type": "guide",
+      "quote": "Inspection enables adaptation. Inspection without adaptation is considered pointless. Scrum events are designed to provoke change.",
+      "cite": "Inspection",
+      "gloss": "Ein Review, das nie etwas verändert, ist ein Status-Meeting mit besserem Catering."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m01k2",
+        "kind": "multi",
+        "stem": "A Scrum Team holds a Sprint Review every Sprint. Stakeholders attend, the Increment is shown, notes are taken, and nothing about the Product Backlog or the way the team works has changed in five Sprints. Select the TWO statements the Scrum Guide supports.",
+        "options": [
+          "Inspection is happening but adaptation is not, which makes the inspection pointless",
+          "The team should stop holding Sprint Reviews since they produce nothing",
+          "Scrum events are designed to provoke change, so an event that provokes none is not doing its job",
+          "This is acceptable as long as the Increment meets the Definition of Done",
+          "Transparency has failed, which is why nothing changes"
+        ],
+        "answer": [
+          0,
+          2
+        ],
+        "explain": "The Guide says inspection without adaptation is considered pointless, and that Scrum events are designed to provoke change. Option B is wrong because the fix is to make the event provoke change, not to delete the feedback loop. Option D is wrong because a Done Increment nobody adapts from still wastes the inspection. Option E is tempting, but nothing in the scenario says the work was invisible. The Increment was shown. This is an adaptation failure, not a transparency failure, and the exam will test whether you can tell them apart.",
+        "cite": "Scrum Guide 2020, Inspection",
+        "tag": "empiricism"
+      }
+    },
+    {
+      "type": "teach",
+      "title": "Adaptation ist der Pillar, der dich etwas kostet",
+      "body": "Transparency kostet Ehrlichkeit. Inspection kostet Aufmerksamkeit. Adaptation kostet deinen Plan - und genau deshalb lassen die Leute sie still und leise weg.\n\nAdaptieren heisst: Was du im Januar gesagt hast, ist jetzt falsch, und du sagst das laut. Für einen Founder, der auch noch Sales macht, ist das kein abstraktes Unbehagen. Vielleicht hast du diesen Plan schon einem Prospect beschrieben.\n\nDer Guide ist beim Timing konkret: Die Anpassung passiert so schnell wie möglich, damit die Abweichung klein bleibt. Bis zum Quartalsreview warten, um etwas zu korrigieren, das du in Woche zwei gelernt hast, ist keine Geduld. Das sind drei Monate Bauen auf einem bekannten Fehler."
+    },
+    {
+      "type": "guide",
+      "quote": "If any aspects of a process deviate outside acceptable limits or if the resulting product is unacceptable, the process being applied or the materials being produced must be adjusted. The adjustment must be made as soon as possible to minimize further deviation.",
+      "cite": "Adaptation",
+      "gloss": "Sobald du es weisst, änderst du. Verzögerung ist keine Vorsicht, sie ist Zinseszins."
+    },
+    {
+      "type": "sim",
+      "title": "Die Demo-Uhr",
+      "setup": "Ein Request kommt rein: Die Demo soll immer das heutige Datum zeigen, weil ein März-Snapshot in einem Live-Pitch veraltet wirkt. Du schaust dir das tatsächliche Verhalten an.\n\nDie Northfield-Beispieldaten sind zu 75 Prozent verbraucht, gemessen an einem Fiskaljahr von Juli bis Juni. Das fixiert den Snapshot rechnerisch auf März. Stellst du die Uhr auf heute, sieht es so aus, als hätte die Gemeinde 75 Prozent ihres Budgetkredits in sechs Wochen verbraucht. Jedes Pace-Flag, jede Prognose und jede At-risk-Zahl auf dem Screen wird zu Unsinn.\n\nDu kannst ein echtes Fiskaljahr Juli bis Juni haben, zu 75 Prozent verbrauchte Daten oder ein immer aktuelles Datum. Zwei der drei, egal welche. Nie alle drei.",
+      "choices": [
+        {
+          "label": "Nein sagen und erklären, dass es die Prognosen kaputtmachen würde.",
+          "outcome": "Der Request ist eine Woche lang ruhig. Dann kommt er von jemand anderem zurück, leicht anders formuliert. Niemand sonst hat den Constraint kennengelernt. Also kann dir niemand helfen, ihn zu umgehen, oder die Version des Requests erkennen, die okay wäre.",
+          "verdict": "mixed",
+          "lesson": "Ein Nein, das den Grund nicht weitergibt, ist ein Nein, das du immer wieder wiederholen musst. Transparency ist nicht Höflichkeit. Transparency heisst: allen dieselben Fakten hinlegen, damit die nächste Entscheidung besser wird als diese."
+        },
+        {
+          "label": "Die drei Eigenschaften auf den Tisch legen und fragen, welche zwei die anfragende Person will.",
+          "outcome": "Sie wählen eine Live-Uhr plus aktuelle Daten. Dann merken sie sofort: Das heisst, auf ein echtes Fiskaljahr Juli bis Juni zu verzichten - und genau das ist der ganze Sinn einer Demo für ein Gemeindebudget. Sie ziehen den Request selbst zurück und wünschen sich stattdessen ein sichtbares Label \"snapshot as of March\".",
+          "verdict": "good",
+          "lesson": "Wenn du einen versteckten Constraint sichtbar machst, wird aus einem Streit eine Entscheidung. Genau das ist der eigentliche Job von Transparency: eine echte Inspection durch jemand anderen als dich möglich machen."
+        },
+        {
+          "label": "Bauen. Es ist eine einzeilige Änderung, und die anfragende Person ist senior.",
+          "outcome": "Die nächste Demo zeigt eine Gemeinde, die drei Viertel ihres Budgets in sechs Wochen ausgegeben hat. Der Prospect sagt nichts dazu - und stellt auch keine Fragen mehr zu den Anomalie-Zahlen.",
+          "verdict": "bad",
+          "lesson": "Billig zu bauen ist nicht dasselbe wie billig. Die Kosten sind dort gelandet, wo du nicht hingeschaut hast: bei der Glaubwürdigkeit jeder anderen Zahl auf dem Screen."
+        },
+        {
+          "label": "Einen Toggle einbauen, damit es beide Verhalten gibt und niemand entscheiden muss.",
+          "outcome": "Jetzt gehen zwei Versionen der Wahrheit raus. Unter Druck wählt die präsentierende Person die, die am frischesten aussieht - und das ist die falsche. Du hast die Entscheidung an die Person abgegeben, die gerade den Laptop hält.",
+          "verdict": "mixed",
+          "lesson": "Ein Toggle ist oft eine Entscheidung, die du nicht treffen wolltest. Manchmal ist das richtig. Wenn die zwei Zustände sich über Fakten statt über Präferenzen widersprechen, ist es das nicht."
+        }
+      ]
+    },
+    {
+      "type": "teach",
+      "title": "Absichtlich unfertig gelassen",
+      "body": "Scrum sagt dir, dass du eine Sprint Retrospective abhalten sollst. Es sagt dir nicht, wie du sie durchführst. Es sagt dir, dass das Product Backlog geordnet ist. Es sagt dir nicht, wonach du es ordnen sollst. Das macht Leute wahnsinnig - und es ist Absicht.\n\nEin Framework, das jede Practice vorschreibt, wäre ein Defined Process. Und genau das scheitert bei Arbeit, die complex ist. Scrum definiert nur die Teile, die es braucht, damit der empirical Loop läuft. Den Rest überlässt es dir - du füllst ihn mit dem, was dein Kontext braucht.\n\nAlso: Die Lücken darfst du selbst füllen. Die Teile, die festgelegt sind, darfst du nicht entfernen. Das sind zwei verschiedene Freiheiten. Wer sie verwechselt, landet am schnellsten bei Meetings ohne Feedback."
+    },
+    {
+      "type": "guide",
+      "quote": "Scrum is simple. Try it as is and determine if its philosophy, theory, and structure help to achieve goals and create value. The Scrum framework is purposefully incomplete, only defining the parts required to implement Scrum theory. Scrum is built upon by the collective intelligence of the people using it.",
+      "cite": "Scrum Definition",
+      "gloss": "Absichtlich unvollständig, damit du die Lücken füllen kannst. Absichtlich nicht optional, damit du die Teile, die dir unbequem sind, nicht streichen kannst."
+    },
+    {
+      "type": "write",
+      "prompt": "Schreib einen Satz, der die Annahme in deiner aktuellen Ledgerline-Roadmap benennt, die am meisten weh tun würde, wenn sie sich als falsch herausstellt. Dazu das Kleinste, was du real tun könntest, um es herauszufinden.",
+      "starter": "Wir gehen davon aus, dass ______. Wenn das falsch ist, ergibt ______ keinen Sinn mehr. Der günstigste Weg, das herauszufinden, ist ______.",
+      "rubric": [
+        "Benennt eine konkrete Annahme, keine Kategorie wie Product-Market-Fit oder User Demand",
+        "Die Annahme handelt davon, wie sich jemand ausserhalb der Firma verhalten wird - nicht davon, ob du etwas bauen kannst",
+        "Nennt eine konkrete Konsequenz: welche Arbeit falsch oder verschwendet ist, wenn die Annahme nicht hält",
+        "Der Test ist etwas, das ein Zwei-Personen-Team innerhalb eines Monats tatsächlich abschliessen könnte, mit mindestens einer echten Person ausserhalb der Firma",
+        "Der Test liefert eine Beobachtung, die du jemandem zeigen könntest - keine Meinung, für die du argumentieren müsstest"
+      ],
+      "model": "Wir gehen davon aus, dass ein Finance Director eine Zahl aus Ledgerline in ein Packet fürs Select Board übernimmt, bevor sie auf den Dollar genau mit Corvus Financials übereinstimmt. Wenn das falsch ist, sind die ausgelieferten Screens eine Demo statt ein Produkt. Und die Reconciliation ist dann das Adoption-Gate statt ein späteres Item. Der günstigste Weg, das herauszufinden, ist, uns zu Dana Whitcomb zu setzen, während sie das Packet für nächsten Monat aus unserem Export baut. Dabei zählen wir, wie viele Zahlen sie von Hand gegen Corvus nachprüft."
+    },
+    {
+      "type": "keypoints",
+      "points": [
+        "Complicated Probleme haben Antworten, die man wissen kann. Complex Probleme zeigen ihre Antworten erst, wenn du anfängst.",
+        "Empiricism: Wissen entsteht aus Erfahrung, und Entscheidungen basieren auf dem, was beobachtet wird.",
+        "Die Pillars sind eine Kette. Inspection ohne Transparency ist irreführend und verschwenderisch. Inspection ohne Adaptation gilt als sinnlos.",
+        "Adaptation muss so schnell wie möglich passieren, weil jede Verzögerung die Abweichung weiter vergrössert.",
+        "Scrum ist absichtlich unvollständig. Füll die Lücken, entfern nicht die Teile."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "m01q1",
+      "kind": "mcq",
+      "stem": "A stakeholder asks your team to commit today to a fixed scope on a fixed date, eleven months out, for a product no municipality has yet used in production. Which response best reflects Scrum's foundation?",
+      "options": [
+        "Agree to the scope and date, then manage change requests through a formal change control board",
+        "Refuse to plan at all, since the work is complex and plans are guesses",
+        "Explain that the work is complex, offer a forecast that gets revised against real Increments, and commit instead to inspecting and adapting on a fixed cadence",
+        "Commit to the date but not the scope, since dates matter more to municipal buyers"
+      ],
+      "answer": 2,
+      "explain": "Scrum is founded on empiricism: decisions are made on what is observed, and the observation comes from working Increments. That makes a long-range forecast legitimate and a long-range commitment dishonest. Option A is defined process control applied to complex work, which is exactly the failure mode. Option B is the caricature of empiricism, and wrong, because Scrum plans constantly. Option D sounds pragmatic but still commits to something you have no evidence for, and quietly makes scope the hidden variable nobody agreed to.",
+      "cite": "Scrum Guide 2020, Scrum Theory",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01q2",
+      "kind": "mcq",
+      "stem": "A dashboard shows a health roll-up with three states, but one state is mathematically unreachable given how its threshold is calculated. Stakeholders have been reviewing this roll-up every month for a year. What has actually gone wrong first?",
+      "options": [
+        "Adaptation, because nobody changed the threshold",
+        "Transparency, because the state of the work was not truly visible to those inspecting it",
+        "Inspection, because the reviews were not frequent enough",
+        "Nothing in Scrum terms, because this is a defect rather than a process problem"
+      ],
+      "answer": 1,
+      "explain": "The pillars run in order. What people inspected was not the real state of things, so every inspection built on it was misleading and wasteful, which is exactly the Guide's phrasing. Option A is downstream: you cannot adapt correctly to a signal that was never true. Option C is wrong because the reviews happened often, they were just looking at a lie. Option D is the trap: in Scrum, an artifact that misrepresents reality is a transparency problem regardless of whether the cause was a bug.",
+      "cite": "Scrum Guide 2020, Transparency",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01q3",
+      "kind": "tf",
+      "stem": "True or false: because Scrum is founded on empiricism, a Scrum Team should avoid making plans and instead respond to whatever emerges.",
+      "answer": false,
+      "explain": "False. Scrum plans constantly: every Sprint Planning, every Daily Scrum, and continuously through refinement. What empiricism rejects is treating a plan built before the evidence existed as a fixed commitment. The exam phrases this trap with words like 'no planning', 'plans are unnecessary', or 'requirements are not written down'. All of them are wrong.",
+      "cite": "Scrum Guide 2020, Scrum Theory",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01q4",
+      "kind": "mcq",
+      "stem": "Two weeks into a one-month Sprint, the Developers discover that the ERP feed they are building against returns data in a format nobody anticipated, which makes half the Sprint Backlog impossible as planned. What does the Adaptation pillar say about timing?",
+      "options": [
+        "Finish the Sprint as planned and raise it at the Sprint Retrospective, so the team keeps its commitment",
+        "Adjust as soon as possible, to minimize further deviation",
+        "Wait for the Sprint Review, where stakeholders can weigh in on the change",
+        "Cancel the Sprint immediately, since the plan is no longer valid"
+      ],
+      "answer": 1,
+      "explain": "The Guide states the adjustment must be made as soon as possible to minimize further deviation. Options A and C both build two more weeks of work on a known error, which is the exact waste adaptation exists to prevent. Option D is a real Product Owner power but the wrong trigger: a Sprint is cancelled when the Sprint Goal becomes obsolete, not when the plan for reaching it changes. Scope inside the Sprint can be renegotiated with the Product Owner without touching the Sprint Goal.",
+      "cite": "Scrum Guide 2020, Adaptation",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01q5",
+      "kind": "multi",
+      "stem": "Your Lead Engineer argues that Scrum is too vague because it never says how to order a backlog or how to run a Retrospective. Select the TWO statements that best answer him.",
+      "options": [
+        "The Scrum framework is purposefully incomplete, defining only the parts required to implement Scrum theory",
+        "The missing detail is an oversight the Scrum Guide intends to fix in a later version",
+        "Various processes, techniques and methods can be employed within the framework, and Scrum wraps around existing practices or renders them unnecessary",
+        "Teams are free to remove any element of Scrum they find unhelpful, since it is incomplete",
+        "The vagueness means Scrum works only for software teams, who already have practices to fill the gaps"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explain": "The Guide says the framework is purposefully incomplete and that various processes, techniques and methods can be employed within it. Option B invents an intent the Guide contradicts. Option D is the dangerous one, and it is the whole reason the End Note exists: implementing only parts of Scrum is possible, but the result is not Scrum. Incomplete means gaps you fill, not parts you delete. Option E contradicts the Purpose section, which explicitly notes adoption well beyond software.",
+      "cite": "Scrum Guide 2020, Scrum Definition",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01q6",
+      "kind": "order",
+      "instruction": "Put the three empirical pillars in the order the Scrum Guide describes them working, from the one that enables everything to the one that produces change.",
+      "items": [
+        "Transparency: the work and process are genuinely visible to those doing it and those receiving it",
+        "Inspection: artifacts and progress toward agreed goals are examined frequently and diligently",
+        "Adaptation: the process or the product is adjusted as soon as possible"
+      ],
+      "explain": "Transparency enables inspection, and inspection enables adaptation. The order matters because each link fails silently without the one before it. Inspecting an artifact that misrepresents reality is misleading and wasteful. Inspecting without changing anything is considered pointless. Expect questions that hand you a broken team and ask which link snapped first.",
+      "cite": "Scrum Guide 2020, Scrum Theory",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01q7",
+      "kind": "mcq",
+      "stem": "Which of these best captures what the Scrum Guide means by lean thinking, the second half of Scrum's foundation?",
+      "options": [
+        "Keeping the team as small and inexpensive as possible",
+        "Reducing waste and focusing on the essentials",
+        "Delivering the minimum viable product before anything else",
+        "Eliminating documentation in favour of working software"
+      ],
+      "answer": 1,
+      "explain": "The Guide's wording is exact: lean thinking reduces waste and focuses on the essentials. Option A confuses lean with cheap, and team size is covered separately under Scrum Team. Option C is a popular product practice but not the Guide's definition of lean thinking, and MVP appears nowhere in the Guide. Option D is a line from the Agile Manifesto about valuing one thing more than another, not a Scrum definition, and it does not say eliminate.",
+      "cite": "Scrum Guide 2020, Scrum Theory",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01q8",
+      "kind": "mcq",
+      "stem": "A prospect asks whether Ledgerline's roadmap is fixed. Which framing is most consistent with Scrum's definition of the framework itself?",
+      "options": [
+        "Scrum is a methodology that prescribes how each practice is performed, so the roadmap follows a defined process",
+        "Scrum is a lightweight framework that helps people, teams and organizations generate value through adaptive solutions for complex problems",
+        "Scrum is a project management approach that optimises for on-time, on-budget delivery of an agreed scope",
+        "Scrum is a set of ceremonies a team performs to keep stakeholders informed"
+      ],
+      "answer": 1,
+      "explain": "That is the Guide's opening sentence, close to verbatim, and every word in it is doing work: lightweight, framework rather than methodology, adaptive solutions, and complex problems. Option A calls it a methodology and prescribes practices, which contradicts purposeful incompleteness. Option C describes exactly the fixed-scope contract model Scrum was built to replace on complex work. Option D reduces the events to reporting rituals, and the Guide says events exist to provoke change, not to inform.",
+      "cite": "Scrum Guide 2020, Scrum Definition",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01q9",
+      "kind": "tf",
+      "stem": "True or false: adopting Scrum requires a team to abandon the working practices it already has.",
+      "answer": false,
+      "explain": "False. The Guide says Scrum wraps around existing practices or renders them unnecessary, and makes visible the relative efficacy of current management, environment and work techniques so that improvements can be made. Scrum is a container, not a replacement kit. The nuance the exam tests: Scrum will make it obvious which of your existing practices are not helping, and then it is on you to change them.",
+      "cite": "Scrum Guide 2020, Scrum Definition",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01q10",
+      "kind": "mcq",
+      "stem": "A team runs Sprint Planning and a Sprint Review but has dropped the Daily Scrum and the Sprint Retrospective, describing the result as Scrum adapted to a two person team. What is the most accurate assessment?",
+      "options": [
+        "This is valid, because Scrum is purposefully incomplete and teams may tailor it",
+        "This is valid as long as the team still produces an Increment each Sprint",
+        "Implementing only parts of Scrum is possible, but the result is not Scrum, and the dropped events were the two that provoke change",
+        "This is invalid only because the Daily Scrum is mandatory, whereas the Retrospective is optional for small teams"
+      ],
+      "answer": 2,
+      "explain": "The End Note is blunt: implementing only parts of Scrum is possible, but the result is not Scrum. Options A and B both confuse incompleteness with optionality. Purposeful incompleteness means Scrum does not tell you how to run a Retrospective, not that you may skip it. Option D invents a hierarchy among events that does not exist. Notice which two events were dropped: the ones whose output is a changed plan, which is precisely how a team keeps its meetings and loses its feedback loop.",
+      "cite": "Scrum Guide 2020, End Note",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01q11",
+      "kind": "mcq",
+      "stem": "During a Sprint your team learns something that invalidates an assumption behind a feature already sold in three demos. The Scrum Master asks what you want to do. Which action is most consistent with empiricism?",
+      "options": [
+        "Keep building it this Sprint, since the demos created an expectation, and revisit next quarter",
+        "Make the new observation visible to the team and stakeholders now, and adapt the Product Backlog based on it",
+        "Ask the Developers to keep it quiet until you have a replacement story for the prospects",
+        "Add a second feature that compensates for the flaw, so nothing already promised has to be withdrawn"
+      ],
+      "answer": 1,
+      "explain": "Empiricism means decisions are based on what is observed, and adaptation happens as soon as possible to minimize further deviation. Option A knowingly builds on a false premise for a quarter. Option C destroys transparency deliberately, which makes every downstream inspection misleading and wasteful. Option D is the most seductive founder answer: it protects the story rather than the product, and adds scope to avoid a conversation. The uncomfortable disclosure is the cheap one, right now.",
+      "cite": "Scrum Guide 2020, Adaptation",
+      "tag": "empiricism"
+    }
+  ],
+  "cards": [
+    {
+      "id": "m01c1",
+      "front": "Complicated vs complex, in one test",
+      "back": "Complicated: do it twice, get the same result, and an expert could have written the plan up front. Complex: the answer only appears once you start, because doing it changes the situation.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01c2",
+      "front": "What are the two things Scrum is founded on?",
+      "back": "Empiricism and lean thinking. Empiricism: knowledge comes from experience and decisions are made on what is observed. Lean thinking: reduce waste, focus on the essentials.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01c3",
+      "front": "Name the three empirical pillars, in order",
+      "back": "Transparency, inspection, adaptation. Transparency enables inspection. Inspection enables adaptation.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01c4",
+      "front": "What happens to inspection without transparency?",
+      "back": "It is misleading and wasteful. You inspect something that does not reflect reality, so every decision downstream is confidently wrong.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01c5",
+      "front": "What happens to inspection without adaptation?",
+      "back": "It is considered pointless. Scrum events are designed to provoke change, so an event that changes nothing is not doing its job.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01c6",
+      "front": "When must adaptation happen?",
+      "back": "As soon as possible, to minimize further deviation. Waiting until the next scheduled review means building on a known error in the meantime.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01c7",
+      "front": "What makes adaptation harder, according to the Guide?",
+      "back": "It becomes more difficult when the people involved are not empowered or self-managing. A Scrum Team is expected to adapt the moment it learns anything new through inspection.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01c8",
+      "front": "Why is Scrum purposefully incomplete?",
+      "back": "It defines only the parts required to implement Scrum theory, and is built upon by the collective intelligence of the people using it. Gaps are yours to fill. Defined parts are not yours to delete.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01c9",
+      "front": "What does Scrum do to your existing practices?",
+      "back": "It wraps around them or renders them unnecessary, and makes visible the relative efficacy of current management, environment and work techniques so improvements can be made.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01c10",
+      "front": "Scrum in one sentence, per the Guide",
+      "back": "A lightweight framework that helps people, teams and organizations generate value through adaptive solutions for complex problems.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01c11",
+      "front": "What does Scrum use iteration and increments for?",
+      "back": "To optimize predictability and to control risk. Shorter Sprints generate more learning cycles and limit the risk of cost and effort to a smaller time frame.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m01c12",
+      "front": "Implementing only some of Scrum: valid?",
+      "back": "Possible, but the result is not Scrum. The framework is immutable, and Scrum exists only in its entirety.",
+      "tag": "empiricism"
+    }
+  ]
+}

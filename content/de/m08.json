@@ -1,0 +1,528 @@
+{
+  "id": "m08",
+  "num": 8,
+  "week": 3,
+  "title": "Daily Scrum, Review, Retrospective",
+  "subtitle": "Die drei Events nach dem Planning - und wie viel Raum du in jedem davon bekommst.",
+  "minutes": 30,
+  "why": "Ein Product Owner, der sich in allen drei Events gleich verhält, macht aus einem self-managing Team eine Reporting Line. Und aus der einen Stunde, die dir die Stakeholder geben, wird eine Slideshow.",
+  "objectives": [
+    "Für jedes der drei Events den Zweck, die Dauer und den Teilnehmerkreis nennen",
+    "Die einzige Bedingung nennen, unter der du ins Daily Scrum gehörst",
+    "Ein Sprint Review als Working Session statt als Demo durchführen",
+    "Erklären, warum es in Scrum nirgends ein Sign-off durch den Product Owner gibt",
+    "Ein Increment definieren und sagen, wann es released werden darf"
+  ],
+  "beats": [
+    {
+      "type": "hook",
+      "body": "Das Daily Scrum deines Engineers ist still und leise zu einem Report an dich geworden. Dein Sprint Review ist zu einem Slide Deck geworden, an dessen Ende eine Demo angeschraubt ist. Deine Retrospective findet gar nicht statt. Du bist busy, und sie fühlt sich wie das optionale Event an.\n\nDrei Events, drei verschiedene Jobs, und in jedem bekommst du unterschiedlich viel Raum. Wer das falsch macht, geht den häufigsten Weg, auf dem ein Founder zum Bottleneck wird. Und zwar in einem Team, das eigentlich self-managing sein sollte."
+    },
+    {
+      "type": "teach",
+      "title": "Drei Events, drei verschiedene Inspections",
+      "body": "Nach dem Sprint Planning bleiben drei Events, und jedes inspiziert etwas anderes. Das Daily Scrum inspiziert jeden Arbeitstag den Fortschritt Richtung Sprint Goal. Es gehört den Developers.\n\nDas Sprint Review inspiziert das Outcome des Sprints, mit den Stakeholdern im Raum. Dort stehst du im Zentrum. Die Sprint Retrospective inspiziert, wie das Team gearbeitet hat: Individuen, Interaktionen, Prozesse, Tools und die Definition of Done.\n\nBeachte: Was inspiziert wird, ändert sich jedes Mal. Gehst du mit demselben Verhalten in alle drei, bist du in einem nutzlos und in einem anderen destruktiv.",
+      "visual": "sprint-timeline",
+      "callout": {
+        "kind": "why",
+        "text": "Jedes Scrum Event ist eine formale Gelegenheit für die Inspection und Adaptation eines Artifacts. Wenn du weisst, welches Artifact auf dem Tisch liegt, weisst du auch, wessen Meeting es ist."
+      }
+    },
+    {
+      "type": "guide",
+      "quote": "The purpose of the Daily Scrum is to inspect progress toward the Sprint Goal and adapt the Sprint Backlog as necessary, adjusting the upcoming planned work.",
+      "cite": "Daily Scrum",
+      "gloss": "Fortschritt Richtung Goal, nicht Fortschritt durch eine Ticket-Liste. Das Output ist ein angepasster Plan, kein Update für dich."
+    },
+    {
+      "type": "guide",
+      "quote": "The Daily Scrum is a 15-minute event for the Developers of the Scrum Team. To reduce complexity, it is held at the same time and place every working day of the Sprint. If the Product Owner or Scrum Master are actively working on items in the Sprint Backlog, they participate as Developers.",
+      "cite": "Daily Scrum",
+      "gloss": "Für die Developers. Lies den letzten Satz zweimal. Er ist für dich die einzige Tür in den Raum, und an diese Tür ist eine Bedingung geknüpft."
+    },
+    {
+      "type": "analogy",
+      "title": "Die Küche um 5:55",
+      "body": "Kurz bevor der Service losgeht, stecken die Köche an der Linie die Köpfe zusammen. Das dauert etwa eine Minute. Zweihundert Gedecke sind gebucht, und die Fischlieferung kam zu knapp. Also übernimmt der Garde manger das Anrichten der Salate, und jemand zieht ein Backup-Special. Dann kochen sie.\n\nJetzt stell den Owner in diese Runde. Der Owner fragt jeden Koch der Reihe nach, was er gestern gemacht hat. Aus der Runde wird ein Report. Sie dauert zu lang und bringt kein Re-Planning. Die Köche heben sich ihre echten Probleme für später auf, wenn der Owner nicht danebensteht.\n\nGleicher Raum, gleiche Leute, komplett anderes Meeting. Genau das ist das ganze Risiko, wenn ein Founder ins Daily Scrum geht."
+    },
+    {
+      "type": "teach",
+      "title": "Deine drei ehrlichen Optionen",
+      "body": "Eins: Du arbeitest aktiv an Items im Sprint Backlog, also bist du als Developer dabei. Dann planst du mit den anderen zusammen neu, statt Infos von ihnen abzuholen.\n\nZwei: Das tust du nicht, also bist du höchstens Gast. Gäste reden nicht als Erste und fragen nicht nach dem Status. Sie beantworten auch keine Fragen, die sich die Developers gegenseitig beantworten sollten.\n\nDrei: Du gehst nicht hin und holst dir, was du brauchst, direkt aus dem Sprint Backlog. Der Guide beschreibt es als hoch sichtbares Echtzeit-Bild der Arbeit, das während des ganzen Sprints aktualisiert wird. In einer Firma, in der du die Löhne zahlst, ist Option drei oft die freundlichste."
+    },
+    {
+      "type": "trap",
+      "myth": "Im Daily Scrum geben die Developers dem Product Owner ein Status-Update. Also sollte der Product Owner dabei sein und es leiten.",
+      "truth": "Das Daily Scrum ist ein 15-Minuten-Event für die Developers des Scrum Teams. Wenn der Product Owner oder der Scrum Master aktiv an Items im Sprint Backlog arbeiten, nehmen sie als Developers teil. Sein Zweck: den Fortschritt Richtung Sprint Goal inspizieren und das Sprint Backlog bei Bedarf anpassen.",
+      "why": "PSPO I fragt das in mehreren Verkleidungen ab: Der Product Owner will ein tägliches Update, ein Manager will Anwesenheit, ein Stakeholder will mithören. Die richtige Antwort hat immer dieselbe Form: Das Event dient den Developers und ihrem Re-Planning.\n\nDer Guide stellt keinen Türsteher hin. Aber sobald das Event zum Reporting wird, macht es seinen Job nicht mehr."
+    },
+    {
+      "type": "guide",
+      "quote": "The Developers can select whatever structure and techniques they want, as long as their Daily Scrum focuses on progress toward the Sprint Goal and produces an actionable plan for the next day of work. This creates focus and improves self-management.",
+      "cite": "Daily Scrum",
+      "gloss": "Überhaupt kein vorgeschriebenes Format. Nur zwei Constraints: Fokus auf das Sprint Goal, und am Schluss einen Plan für morgen haben."
+    },
+    {
+      "type": "teach",
+      "title": "Die drei Fragen sind nicht Scrum",
+      "body": "[[PRACTICE]] Die berühmten drei Fragen (was habe ich gestern gemacht, was mache ich heute, was blockiert mich) sind eine Practice und nicht Teil von Scrum. Sie standen im Guide von 2017 und wurden 2020 gestrichen. Der Hauptgrund: Teams haben sie als Round-Robin-Report abgespult, statt neu zu planen.\n\nIn der Prüfung ist jede Antwort falsch, die die drei Fragen voraussetzt. In deiner Küche ist der Test einfacher: Hat sich am Ende der Plan für den nächsten Tag geändert? Wenn sich der Plan nie ändert, ist das Event Theater.\n\nUnd beachte das Überdruckventil, das der Guide selbst einbaut: Das Daily Scrum ist nicht der einzige Moment, in dem die Developers ihren Plan anpassen dürfen."
+    },
+    {
+      "type": "guide",
+      "quote": "The Daily Scrum is not the only time Developers are allowed to adjust their plan. They often meet throughout the day for more detailed discussions about adapting or re-planning the rest of the Sprint's work.",
+      "cite": "Daily Scrum",
+      "gloss": "Die 15 Minuten sind eine Untergrenze, keine Ration. Niemand muss bis morgen früh warten, um den Plan zu ändern."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m08ck1",
+        "kind": "mcq",
+        "stem": "You are not working on any Sprint Backlog items this Sprint, but you want to know each morning whether the Sprint Goal is still reachable. What is the best move?",
+        "options": [
+          "Attend the Daily Scrum and ask each Developer for their status at the end",
+          "Ask the Scrum Master to send you a written recap of the Daily Scrum each day",
+          "Inspect the Sprint Backlog, which is a real-time picture of the work, and talk with the Developers outside the event when you need more",
+          "Require the Developers to add a Product Owner update slot to the Daily Scrum"
+        ],
+        "answer": 2,
+        "explain": "The Daily Scrum is a 15-minute event for the Developers, and you join as a Developer only if you are actively working on Sprint Backlog items. The Sprint Backlog is updated throughout the Sprint and is exactly the transparency mechanism built for your question. Asking for status inside the event converts re-planning into reporting. A Scrum Master recap makes them your messenger, which is not the accountability. Requiring a slot is you dictating the structure, which the Guide gives to the Developers.",
+        "cite": "Scrum Guide 2020, Daily Scrum and Sprint Backlog",
+        "tag": "events"
+      }
+    },
+    {
+      "type": "guide",
+      "quote": "The purpose of the Sprint Review is to inspect the outcome of the Sprint and determine future adaptations. The Scrum Team presents the results of their work to key stakeholders and progress toward the Product Goal is discussed.",
+      "cite": "Sprint Review",
+      "gloss": "Outcome, nicht Aktivität. Und der Fortschritt Richtung Product Goal kommt auf den Tisch. Damit ist das genau das Event, in dem dein Artifact öffentlich inspiziert wird."
+    },
+    {
+      "type": "teach",
+      "title": "Das zweitletzte Event",
+      "body": "Das Sprint Review ist das zweitletzte Event im Sprint, direkt vor der Retrospective. Bei einem einmonatigen Sprint ist es auf vier Stunden begrenzt. Bei kürzeren Sprints ist es meist kürzer.\n\nEs ist das einzige Event, bei dem die Aussenwelt mit im Raum ist. Für Ledgerline könnte das heissen: ein Finance Director, ein Treasurer und ein external auditor am selben Tisch.\n\nEs ist dein Event in dem Sinn, dass du am meisten zu gewinnen hast. Denn hier darf das Product Backlog anhand dessen angepasst werden, was du lernst. Es ist nicht dein Event in dem Sinn, dass du präsentierst und die anderen nicken."
+    },
+    {
+      "type": "guide",
+      "quote": "During the event, the Scrum Team and stakeholders review what was accomplished in the Sprint and what has changed in their environment. Based on this information, attendees collaborate on what to do next. The Product Backlog may also be adjusted to meet new opportunities. The Sprint Review is a working session and the Scrum Team should avoid limiting it to a presentation.",
+      "cite": "Sprint Review",
+      "gloss": "Working Session. Der Guide spricht laut aus, was sonst keiner sagt, weil fast jedes Team in eine Präsentation abdriftet."
+    },
+    {
+      "type": "trap",
+      "myth": "Das Sprint Review ist die Demo. Du zeigst, was gebaut wurde, sammelst Applaus oder Notizen ein, und alle gehen zurück an die Arbeit.",
+      "truth": "Das Sprint Review ist eine Working Session, und das Scrum Team sollte vermeiden, es auf eine Präsentation zu beschränken. Die Teilnehmenden erarbeiten gemeinsam, was als Nächstes zu tun ist. Und das Product Backlog darf auch angepasst werden, um neue Opportunities zu nutzen.",
+      "why": "Die Prüfung unterscheidet zwischen Inspection und Broadcast. Falsche Antworten beschreiben Einbahnverkehr: Das Team demonstriert, der Product Owner präsentiert, die Stakeholder schauen zu.\n\nRichtige Antworten beschreiben Zusammenarbeit daran, was als Nächstes kommt. Und ein Product Backlog, das sich ändern darf, während noch alle im Raum sind."
+    },
+    {
+      "type": "civic",
+      "title": "Zwei Screens, zwei Antworten, eine Board-Sitzung",
+      "body": "Budget Pace listet vier Departments, die auf Kurs über der Appropriation liegen. Executive Overview sagt drei. Der eine Screen rundet vor dem Filtern, der andere vergleicht ungerundet. Public Works mit 1.905 Prozent fällt auf die eine oder die andere Seite, je nachdem, welchen Screen du geöffnet hast. Das Select Board Packet wird aus einem der beiden gedruckt.\n\nJetzt spiel ein Sprint Review durch. Du gehst Executive Overview durch, und Ruth Delgado, die Vorsitzende des Select Board, hat Budget Pace auf ihrem eigenen Laptop offen. Das ist kein Bug Report. Das ist ein Stakeholder, der live das Vertrauen ins Produkt verliert, vor einem Auditor.\n\nDie richtige Frage ist nicht, welche Zahl stimmt. Sondern ob dieses Increment überhaupt je usable war."
+    },
+    {
+      "type": "teach",
+      "title": "Was ein Increment wirklich ist",
+      "body": "Ein Increment ist ein konkreter Stepping Stone Richtung Product Goal, und die Definition enthält drei Tests. Additive: Es funktioniert mit allem zusammen, was vorher gebaut wurde - genau daran sind die zwei Screens gescheitert. Thoroughly verified: Jemand hat es geprüft, statt es einfach anzunehmen. Usable: Value, das niemand nutzen kann, ist kein Value.\n\nEin Sprint ist nicht auf ein einziges Increment beschränkt. Innerhalb eines Sprints dürfen mehrere Increments entstehen. Das killt leise die Idee, Shipping sei eine Zeremonie, die einmal pro Sprint stattfindet.\n\nDas Increment ist ein Artifact, und sein Commitment ist die Definition of Done. Arbeit, die die Definition of Done nicht erfüllt, ist überhaupt nicht Teil des Increments."
+    },
+    {
+      "type": "guide",
+      "quote": "An Increment is a concrete stepping stone toward the Product Goal. Each Increment is additive to all prior Increments and thoroughly verified, ensuring that all Increments work together. In order to provide value, the Increment must be usable.\n\nMultiple Increments may be created within a Sprint. The sum of the Increments is presented at the Sprint Review thus supporting empiricism. However, an Increment may be delivered to stakeholders prior to the end of the Sprint. The Sprint Review should never be considered a gate to releasing value. Work cannot be considered part of an Increment unless it meets the Definition of Done.",
+      "cite": "Increment",
+      "gloss": "Vier Prüfungs-Facts in einem Block: additive, verified und usable; mehr als eins pro Sprint ist ok; releasen, wann immer du willst; und unfertige Arbeit ist kein Increment."
+    },
+    {
+      "type": "trap",
+      "myth": "Nichts darf released werden, bevor die Stakeholder es im Sprint Review gesehen haben.",
+      "truth": "Ein Increment darf schon vor dem Ende des Sprints an Stakeholder geliefert werden. Das Sprint Review sollte nie als Gate für das Releasen von Value betrachtet werden.",
+      "why": "Diese Antwort ist verlockend, weil sie verantwortungsvoll klingt. Aber jede Antwort, die das Sprint Review zu einem nötigen Approval-Schritt vor dem Release macht, ist falsch.\n\nRelease-Entscheide liegen beim Product Owner und können an jedem Tag des Sprints fallen. Vorausgesetzt, die Arbeit erfüllt die Definition of Done."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m08ck2",
+        "kind": "tf",
+        "stem": "On day four of a two week Sprint, a completed item that meets the Definition of Done could be released to a town without waiting for the Sprint Review.",
+        "answer": true,
+        "explain": "True. An Increment may be delivered to stakeholders prior to the end of the Sprint, and the Sprint Review should never be considered a gate to releasing value. The only hard condition is the Definition of Done: work cannot be considered part of an Increment unless it meets it. Whether to release is a Product Owner decision about value, not a permission you collect at an event.",
+        "cite": "Scrum Guide 2020, Increment",
+        "tag": "artifacts"
+      }
+    },
+    {
+      "type": "trap",
+      "myth": "Im Sprint Review akzeptiert der Product Owner jede Story oder gibt ihr ein Sign-off. Alles, was nicht akzeptiert wird, ist abgelehnt.",
+      "truth": "Im Scrum Guide 2020 gibt es nirgends einen Acceptance-Schritt, kein Sign-off und keine Approval durch den Product Owner. Ob ein Item zählt, entscheidet die Definition of Done.\n\nWenn ein Product Backlog Item die Definition of Done nicht erfüllt, kann es weder released noch im Sprint Review überhaupt präsentiert werden. Es geht zurück ins Product Backlog, zur späteren Berücksichtigung.",
+      "why": "[[PRACTICE]] Story Acceptance und Product-Owner-Sign-off sind weit verbreitete Praxis. Die Wörter kommen aber nirgends im Guide vor - und genau deshalb nutzt PSPO I sie als Köder. Der tiefere Punkt ist das Timing. Über Qualität wird laufend entschieden, und zwar gegen einen gemeinsamen Standard, an den sich die Developers halten. Nicht dadurch, dass du am Ende ein Urteil fällst. Wenn du Qualitätsprobleme erst im Review entdeckst, ist die Definition of Done zu schwach."
+    },
+    {
+      "type": "sim",
+      "title": "Das Tool, bei dem sich keiner einig ist",
+      "setup": "Sprint Review. Im Increment steckt Ask the Ledger: eine Fragebox, in die man in normalem Englisch tippt. Sie liefert eine Tabelle plus die Query, die sie ausgeführt hat, mit CSV-Export. Yusuf Adeyemi, der External Auditor, nennt es zentral für sein Mandat. Dana Whitcomb, die Finance Director, sagt, sie würde das Ganze gegen Saved Views eintauschen, denen sie vertrauen kann.\n\nMargaret Shaw, die Town Clerk, sagt laut, dass es ihr Angst macht. Denn es könnte ein Resident hinter ihr stehen, wenn es läuft. Ruth Delgado sagt nichts, weil sie es nie öffnen wird. Das Feature zu streichen stand bis vor zehn Minuten auf deiner Liste. Dann haben alle gesehen, wie es wirklich funktioniert.",
+      "choices": [
+        {
+          "label": "Bedank dich für das Feedback, sag, dass du es mitnimmst und entscheidest, und geh zum nächsten Punkt.",
+          "outcome": "Das Review bleibt aufgeräumt. Du gehst mit vier Meinungen raus, aber ohne gemeinsames Verständnis. Am Abend entscheidest du allein. Zwei der vier sind im nächsten Sprint überrascht davon.",
+          "verdict": "mixed",
+          "lesson": "Du hast keine Regel gebrochen. Aber du hast die eine Stunde verschwendet, in der diese vier Leute je zusammen in einem Raum sind. Die Teilnehmenden arbeiten gemeinsam daran, was als Nächstes zu tun ist - und genau diese Zusammenarbeit ist der Sinn des Events."
+        },
+        {
+          "label": "Frag die vier direkt vor Ort, was sich an Ask the Ledger ändert, wenn ein Resident hinter Margaret steht. Lass sie diskutieren und pass das Product Backlog live an.",
+          "outcome": "Die Uneinigkeit löst sich in ein anderes Item auf als das, das du hattest. Das Tool bleibt. Was sich ändert: wer es öffnen kann und was es standardmässig zeigt. Yusuf behält sein Tool, Danas Saved Views werden davor eingeordnet, und Margaret benennt die Exposure-Kontrolle, die sie braucht.",
+          "verdict": "good",
+          "lesson": "Das Product Backlog darf angepasst werden, um neue Opportunities zu nutzen - und hier passiert das. Widersprüchliches Stakeholder-Feedback heisst meistens, dass das Item falsch ist. Nicht, dass einer der Stakeholder falsch liegt."
+        },
+        {
+          "label": "Bring alle sechs Demo-Punkte nach Zeitplan durch und führ die Ask-the-Ledger-Debatte danach per E-Mail.",
+          "outcome": "Im E-Mail-Thread sind drei der vier Leute drin. Er produziert einen Entscheid, an dessen Zustimmung sich niemand erinnert. Der Use Case des Auditors - der, der die Existenz des Features rechtfertigt - wird nie vor der Finance Director ausgesprochen.",
+          "verdict": "bad",
+          "lesson": "Das Scrum Team sollte vermeiden, das Sprint Review auf eine Präsentation zu beschränken. Demo plus Follow-up-Mail ist das Präsentations-Antipattern - nur mit extra Schritten und schlechterer Beteiligung."
+        },
+        {
+          "label": "Streich Ask the Ledger. Zwei der vier haben entweder Angst davor oder werden es nie nutzen, und die Finance Director ist der Economic Buyer.",
+          "outcome": "Du entfernst genau das eine Feature, das der Auditor für zentral hält. Und zwar am selben Tag, an dem der Grund, warum es auf der Streichliste stand, nicht mehr stimmt.",
+          "verdict": "bad",
+          "lesson": "Stimmen zählen ist nicht nach Value ordnen. Ein Feature streichen und seine Exposure streichen sind zwei verschiedene Entscheidungen. Im Review findest du heraus, welche du eigentlich gebraucht hast."
+        }
+      ]
+    },
+    {
+      "type": "guide",
+      "quote": "The purpose of the Sprint Retrospective is to plan ways to increase quality and effectiveness.\n\nThe Scrum Team inspects how the last Sprint went with regards to individuals, interactions, processes, tools, and their Definition of Done. Inspected elements often vary with the domain of work. Assumptions that led them astray are identified and their origins explored. The Scrum Team discusses what went well during the Sprint, what problems it encountered, and how those problems were (or were not) solved.",
+      "cite": "Sprint Retrospective",
+      "gloss": "Fünf Dinge werden inspiziert, und die Definition of Done ist eines davon. Lern die Liste auswendig - die Prüfung fragt sie direkt ab."
+    },
+    {
+      "type": "teach",
+      "title": "Hier bist du mit drin",
+      "body": "In der Sprint Retrospective inspiziert sich das Scrum Team selbst. Du bist Mitglied des Scrum Teams, also bist du dabei. Nicht als Beobachter und nicht als Chef, der am Schluss für die Highlights vorbeischaut.\n\nDein eigenes Verhalten liegt auf dem Tisch: wie spät deine Backlog Items kamen, wie oft du mitten im Sprint umsortiert hast, an wie vielen Morgen du im Daily Scrum aufgetaucht bist. Das ist unangenehm in einer Firma, in der du auch die Löhne unterschreibst. Genau deshalb ist es wichtig.\n\nDie Stelle, die du auswendig lernen solltest: \"assumptions that led them astray are identified and their origins explored\". In einem so kleinen Team stammen die meisten dieser Annahmen von dir."
+    },
+    {
+      "type": "guide",
+      "quote": "The Scrum Team identifies the most helpful changes to improve its effectiveness. The most impactful improvements are addressed as soon as possible. They may even be added to the Sprint Backlog for the next Sprint.\n\nThe Sprint Retrospective concludes the Sprint. It is timeboxed to a maximum of three hours for a one-month Sprint. For shorter Sprints, the event is usually shorter.",
+      "cite": "Sprint Retrospective",
+      "gloss": "Improvements sind keine Irgendwann-Liste. Die wirkungsvollsten werden so schnell wie möglich angegangen und dürfen direkt ins nächste Sprint Backlog."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m08ck3",
+        "kind": "mcq",
+        "stem": "Your Retrospective produces eight improvement ideas. Your Scrum Master asks what to do with them. What does the Scrum Guide 2020 describe?",
+        "options": [
+          "Log all eight in a process improvement backlog owned by the Scrum Master and review them quarterly",
+          "Identify the most helpful changes, address the most impactful ones as soon as possible, and they may even be added to the Sprint Backlog for the next Sprint",
+          "The Product Owner selects which improvements are worth the team's capacity, since capacity spent improving is capacity not spent on value",
+          "Improvements are handled outside Scrum, because the Sprint Backlog contains only Product Backlog items"
+        ],
+        "answer": 1,
+        "explain": "The Guide says the Scrum Team identifies the most helpful changes, the most impactful improvements are addressed as soon as possible, and they may even be added to the Sprint Backlog for the next Sprint. A separate quarterly process backlog is a practice, not Scrum, and it defers exactly what the Guide says to do soon. You do not select the team's improvements, because the Retrospective belongs to the whole Scrum Team. And improvements can absolutely live in the Sprint Backlog.",
+        "cite": "Scrum Guide 2020, Sprint Retrospective",
+        "tag": "events"
+      }
+    },
+    {
+      "type": "write",
+      "prompt": "Nimm den Zwei-Screens-Vorfall: Budget Pace sagte, vier Departments seien über dem Budgetkredit, Executive Overview sagte drei. Schreib das Improvement, das dein Team aus der Retrospective mitnehmen würde. Ein oder zwei Sätze. Es muss verändern, wie das Team arbeitet - nicht nur die Zahl korrigieren.",
+      "starter": "Annahme, die uns in die Irre geführt hat: [was wir geglaubt haben]. Änderung, die wir machen: [was im nächsten Sprint anders ist]. Woran wir merken, dass es funktioniert hat: [beobachtbares Signal].",
+      "rubric": [
+        "Benennt eine Annahme, keine Person. Der Guide verlangt, dass die Ursprünge erforscht werden, nicht dass Schuld verteilt wird.",
+        "Verändert eine individuelle Praxis, eine Interaktion, einen Prozess, ein Tool oder die Definition of Done - das sind die fünf Dinge, die die Retrospective inspiziert.",
+        "Klein genug, um so schnell wie möglich angegangen zu werden und ins nächste Sprint Backlog zu passen.",
+        "Hat ein beobachtbares Signal, damit die nächste Retrospective erkennen kann, ob es funktioniert hat.",
+        "Hört nicht damit auf, Public Works auf 1.905 Prozent zu korrigieren. Wer nur die Zahl korrigiert, lässt die Ursache stehen."
+      ],
+      "model": "Annahme, die uns in die Irre geführt hat: Wir dachten, zwei Screens mit derselben Kennzahl würden übereinstimmen, weil sie dieselben Daten lesen. Änderung, die wir machen: Jede Zahl, die auf mehr als einem Screen erscheint, wird von einer gemeinsamen Funktion berechnet. Und die Definition of Done bekommt eine Zeile, die für gemeinsame Zahlen einen Cross-Screen-Check verlangt. Woran wir merken, dass es funktioniert hat: Im nächsten Sprint Review öffnen wir zwei Screens nebeneinander bei irgendeiner gemeinsamen Zahl, und sie stimmen überein.\n\nWarum das durchkommt: Es benennt eine Überzeugung statt eines Engineers. Es verändert sowohl ein Tool als auch die Definition of Done. Es ist klein genug, um sofort zu starten. Und es hat ein Signal, das alle im Raum sehen können."
+    },
+    {
+      "type": "keypoints",
+      "points": [
+        "Daily Scrum: 15 Minuten, für die Developers, inspiziert den Fortschritt Richtung Sprint Goal. Du nimmst nur teil, wenn du aktiv an Sprint Backlog Items arbeitest - und dann als Developer.",
+        "Die drei Fragen sind eine entfernte Praxis, nicht Scrum. Die Developers wählen ihre Struktur selbst.",
+        "Sprint Review: zweitletztes Event, max. 4 Stunden bei einem einmonatigen Sprint. Eine Working Session, in der die Teilnehmenden gemeinsam daran arbeiten, was als Nächstes zu tun ist, und das Product Backlog angepasst werden darf.",
+        "Es gibt in Scrum keine Acceptance und kein Sign-off durch den Product Owner. Die Definition of Done entscheidet, und unfertige Arbeit geht zurück ins Product Backlog.",
+        "Ein Increment muss additiv, gründlich verifiziert und nutzbar sein. Mehrere pro Sprint sind okay, und das Sprint Review ist nie ein Gate, um Value zu releasen.",
+        "Sprint Retrospective: schliesst den Sprint ab, max. 3 Stunden bei einem einmonatigen Sprint. Inspiziert Individuen, Interaktionen, Prozesse, Tools und die Definition of Done. Du bist dabei, weil du zum Scrum Team gehörst."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "m08q1",
+      "kind": "mcq",
+      "stem": "You are the Product Owner and you are not working on any Sprint Backlog items. You attend the Daily Scrum and, at the end, ask each Developer what they finished yesterday. Your Scrum Master pushes back. Who is right?",
+      "options": [
+        "You are, because the Product Owner is accountable for value and needs daily visibility",
+        "The Scrum Master, because the Daily Scrum is a 15-minute event for the Developers and its purpose is to inspect progress toward the Sprint Goal and adapt the Sprint Backlog",
+        "You are, because the Scrum Guide permits any stakeholder to ask questions during the Daily Scrum",
+        "The Scrum Master, because the Scrum Guide forbids anyone other than Developers from being present"
+      ],
+      "answer": 1,
+      "explain": "The Daily Scrum is for the Developers, and the Product Owner participates only as a Developer, which requires actively working on Sprint Backlog items. Turning it into a round of status questions defeats the purpose, which is to inspect progress toward the Sprint Goal and adapt the plan. Option four overstates the Guide: the 2020 Guide does not forbid attendance, it just names whose event it is. Accountability for value does not convert into a right to a daily report.",
+      "cite": "Scrum Guide 2020, Daily Scrum",
+      "tag": "events"
+    },
+    {
+      "id": "m08q2",
+      "kind": "tf",
+      "stem": "The Developers must answer what they did yesterday, what they will do today, and what is blocking them during the Daily Scrum.",
+      "answer": false,
+      "explain": "False. The Developers can select whatever structure and techniques they want, as long as the Daily Scrum focuses on progress toward the Sprint Goal and produces an actionable plan for the next day of work. The three questions were in the 2017 Guide and were removed in 2020. They remain a common practice, and any exam answer that requires them is wrong.",
+      "cite": "Scrum Guide 2020, Daily Scrum",
+      "tag": "events"
+    },
+    {
+      "id": "m08q3",
+      "kind": "mcq",
+      "stem": "Your Sprint Review has become a rehearsed walkthrough: you narrate slides, your engineer demos, stakeholders watch and email comments the next day. What single change most aligns it with the Scrum Guide 2020?",
+      "options": [
+        "Shorten it so stakeholder time is respected",
+        "Add a formal approval vote at the end so decisions are recorded",
+        "Turn it into a working session where attendees collaborate on what to do next, adjusting the Product Backlog in the room",
+        "Move it to the last position in the Sprint so it can incorporate the Retrospective's findings"
+      ],
+      "answer": 2,
+      "explain": "The Guide states the Sprint Review is a working session and the Scrum Team should avoid limiting it to a presentation, and that attendees collaborate on what to do next while the Product Backlog may be adjusted to meet new opportunities. Shortening a presentation just makes it a shorter presentation. There is no approval vote in Scrum. And the Sprint Review is the second to last event by definition, so moving it after the Retrospective is not an option.",
+      "cite": "Scrum Guide 2020, Sprint Review",
+      "tag": "events"
+    },
+    {
+      "id": "m08q4",
+      "kind": "multi",
+      "stem": "Which two statements about the Sprint Review are true according to the Scrum Guide 2020? Pick two.",
+      "options": [
+        "The Product Backlog may be adjusted to meet new opportunities",
+        "The Product Owner accepts or rejects each completed item during the event",
+        "It is the last event of the Sprint",
+        "It is timeboxed to a maximum of four hours for a one-month Sprint",
+        "Its main purpose is to demonstrate completed work to stakeholders"
+      ],
+      "answer": [
+        0,
+        3
+      ],
+      "explain": "Both correct options are stated directly in the Sprint Review section. There is no acceptance or rejection step anywhere in the Guide, which is a widespread practice rather than Scrum. The Sprint Review is the second to last event, ahead of the Retrospective. And the purpose is to inspect the outcome and determine future adaptations, with the Guide explicitly warning against limiting it to a presentation.",
+      "cite": "Scrum Guide 2020, Sprint Review",
+      "tag": "events"
+    },
+    {
+      "id": "m08q5",
+      "kind": "mcq",
+      "stem": "One selected item is functionally complete but has not passed the team's required security review, which is part of their Definition of Done. What happens at the Sprint Review?",
+      "options": [
+        "It is presented so stakeholders can give early feedback, and marked as pending",
+        "It cannot be released or even presented at the Sprint Review, and it returns to the Product Backlog for future consideration",
+        "The Product Owner may waive the Definition of Done for this item if the value is high enough",
+        "It is presented and the stakeholders decide whether the security review is necessary"
+      ],
+      "answer": 1,
+      "explain": "The Guide is blunt here: if a Product Backlog item does not meet the Definition of Done, it cannot be released or even presented at the Sprint Review, and instead it returns to the Product Backlog for future consideration. Presenting it anyway breaks that rule and damages transparency, because stakeholders would be inspecting something that is not part of the Increment. There is no Product Owner waiver, and stakeholders do not vote on quality standards.",
+      "cite": "Scrum Guide 2020, Commitment: Definition of Done",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m08q6",
+      "kind": "tf",
+      "stem": "An Increment may be delivered to stakeholders before the end of the Sprint.",
+      "answer": true,
+      "explain": "True, and the Guide goes further: the Sprint Review should never be considered a gate to releasing value. Multiple Increments may be created within a Sprint, and the sum of them is what gets presented at the Review. The only condition on any of it is the Definition of Done, since work cannot be considered part of an Increment unless it meets it.",
+      "cite": "Scrum Guide 2020, Increment",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m08q7",
+      "kind": "order",
+      "kindnote": "sequence",
+      "instruction": "Put these events in the order they occur within a single Sprint.",
+      "items": [
+        "Sprint Planning",
+        "Daily Scrum",
+        "Sprint Review",
+        "Sprint Retrospective"
+      ],
+      "explain": "Sprint Planning initiates the Sprint. The Daily Scrum happens every working day inside it. The Sprint Review is the second to last event, and the Sprint Retrospective concludes the Sprint. The Sprint itself is the container for all of these, so it is not one of the four in the sequence. The most common mix-up is placing the Review after the Retrospective, which the Guide rules out by naming the Review as second to last.",
+      "cite": "Scrum Guide 2020, Scrum Events",
+      "tag": "events"
+    },
+    {
+      "id": "m08q8",
+      "kind": "sort",
+      "stem": "Sort each statement into the event it describes.",
+      "buckets": [
+        "Daily Scrum",
+        "Sprint Review",
+        "Sprint Retrospective"
+      ],
+      "items": [
+        {
+          "text": "15 minutes, held at the same time and place every working day",
+          "bucket": "Daily Scrum"
+        },
+        {
+          "text": "Inspects progress toward the Sprint Goal and adapts the Sprint Backlog",
+          "bucket": "Daily Scrum"
+        },
+        {
+          "text": "Four hour maximum for a one-month Sprint",
+          "bucket": "Sprint Review"
+        },
+        {
+          "text": "Attendees collaborate on what to do next, and the Product Backlog may be adjusted",
+          "bucket": "Sprint Review"
+        },
+        {
+          "text": "Inspects individuals, interactions, processes, tools, and the Definition of Done",
+          "bucket": "Sprint Retrospective"
+        },
+        {
+          "text": "Three hour maximum for a one-month Sprint, and it concludes the Sprint",
+          "bucket": "Sprint Retrospective"
+        },
+        {
+          "text": "Assumptions that led the team astray are identified and their origins explored",
+          "bucket": "Sprint Retrospective"
+        }
+      ],
+      "explain": "The three timeboxes for a one-month Sprint are 15 minutes, 4 hours, and 3 hours, and mixing up the 4 and the 3 is the single most common careless error on this topic. Note also that only the Retrospective inspects the Definition of Done, and only the Sprint Review has stakeholders collaborating on what to do next.",
+      "cite": "Scrum Guide 2020, Daily Scrum, Sprint Review, Sprint Retrospective",
+      "tag": "events"
+    },
+    {
+      "id": "m08q9",
+      "kind": "mcq",
+      "stem": "At the Sprint Review, your auditor calls a feature essential and your Finance Director says she would rather it did not exist. What does the Scrum Guide 2020 suggest you do with that conflict?",
+      "options": [
+        "Defer the decision, since only the Product Owner may change the Product Backlog",
+        "Let the attendees collaborate on what to do next, and adjust the Product Backlog to meet new opportunities",
+        "Escalate to whoever holds the budget, since the economic buyer breaks ties",
+        "Put it to a vote among the stakeholders present"
+      ],
+      "answer": 1,
+      "explain": "The Guide describes attendees collaborating on what to do next, with the Product Backlog adjusted to meet new opportunities. Deferring is technically permitted but throws away the working session, which is the reason those people are in the room. Nothing in Scrum makes the budget holder a tiebreaker, and there is no voting mechanism. You still own the ordering decision afterward, but the collaboration is where the information comes from.",
+      "cite": "Scrum Guide 2020, Sprint Review",
+      "tag": "stakeholders"
+    },
+    {
+      "id": "m08q10",
+      "kind": "mcq",
+      "stem": "Which statement about the Sprint Retrospective is correct?",
+      "options": [
+        "The Scrum Master runs it and the Product Owner is excluded so the Developers can speak freely",
+        "It occurs before the Sprint Review so improvements can be shared with stakeholders",
+        "The Scrum Team inspects the last Sprint including its Definition of Done, and it concludes the Sprint",
+        "It is optional when the Sprint met its Sprint Goal"
+      ],
+      "answer": 2,
+      "explain": "The Retrospective inspects individuals, interactions, processes, tools, and the Definition of Done, and it concludes the Sprint. The Product Owner is a member of the Scrum Team and attends, so excluding them is wrong. The Sprint Review is the second to last event, so the Retrospective comes after it. And no Scrum event is optional. A successful Sprint still has assumptions worth examining.",
+      "cite": "Scrum Guide 2020, Sprint Retrospective",
+      "tag": "events"
+    },
+    {
+      "id": "m08q11",
+      "kind": "multi",
+      "stem": "Which two are true of an Increment according to the Scrum Guide 2020? Pick two.",
+      "options": [
+        "Each Increment is additive to all prior Increments and thoroughly verified",
+        "Exactly one Increment is created per Sprint",
+        "In order to provide value, the Increment must be usable",
+        "An Increment becomes releasable once the Product Owner approves it at the Sprint Review",
+        "An Increment may include work that does not yet meet the Definition of Done if it is clearly labeled"
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explain": "Both correct statements are quoted almost word for word from the Increment section. Multiple Increments may be created within a Sprint, so option two is wrong. There is no Product Owner approval step, and the Sprint Review should never be considered a gate to releasing value. And work cannot be considered part of an Increment unless it meets the Definition of Done, labeled or not.",
+      "cite": "Scrum Guide 2020, Increment",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m08q12",
+      "kind": "mcq",
+      "stem": "Two screens in your product report different counts for the same measure because one rounds before filtering. Both shipped in past Sprints and both were called Done. What does this most directly indicate?",
+      "options": [
+        "The Product Owner failed to accept the second screen at its Sprint Review",
+        "The Definition of Done did not make consistency across the Increment a quality measure, so work that was not additive was still called Done",
+        "The Developers need to be assigned clearer ownership of each screen",
+        "The Sprint Review should have been longer"
+      ],
+      "answer": 1,
+      "explain": "Each Increment is meant to be additive to all prior Increments and thoroughly verified, ensuring that all Increments work together. Two screens that contradict each other are not additive, which points straight at the Definition of Done, one of the things the Retrospective inspects. There is no Product Owner acceptance step to fail. Assigning ownership to individuals cuts against self-management and would not have caught a cross-screen inconsistency. A longer meeting does not change a quality standard.",
+      "cite": "Scrum Guide 2020, Increment and Commitment: Definition of Done",
+      "tag": "artifacts"
+    }
+  ],
+  "cards": [
+    {
+      "id": "m08c1",
+      "front": "Purpose of the Daily Scrum",
+      "back": "To inspect progress toward the Sprint Goal and adapt the Sprint Backlog as necessary, adjusting the upcoming planned work.",
+      "tag": "events"
+    },
+    {
+      "id": "m08c2",
+      "front": "Who is the Daily Scrum for, and when may the Product Owner join?",
+      "back": "It is a 15-minute event for the Developers. If the Product Owner or Scrum Master are actively working on items in the Sprint Backlog, they participate as Developers.",
+      "tag": "events"
+    },
+    {
+      "id": "m08c3",
+      "front": "Are the three questions required in the Daily Scrum?",
+      "back": "No. They are a practice removed in the 2020 Guide. The Developers can select whatever structure and techniques they want, as long as it focuses on progress toward the Sprint Goal and produces an actionable plan for the next day.",
+      "tag": "events"
+    },
+    {
+      "id": "m08c4",
+      "front": "Purpose of the Sprint Review",
+      "back": "To inspect the outcome of the Sprint and determine future adaptations. The Scrum Team presents results to key stakeholders and progress toward the Product Goal is discussed.",
+      "tag": "events"
+    },
+    {
+      "id": "m08c5",
+      "front": "The one sentence that kills the demo antipattern",
+      "back": "The Sprint Review is a working session and the Scrum Team should avoid limiting it to a presentation. Attendees collaborate on what to do next, and the Product Backlog may be adjusted.",
+      "tag": "events"
+    },
+    {
+      "id": "m08c6",
+      "front": "Where does the Sprint Review sit, and how long?",
+      "back": "Second to last event of the Sprint, timeboxed to a maximum of four hours for a one-month Sprint. Shorter Sprints, usually shorter.",
+      "tag": "events"
+    },
+    {
+      "id": "m08c7",
+      "front": "Does the Product Owner accept or sign off stories?",
+      "back": "No. Acceptance and sign-off appear nowhere in the Scrum Guide 2020. The Definition of Done decides. An item that does not meet it cannot be released or even presented at the Sprint Review, and returns to the Product Backlog.",
+      "tag": "antipatterns"
+    },
+    {
+      "id": "m08c8",
+      "front": "Purpose of the Sprint Retrospective",
+      "back": "To plan ways to increase quality and effectiveness. It concludes the Sprint and is timeboxed to a maximum of three hours for a one-month Sprint.",
+      "tag": "events"
+    },
+    {
+      "id": "m08c9",
+      "front": "What does the Sprint Retrospective inspect?",
+      "back": "How the last Sprint went with regards to individuals, interactions, processes, tools, and their Definition of Done. Assumptions that led them astray are identified and their origins explored.",
+      "tag": "events"
+    },
+    {
+      "id": "m08c10",
+      "front": "What happens to Retrospective improvements?",
+      "back": "The Scrum Team identifies the most helpful changes. The most impactful improvements are addressed as soon as possible, and they may even be added to the Sprint Backlog for the next Sprint.",
+      "tag": "events"
+    },
+    {
+      "id": "m08c11",
+      "front": "Define an Increment",
+      "back": "A concrete stepping stone toward the Product Goal, additive to all prior Increments and thoroughly verified, and usable. Multiple Increments may be created within a Sprint.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m08c12",
+      "front": "Is the Sprint Review a gate to release?",
+      "back": "Never. An Increment may be delivered to stakeholders prior to the end of the Sprint. The Sprint Review should never be considered a gate to releasing value. The only condition is the Definition of Done.",
+      "tag": "artifacts"
+    }
+  ]
+}

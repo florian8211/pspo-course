@@ -1,0 +1,504 @@
+{
+  "id": "m02",
+  "num": 2,
+  "week": 1,
+  "title": "Die ganze Maschine",
+  "subtitle": "Jedes bewegliche Teil von Scrum in einem Durchgang - damit die Details später einen Platz haben, wo sie landen können.",
+  "minutes": 30,
+  "why": "Ein Product Owner, der Scrum Stück für Stück lernt, verteidigt am Ende einzelne Meetings statt eines funktionierenden Loops. Und er kann nicht sagen, welche Teile tragend sind.",
+  "objectives": [
+    "Die drei Accountabilities, fünf Events, drei Artifacts und drei Commitments ohne Zögern nennen",
+    "Jedes Artifact mit seinem einen Commitment paaren und sagen, was ohne dieses Commitment aus dem Artifact wird",
+    "Die Events eines Sprints in die richtige Reihenfolge bringen - inklusive welches das zweitletzte ist und welches den Sprint abschliesst",
+    "Beschreiben, wofür das Scrum Team als Ganzes accountable ist - getrennt davon, wer wofür geradesteht",
+    "Ehrlich sagen, welche Teile dieser Maschine dein eigenes Team heute fährt und welche nicht"
+  ],
+  "beats": [
+    {
+      "type": "hook",
+      "body": "Du hast schon Teile davon, du hast sie nur nicht Scrum genannt. Ein Arbeitspaket mit einem Ziel oben, den offenen Fragen schon geklärt und einer Checkliste, was fertig heisst: Das ist ein Backlog Item mit Acceptance Criteria. Eines dieser Kästchen bleibt absichtlich leer. Denn nur eine echte Person, die das Ding benutzt, kann es abhaken. Dieser Instinkt ist genau richtig.\n\nWas dir noch fehlt, ist der Loop drumherum. Dieses Modul gibt dir das ganze Framework in einem Durchgang: drei Accountabilities, fünf Events, drei Artifacts, drei Commitments. Vierzehn Nomen. Lern jetzt, wie sie ineinandergreifen. Dann ist jedes spätere Modul Detail statt Vokabular."
+    },
+    {
+      "type": "analogy",
+      "title": "Die Küche, die jede Woche ihr Menü neu druckt",
+      "body": "Stell dir eine kleine Küche vor, die jede Woche ein neues Menü druckt und nie zweimal dasselbe fährt.\n\nDrei Leute. Eine Person entscheidet, was aufs Menü kommt und in welcher Reihenfolge Gerichte entwickelt werden. Eine hält die Küche kochfähig: Sie schärft das System und räumt weg, was die Linie blockiert. Der Rest kocht tatsächlich.\n\nDrei Dinge hängen an der Wand. Das Ideenbuch: jedes Gericht, das sie je servieren könnten, geordnet. Das Menü dieser Woche. Und das Essen, das den Pass verlassen hat.\n\nAuf jedem steht oben eine Zeile. Das Ideenbuch sagt, was für ein Restaurant sie werden. Das Menü sagt, was diese Woche beweisen will. Der Pass sagt, was ein Teller sein muss, bevor er rausgeht.",
+      "visual": "scrum-machine"
+    },
+    {
+      "type": "teach",
+      "title": "Ein Team, keine Sub-Teams",
+      "body": "Ein **Scrum Team** besteht aus einem Scrum Master, einem Product Owner und Developers. Nicht ein Product Owner plus ein Produkt-Komitee. Nicht ein Scrum Master, der gleichzeitig der Chef ist. Innerhalb eines Scrum Teams gibt es keine Sub-Teams und keine Hierarchien.\n\nEs sind typischerweise zehn oder weniger Leute. Das Team ist **cross-functional**: Zusammen haben sie alle Skills, die es braucht, um jeden Sprint Value zu schaffen. Und es ist **self-managing**: Sie entscheiden intern, wer was wann und wie macht.\n\nDann kommt der Satz, den die Leute überspringen: Das ganze Scrum Team ist accountable dafür, jeden Sprint ein wertvolles, nützliches Increment zu schaffen. Die drei Accountabilities teilen auf, wer wofür geradesteht. Sie teilen das Outcome nicht in drei separate Jobs auf.",
+      "callout": {
+        "kind": "why",
+        "text": "Zehn oder weniger ist keine Budget-Regel. Kleinere Teams kommunizieren besser. Und jede zusätzliche Person fügt schneller Kommunikationswege hinzu als Kapazität."
+      }
+    },
+    {
+      "type": "guide",
+      "quote": "The fundamental unit of Scrum is a small team of people, a Scrum Team. The Scrum Team consists of one Scrum Master, one Product Owner, and Developers. Within a Scrum Team, there are no sub-teams or hierarchies. It is a cohesive unit of professionals focused on one objective at a time, the Product Goal.",
+      "cite": "Scrum Team",
+      "gloss": "Ein Team, ein Ziel aufs Mal, und innen drin steht niemand über jemand anderem."
+    },
+    {
+      "type": "teach",
+      "title": "Drei Accountabilities, drei verschiedene Fragen",
+      "body": "Jede Accountability besitzt eine Frage, und keine zwei Leute besitzen dieselbe.\n\n**Product Owner.** Von allem, was wir bauen könnten: Was lohnt sich als Nächstes? Accountable dafür, den Value des Produkts zu maximieren, das aus der Arbeit des Scrum Teams entsteht.\n\n**Developers.** Wie bauen wir es, und ist es wirklich done? Sie erstellen das Sprint Backlog und sorgen für Qualität, indem sie sich an eine Definition of Done halten. Sie passen ihren Plan jeden Tag Richtung Sprint Goal an. Und sie halten sich gegenseitig als Professionals accountable.\n\n**Scrum Master.** Funktioniert die Maschine selbst? Accountable dafür, Scrum so zu etablieren, wie es im Guide definiert ist, und für die Effektivität des Scrum Teams. Ein echter Leader, der dient - ohne Autorität, Tasks zu verteilen."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m02k1",
+        "kind": "mcq",
+        "stem": "Your company forms a Scrum Team: you as Product Owner, the Lead Engineer and a contractor as Developers, and a part-time Scrum Master. In Sprint Planning the Lead Engineer proposes an implementation approach you think is slower than necessary. Who decides how that Product Backlog item gets turned into an Increment?",
+        "options": [
+          "You do, because you are accountable for maximizing value and the approach affects what ships",
+          "The Scrum Master does, because they are accountable for the Scrum Team's effectiveness",
+          "The Developers do, because no one else tells them how to turn Product Backlog items into Increments of value",
+          "The whole Scrum Team decides by consensus, since Sprint Planning is collaborative"
+        ],
+        "answer": 2,
+        "explain": "Sprint Planning Topic Three is unusually absolute: how the chosen work gets done is at the sole discretion of the Developers, and no one else tells them how to turn Product Backlog items into Increments of value. Option A is the founder reflex, and it quietly swaps value for implementation. Option B misreads the Scrum Master accountability, which is about establishing Scrum and team effectiveness, not technical direction. Option D is the subtlest wrong answer: Sprint Planning is collaborative and the whole team forges the Sprint Goal, but the how belongs to the Developers alone. You may influence them by helping them understand and select trade-offs. You may not decide.",
+        "cite": "Scrum Guide 2020, Sprint Planning",
+        "tag": "accountabilities"
+      }
+    },
+    {
+      "type": "teach",
+      "title": "Der Sprint ist ein Container, keine Deadline",
+      "body": "Die meisten hören Sprint und denken an ein Fälligkeitsdatum. Falsche Form. Der Sprint ist ein **Container**: eine Box mit fixer Länge von einem Monat oder weniger. Sie enthält alle anderen Events und die ganze Arbeit, die es braucht, um das Product Goal zu erreichen.\n\nFixe Länge ist wichtiger als kurz. Wenn die Box ständig ihre Grösse ändert, kannst du nie einen Sprint mit dem nächsten vergleichen. Und Vergleich ist der ganze Sinn eines empirical Loops.\n\nEin neuer Sprint startet sofort, nachdem der vorherige abgeschlossen ist. Keine Pausenwoche, keine Abkühlphase. Der Herzschlag pausiert nicht.\n\n[[PRACTICE]] Zwei-Wochen-Sprints sind der übliche Default, und Sprint Zero ist eine weitverbreitete Erfindung. Der Guide sagt einen Monat oder weniger, und nichts weiter.",
+      "visual": "sprint-timeline"
+    },
+    {
+      "type": "guide",
+      "quote": "Sprints are the heartbeat of Scrum, where ideas are turned into value. They are fixed length events of one month or less to create consistency. A new Sprint starts immediately after the conclusion of the previous Sprint.",
+      "cite": "The Sprint",
+      "gloss": "Gleich grosse Box, jedes Mal, nahtlos hintereinander, für immer."
+    },
+    {
+      "type": "teach",
+      "title": "Vier Events in der Box",
+      "body": "Im Container sitzen vier Events. Jedes ist eine formelle Chance, etwas zu inspizieren und etwas zu ändern.\n\n**Sprint Planning** startet den Sprint. Drei Themen: Warum ist dieser Sprint wertvoll? Was kann Done werden? Wie wird die gewählte Arbeit erledigt?\n\n**Daily Scrum**, fünfzehn Minuten, an jedem Arbeitstag des Sprints. Es ist für die Developers, um den Fortschritt Richtung Sprint Goal zu inspizieren.\n\n**Sprint Review**, gegen Ende. Das Scrum Team und die Stakeholder inspizieren das Outcome und entscheiden, was als Nächstes kommt. Eine Working Session, keine Präsentation.\n\n**Sprint Retrospective**, als Letztes. Das Team inspiziert, wie es gearbeitet hat, und wählt die hilfreichsten Änderungen.\n\nDie Reihenfolge wird ständig geprüft. Das Sprint Review ist das zweitletzte. Die Retrospective schliesst den Sprint ab."
+    },
+    {
+      "type": "guide",
+      "quote": "The Sprint is a container for all other events. Each event in Scrum is a formal opportunity to inspect and adapt Scrum artifacts. These events are specifically designed to enable the transparency required. Failure to operate any events as prescribed results in lost opportunities to inspect and adapt.",
+      "cite": "Scrum Events",
+      "gloss": "Lässt du ein Event aus, hast du kein Meeting gespart. Du hast einen Ort entfernt, an dem sich der Plan selbst hätte korrigieren können."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m02k2",
+        "kind": "order",
+        "instruction": "Put the four events that happen inside a Sprint in the order the Scrum Guide describes them, from the one that starts the Sprint to the one that concludes it.",
+        "items": [
+          "Sprint Planning: the Scrum Team lays out the work and forges a Sprint Goal",
+          "Daily Scrum: the Developers inspect progress toward the Sprint Goal, every working day",
+          "Sprint Review: the Scrum Team and stakeholders inspect the outcome and determine future adaptations",
+          "Sprint Retrospective: the Scrum Team plans ways to increase quality and effectiveness, concluding the Sprint"
+        ],
+        "explain": "The Sprint itself is the fifth event, the container holding these four. Sprint Planning initiates the Sprint, the Daily Scrum recurs every working day inside it, the Sprint Review is explicitly the second to last event, and the Retrospective explicitly concludes the Sprint. The exam's favourite version of this asks which event is last, hoping you say Sprint Review because that is where stakeholders show up. Then the next Sprint starts immediately, with no gap.",
+        "cite": "Scrum Guide 2020, Scrum Events",
+        "tag": "events"
+      }
+    },
+    {
+      "type": "teach",
+      "title": "Drei Artifacts, und die eine Zeile, die jedes ehrlich hält",
+      "body": "Ein Artifact ist etwas, das Arbeit oder Value repräsentiert. Es ist so gestaltet, dass alle, die es inspizieren, dieselbe Grundlage für Adaptation haben.\n\n**Product Backlog.** Eine emergente, geordnete Liste dessen, was es braucht, um das Produkt zu verbessern. Die einzige Quelle der Arbeit, die das Scrum Team übernimmt.\n\n**Sprint Backlog.** Das Sprint Goal, die für den Sprint ausgewählten Items, plus der Plan, wie sie geliefert werden. Von den Developers und für die Developers.\n\n**Increment.** Ein konkreter Trittstein Richtung Product Goal. Nutzbar, und additiv zu jedem früheren Increment.\n\nJedes trägt genau ein Commitment. Product Backlog zu Product Goal. Sprint Backlog zu Sprint Goal. Increment zu Definition of Done. Nimm das Commitment weg, und übrig bleiben eine Wunschliste, ein Task-Haufen und ein Build, den niemand messen kann."
+    },
+    {
+      "type": "guide",
+      "quote": "Each artifact contains a commitment to ensure it provides information that enhances transparency and focus against which progress can be measured: For the Product Backlog it is the Product Goal. For the Sprint Backlog it is the Sprint Goal. For the Increment it is the Definition of Done.",
+      "cite": "Scrum Artifacts",
+      "gloss": "Drei Artifacts, drei Commitments, eins zu eins gepaart. Lern die Paarung auswendig, denn sie bringt dir geschenkte Punkte."
+    },
+    {
+      "type": "trap",
+      "myth": "Die Definition of Done sagt dir, wann ein Product Backlog Item bereit ist, in einen Sprint gezogen zu werden.",
+      "truth": "Die Definition of Done ist das Commitment, das zum Increment gehört. Sie ist eine formelle Beschreibung des Zustands des Increments, wenn es die Qualitätsmassstäbe erfüllt, die für das Produkt verlangt sind. Sie ist eine Ziellinie, kein Startgatter.",
+      "why": "PSPO I mischt die drei Paare ständig durch. Jede Option, die die Definition of Done ans Product Backlog hängt oder das Sprint Goal ans Increment, ist schon falsch, bevor du den Rest des Satzes liest. [[PRACTICE]] Das Startgatter, an das die Leute denken, ist eine Definition of Ready. Das ist eine verbreitete Practice und kommt nirgends im Scrum Guide vor."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m02k3",
+        "kind": "sort",
+        "stem": "Drop each of the fourteen nouns of Scrum into the right bucket. This is the whole machine on one screen.",
+        "buckets": [
+          "Accountability",
+          "Event",
+          "Artifact",
+          "Commitment"
+        ],
+        "items": [
+          {
+            "text": "Product Owner",
+            "bucket": "Accountability"
+          },
+          {
+            "text": "Scrum Master",
+            "bucket": "Accountability"
+          },
+          {
+            "text": "Developers",
+            "bucket": "Accountability"
+          },
+          {
+            "text": "The Sprint",
+            "bucket": "Event"
+          },
+          {
+            "text": "Sprint Planning",
+            "bucket": "Event"
+          },
+          {
+            "text": "Daily Scrum",
+            "bucket": "Event"
+          },
+          {
+            "text": "Sprint Review",
+            "bucket": "Event"
+          },
+          {
+            "text": "Sprint Retrospective",
+            "bucket": "Event"
+          },
+          {
+            "text": "Product Backlog",
+            "bucket": "Artifact"
+          },
+          {
+            "text": "Sprint Backlog",
+            "bucket": "Artifact"
+          },
+          {
+            "text": "Increment",
+            "bucket": "Artifact"
+          },
+          {
+            "text": "Product Goal",
+            "bucket": "Commitment"
+          },
+          {
+            "text": "Sprint Goal",
+            "bucket": "Commitment"
+          },
+          {
+            "text": "Definition of Done",
+            "bucket": "Commitment"
+          }
+        ],
+        "explain": "Three accountabilities, five events, three artifacts, three commitments. Two placements catch people out. The Sprint is an event, not a time period that happens to contain events, which is why the count is five and not four. And the Product Goal is a commitment, not an artifact, even though it lives inside the Product Backlog. Notice also what is absent: no roles, no ceremonies, no user stories, no story points, no Definition of Ready, no product manager. Anything the exam offers you that is not on this list is either a practice or a distractor.",
+        "cite": "Scrum Guide 2020, Scrum Team, Scrum Events, Scrum Artifacts",
+        "tag": "artifacts"
+      }
+    },
+    {
+      "type": "teach",
+      "title": "Fünf Values, und warum sich ein Framework damit abgibt",
+      "body": "Commitment, Focus, Openness, Respect, Courage.\n\nDas liest sich wie ein Poster im Pausenraum. Deshalb hier, warum es tragend ist. Die Pillars brauchen Leute, die sich auf eine bestimmte Art verhalten. Sonst brechen sie still zusammen.\n\nTransparency braucht Openness und Courage: Jemand muss laut sagen, dass der Corvus Feed rot ist. Inspection braucht Focus und Respect: Du musst dir das echte Ding anschauen und den Leuten glauben, die es gebaut haben. Adaptation braucht Commitment und Courage: Du musst einen Plan ändern, den du einem Prospect schon beschrieben hast.\n\nLass die Values weg, und die Maschinerie läuft trotzdem. Du bekommst einfach die Meetings ohne das Feedback."
+    },
+    {
+      "type": "guide",
+      "quote": "Successful use of Scrum depends on people becoming more proficient in living five values: Commitment, Focus, Openness, Respect, and Courage",
+      "cite": "Scrum Values",
+      "gloss": "Fünf Values, und der Guide gibt jedem eine einzeilige Definition, die sich zu lernen lohnt. Denn die Prüfung fragt, welchen Value ein Verhalten illustriert."
+    },
+    {
+      "type": "civic",
+      "title": "Was ein kleines Team heute tatsächlich fährt",
+      "body": "Ehrliche Inventur, kein Schimpfen. Stell dir das Team vor, in dem die meisten Founder-Product-Owners tatsächlich sind. Drei oder vier Leute, dieselbe Person macht Support, Sales und Specs. Planning passiert alle paar Monate in einer langen Session. Status läuft per Nachricht, nicht in einem Event. Die Arbeit liegt in dem Tool, das irgendwer zuerst aufgesetzt hat: ein Ziel oben, eine Checkliste unten. Nirgends formales Scrum.\n\nDas ist nicht Scrum, und nichts in diesem Modul sagt, dass es das sein sollte. Es ist ein langes Commitment mit einem informellen Puls. Gefahren wird es von einem Team, das klein genug ist, dass viel Koordination per Osmose passiert.\n\nDie nützliche Frage ist nicht, ob du compliant bist. Sondern welche Teile des Loops dir fehlen und was dich jedes davon gerade kostet."
+    },
+    {
+      "type": "civic",
+      "title": "Du fängst nicht bei null an",
+      "body": "Zwei Dinge zum Festhalten, solange das Vokabular noch neu ist.\n\nDu bist selten die einzige Person in deinem Umfeld, die dieses Framework schon mal laufen gesehen hat. In den meisten kleinen Teams hat jemand eine dieser Accountabilities schon irgendwo in grösserem Rahmen gehalten. Und jemand hat schon gesehen, wie Scrum funktioniert und wie es scheitert. Und zwar in einer Grössenordnung, in der du nie arbeiten wirst. Frag diese Leute früh, bevor du Meinungen hast, die du verteidigen musst.\n\nDie Lücke ist hier also meistens nicht Wissen. Sondern: Ein Drei-Personen-Team, das in langen Blöcken plant, hat bisher noch keinen Zwei-Wochen-Loop gebraucht. Das ändert sich an dem Tag, an dem ein zahlender Pilot dir Evidence schickt, die du nicht vorhergesagt hast."
+    },
+    {
+      "type": "sim",
+      "title": "Wer hält die Scrum Master Accountability?",
+      "setup": "Angenommen, du entscheidest dich, einen echten Sprint zu fahren. Zwei-Wochen-Box. Der Lead Engineer und ein Contractor bauen, du ordnest die Arbeit. Der Guide sagt: Ein Scrum Team besteht aus einem Scrum Master, einem Product Owner und Developers.\n\nIm erweiterten Team hast du ein paar zertifizierte Scrum Masters, beide tragen schon andere Hüte. Dazu gibt es einen CEO, der Roadmap, Sales, Verträge, Finanzen, Hiring und Security verantwortet. Und der es gewohnt ist, derjenige zu sein, der entscheidet.\n\nJemand muss die Scrum Master Accountability halten. Was machst du?",
+      "choices": [
+        {
+          "label": "Bitte einen der zertifizierten Scrum Masters, sie in Teilzeit zu halten. Und sag laut, dass von dieser Person erwartet wird, dir Nein zu sagen.",
+          "outcome": "Sprint zwei: Du drückst mitten in der Woche einen Demo-Request ins Sprint Backlog. Die Person fragt vor den Developers, ob das das Sprint Goal gefährdet. Der Request wartet acht Tage. Nichts geht kaputt, und das Team lernt: Das Goal ist echt.",
+          "verdict": "good",
+          "lesson": "Die Scrum Master Accountability funktioniert nur, wenn die Person, die sie hält, der mächtigsten Person im Raum widersprechen kann. Diese Erlaubnis explizit auszusprechen, bevor du sie brauchst, ist die billigste Investition überhaupt."
+        },
+        {
+          "label": "Halte beide Accountabilities selbst. Es ist ein Drei-Personen-Team, und du bist sowieso schon in jedem Gespräch dabei.",
+          "outcome": "Zwei Sprints lang läuft das gut. Im dritten will ein Prospect, der schon unterschrieben hat, etwas, das das Sprint Goal brechen würde. Bei der Frage, ob du das Goal schützt oder den Request annimmst, gibt es genau eine Stimme auf beiden Seiten. Und der Request gewinnt.",
+          "verdict": "bad",
+          "lesson": "[[PRACTICE]] Der Guide verbietet nirgends, dass eine Person zwei Accountabilities hält. Das hier ist also Ermessenssache, keine Regel. Die Einschätzung: Die beiden Accountabilities existieren, um unterschiedliche Fragen zu stellen. Wenn dieselbe Person beide stellt, gewinnt jedes Mal die lautere Frage."
+        },
+        {
+          "label": "Gib sie dem Lead Engineer, der innerhalb des Sprints schon die Engineering-Prioritäten verantwortet.",
+          "outcome": "Die Events finden statt und bleiben in der Zeit. Aber die Impediments, die auf den Tisch kommen, sind technische - weil er genau die sieht.\n\nDie Prozess-Probleme (die Status-Messages, die niemand liest, der Long-Range-Plan, den niemand mehr anschaut) kommen gar nie an die Oberfläche.",
+          "verdict": "mixed",
+          "lesson": "Ein Developer kann die Scrum Master Accountability halten, und das ist oft besser, als wenn sie niemand hält. Der Preis: Die Person, die den Prozess inspiziert, steckt selbst mittendrin. So bleibt eine ganze Klasse von Problemen unsichtbar."
+        },
+        {
+          "label": "Lass sie weg. Niemand hat Kapazität, und der Guide ist für grössere Firmen geschrieben.",
+          "outcome": "Die ersten zwei Sprints laufen gut, weil ihr alle aufmerksam seid. Bis Sprint vier hat die Retrospective still und leise aufgehört stattzufinden. Das Sprint Goal ist zu einer Task-Liste geworden. Und du bist zurück bei einem Long-Range-Plan, an den zusätzliche Meetings angeschraubt sind.",
+          "verdict": "bad",
+          "lesson": "Das Framework ist immutable. Nur Teile von Scrum umzusetzen ist möglich, aber das Resultat ist nicht Scrum. Und die Teile, die zuerst wegfallen, sind fast immer die, deren einziger Output ein geänderter Plan ist."
+        }
+      ]
+    },
+    {
+      "type": "keypoints",
+      "points": [
+        "Ein Scrum Master, ein Product Owner, Developers. Keine Sub-Teams, keine Hierarchien, typischerweise zehn oder weniger.",
+        "Das ganze Scrum Team ist accountable dafür, jeden Sprint ein wertvolles, nützliches Increment zu erstellen.",
+        "Fünf Events: Der Sprint ist der Container und enthält Sprint Planning, Daily Scrum, Sprint Review und Sprint Retrospective.",
+        "Das Sprint Review kommt an zweitletzter Stelle. Die Sprint Retrospective schliesst den Sprint ab. Der nächste Sprint startet sofort.",
+        "Drei Artifacts, je ein Commitment: Product Backlog zu Product Goal, Sprint Backlog zu Sprint Goal, Increment zu Definition of Done.",
+        "Commitment, Focus, Openness, Respect, Courage. Die Pillars funktionieren nur, wenn sich die Leute so verhalten."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "m02q1",
+      "kind": "mcq",
+      "stem": "Your company grows to eleven people building one product. Someone proposes splitting into a platform squad and a dashboard squad, each with its own backlog and its own priorities. What does the Scrum Guide actually support?",
+      "options": [
+        "Splitting is correct, since a Scrum Team should be typically 10 or fewer people, and separate backlogs give each squad focus",
+        "Reorganize into multiple Scrum Teams if needed, but they share the same Product Goal, Product Backlog, and Product Owner",
+        "Keep one team, because a Scrum Team may never be split regardless of size",
+        "Split the teams and give each its own Product Owner, so each has a single accountable decision maker"
+      ],
+      "answer": 1,
+      "explain": "The Guide says if Scrum Teams become too large they should consider reorganizing into multiple cohesive Scrum Teams, each focused on the same product, and therefore sharing the same Product Goal, Product Backlog, and Product Owner. Option A gets the number right and the structure wrong: separate backlogs and separate priorities fragment the ordering decision, which is the one thing a single Product Owner exists to hold. Option C invents a prohibition that is not there. Option D is the most tempting because it sounds like healthy autonomy, and it is precisely what the Guide rules out: one product, one Product Owner.",
+      "cite": "Scrum Guide 2020, Scrum Team",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m02q2",
+      "kind": "mcq",
+      "stem": "A Sprint ends with work that does not meet the Definition of Done. In the Retrospective someone asks who was accountable for the Increment. What is the most accurate answer per the Scrum Guide?",
+      "options": [
+        "The Developers, since they are required to conform to the Definition of Done",
+        "The Product Owner, since they are accountable for maximizing the value of the product",
+        "The entire Scrum Team, which is accountable for creating a valuable, useful Increment every Sprint",
+        "The Scrum Master, who is accountable for the Scrum Team's effectiveness"
+      ],
+      "answer": 2,
+      "explain": "The Guide states plainly that the entire Scrum Team is accountable for creating a valuable, useful Increment every Sprint. Option A is the trap, because the sentence is true on its own: the Developers are required to conform to the Definition of Done. True statement, wrong question. Options B and D are also true descriptions of those accountabilities and equally not the answer. This question style is everywhere on PSPO I: three genuine quotes and one that answers what was actually asked.",
+      "cite": "Scrum Guide 2020, Scrum Team",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m02q3",
+      "kind": "multi",
+      "stem": "Your Lead Engineer proposes a one week gap between Sprints to clear technical debt, and suggests making the next Sprint three weeks instead of two because there is more work in it. Select the TWO statements the Scrum Guide supports.",
+      "options": [
+        "A new Sprint starts immediately after the conclusion of the previous Sprint",
+        "Sprints are fixed length events of one month or less to create consistency",
+        "Sprint length may be adjusted each Sprint to match the amount of work selected",
+        "A gap between Sprints is permitted as long as no Sprint Goal is active during it",
+        "Technical debt work cannot be part of a Sprint, so a separate period is required for it"
+      ],
+      "answer": [
+        0,
+        1
+      ],
+      "explain": "Both proposals fail on the Guide's own wording. Sprints are fixed length, and a new one starts immediately after the previous one concludes. Option C is the more dangerous of the two ideas: if the box resizes to fit the work, you lose the only stable unit you had for comparing Sprints, and the empirical loop loses its ruler. Option D invents a permitted pause. Option E is wrong because the Product Backlog is everything needed to improve the product, and that includes technical work.",
+      "cite": "Scrum Guide 2020, The Sprint",
+      "tag": "events"
+    },
+    {
+      "id": "m02q4",
+      "kind": "tf",
+      "stem": "True or false: the Sprint Review is the final event of the Sprint, because it is where the Increment is inspected with stakeholders.",
+      "answer": false,
+      "explain": "False. The Guide says the Sprint Review is the second to last event of the Sprint, and separately that the Sprint Retrospective concludes the Sprint. The reasoning is worth more than the fact: the Review inspects the product with people outside the team, and the Retrospective then inspects how the team worked, including whether its Definition of Done is still good enough. Do those in the other order and the team reflects on a Sprint before hearing what stakeholders made of it.",
+      "cite": "Scrum Guide 2020, Sprint Review",
+      "tag": "events"
+    },
+    {
+      "id": "m02q5",
+      "kind": "mcq",
+      "stem": "You draft a one page note explaining Scrum to your CEO. It reads: 'Each artifact has a commitment. The Product Backlog commits to the Product Goal, the Sprint Backlog commits to the Definition of Done, and the Increment commits to the Sprint Goal.' What is wrong with it?",
+      "options": [
+        "Nothing, the pairings are correct",
+        "The last two are swapped: the Sprint Backlog's commitment is the Sprint Goal, and the Increment's is the Definition of Done",
+        "The Product Backlog's commitment is the Definition of Done, since that governs what can be released",
+        "Artifacts do not carry commitments in Scrum, events do"
+      ],
+      "answer": 1,
+      "explain": "The pairing is fixed and one to one: Product Backlog to Product Goal, Sprint Backlog to Sprint Goal, Increment to Definition of Done. Option C is a plausible-sounding inversion, and the giveaway is that the Definition of Done describes the state of an Increment, not the state of a list. Option D contradicts the Artifacts section directly. Expect this pairing to appear two or three times in some form, often buried inside a longer scenario where the pairing error is the only thing wrong.",
+      "cite": "Scrum Guide 2020, Scrum Artifacts",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m02q6",
+      "kind": "mcq",
+      "stem": "Your team wants to examine something specific: not what they built last Sprint, but how they worked, including whether their Definition of Done is still strong enough for a municipal finance product. Which event is that?",
+      "options": [
+        "Sprint Review",
+        "Daily Scrum",
+        "Sprint Retrospective",
+        "Sprint Planning"
+      ],
+      "answer": 2,
+      "explain": "The Sprint Retrospective exists to plan ways to increase quality and effectiveness, and the Guide explicitly lists the Definition of Done among what the team inspects there, alongside individuals, interactions, processes, and tools. Option A is the classic confusion: the Sprint Review inspects the outcome and the product, with stakeholders present. The Daily Scrum inspects progress toward the Sprint Goal, daily. Sprint Planning looks forward. A quick separator that works on almost every question: Review is about the product, Retrospective is about the team.",
+      "cite": "Scrum Guide 2020, Sprint Retrospective",
+      "tag": "events"
+    },
+    {
+      "id": "m02q7",
+      "kind": "mcq",
+      "stem": "Your CEO asks the Scrum Master to produce a weekly report on each Developer's individual progress and to assign next week's tasks so nothing slips. What does the Scrum Guide support?",
+      "options": [
+        "This fits the accountability, since the Scrum Master is accountable for the Scrum Team's effectiveness",
+        "The Developers are self-managing and internally decide who does what, when, and how, so assigning their work is not the Scrum Master's job",
+        "This is the Product Owner's job rather than the Scrum Master's",
+        "The Scrum Master may assign tasks, but only when the Sprint Goal is at risk"
+      ],
+      "answer": 1,
+      "explain": "Self-managing means the team internally decides who does what, when, and how. Option A takes a real sentence about effectiveness and stretches it into line management, which is the single most common way the Scrum Master accountability gets corrupted in small companies. Option C hands the same wrong behaviour to a different person: the Product Owner does not assign Developer tasks either. Option D invents an emergency override that does not exist. The right move is to make the Sprint Backlog transparent enough that no status report is needed.",
+      "cite": "Scrum Guide 2020, Scrum Team",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m02q8",
+      "kind": "multi",
+      "stem": "In week two you learn something that invalidates an assumption behind a feature you have already shown in three sales demos. Saying so will be uncomfortable for you specifically. Select the TWO Scrum Values most directly at stake.",
+      "options": [
+        "Commitment",
+        "Focus",
+        "Openness",
+        "Respect",
+        "Courage"
+      ],
+      "answer": [
+        2,
+        4
+      ],
+      "explain": "The Guide's own one line definitions decide this. The Scrum Team and its stakeholders are open about the work and the challenges, which is Openness. The Scrum Team members have the courage to do the right thing, to work on tough problems, which is Courage. Focus is defined as focus on the work of the Sprint. Respect is defined as respecting each other as capable, independent people. Commitment is defined as committing to goals and to supporting each other. Learn the Guide's definitions rather than the dictionary ones, because value questions are decided on that wording.",
+      "cite": "Scrum Guide 2020, Scrum Values",
+      "tag": "value"
+    },
+    {
+      "id": "m02q9",
+      "kind": "mcq",
+      "stem": "Your Scrum Master suggests that you, as Product Owner, keep the Sprint Backlog up to date in the tracker so the Developers can stay heads down. What is the problem with that?",
+      "options": [
+        "There is none, since the Product Owner is accountable for Product Backlog management",
+        "The Sprint Backlog is a plan by and for the Developers, and their real-time picture of the work they plan to do",
+        "Only the Scrum Master is permitted to maintain the Sprint Backlog",
+        "There is none, as long as you do not change the Sprint Goal"
+      ],
+      "answer": 1,
+      "explain": "The Guide calls the Sprint Backlog a plan by and for the Developers, updated throughout the Sprint as more is learned, with enough detail that they can inspect their progress in the Daily Scrum. If you maintain it, it stops being their picture and becomes your report, and the Daily Scrum inspects a document rather than reality. Option A confuses the two backlogs, which is exactly what the question is testing. Option C invents a rule. Option D sounds careful and still misses that the harm is to transparency, not to the Sprint Goal.",
+      "cite": "Scrum Guide 2020, Sprint Backlog",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m02q10",
+      "kind": "mcq",
+      "stem": "A startup adopts Sprints, a Product Backlog, and a Sprint Review, but has nobody holding the Scrum Master accountability because no one has capacity. They describe this as Scrum adapted for a small team. Which assessment is most accurate?",
+      "options": [
+        "It is fine, because the Scrum framework is purposefully incomplete and teams tailor it",
+        "The Scrum framework is immutable, and while implementing only parts of Scrum is possible, the result is not Scrum",
+        "It is fine, because in a small team the Product Owner naturally covers that work",
+        "It is fine as long as the team still produces a Done Increment each Sprint"
+      ],
+      "answer": 1,
+      "explain": "The End Note is blunt: the framework is immutable, implementing only parts of Scrum is possible, but the result is not Scrum. Option A confuses incompleteness with optionality, which is the distinction from module one: gaps are yours to fill, defined parts are not yours to delete. Option C fails on the facts of the scenario, since nobody holds the accountability at all, and Scrum requires a Scrum Master to foster the environment described in the Scrum Definition. Option D grades the output while ignoring that the loop meant to improve it has been removed.",
+      "cite": "Scrum Guide 2020, End Note",
+      "tag": "antipatterns"
+    },
+    {
+      "id": "m02q11",
+      "kind": "mcq",
+      "stem": "On day four of a two week Sprint the Developers finish a reconciliation view that meets the Definition of Done. A pilot town wants it now, and the Sprint Review is nine days away. What does the Scrum Guide say?",
+      "options": [
+        "It must wait for the Sprint Review, since that is where the Increment is inspected by stakeholders",
+        "An Increment may be delivered to stakeholders prior to the end of the Sprint, and the Sprint Review should never be considered a gate to releasing value",
+        "It may be released only after the Product Owner formally accepts it in a sign-off step",
+        "It must wait until the end of the Sprint, because the sum of the Increments is presented at the Sprint Review"
+      ],
+      "answer": 1,
+      "explain": "The Guide is explicit on both halves: multiple Increments may be created within a Sprint, an Increment may be delivered to stakeholders prior to the end of the Sprint, and the Sprint Review should never be considered a gate to releasing value. Options A and D both turn an inspection point into a checkpoint, which is the most common release misconception the exam tests. Option C describes a formal Product Owner acceptance step that appears nowhere in the Scrum Guide. The gate that does exist is the Definition of Done, and this item already passed it.",
+      "cite": "Scrum Guide 2020, Increment",
+      "tag": "artifacts"
+    }
+  ],
+  "cards": [
+    {
+      "id": "m02c1",
+      "front": "What does a Scrum Team consist of?",
+      "back": "One Scrum Master, one Product Owner, and Developers. No sub-teams, no hierarchies inside it. A cohesive unit of professionals focused on one objective at a time, the Product Goal.",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m02c2",
+      "front": "How big is a Scrum Team?",
+      "back": "Small enough to remain nimble and large enough to complete significant work within a Sprint, typically 10 or fewer people. Too large means reorganizing into multiple teams on the same product.",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m02c3",
+      "front": "Cross-functional versus self-managing",
+      "back": "Cross-functional: the members have all the skills necessary to create value each Sprint. Self-managing: they internally decide who does what, when, and how.",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m02c4",
+      "front": "Who is accountable for the Increment?",
+      "back": "The entire Scrum Team is accountable for creating a valuable, useful Increment every Sprint. The three accountabilities divide who answers for what, not the outcome itself.",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m02c5",
+      "front": "The three accountabilities, one question each",
+      "back": "Product Owner: what is worth building next, maximizing the value of the product. Developers: how it gets built and whether it is Done. Scrum Master: establishing Scrum, and the Scrum Team's effectiveness.",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m02c6",
+      "front": "Name the five Scrum events",
+      "back": "The Sprint (the container), Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective. The Sprint holds the other four.",
+      "tag": "events"
+    },
+    {
+      "id": "m02c7",
+      "front": "Which event is second to last, and which concludes the Sprint?",
+      "back": "The Sprint Review is the second to last event of the Sprint. The Sprint Retrospective concludes the Sprint. A new Sprint starts immediately afterwards.",
+      "tag": "events"
+    },
+    {
+      "id": "m02c8",
+      "front": "Timeboxes for a one-month Sprint",
+      "back": "Sprint Planning 8 hours maximum, Sprint Review 4 hours maximum, Sprint Retrospective 3 hours maximum. For shorter Sprints these three are usually shorter. The Daily Scrum is always a 15-minute event, whatever the Sprint length.",
+      "tag": "events"
+    },
+    {
+      "id": "m02c9",
+      "front": "Name the three artifacts and what each is",
+      "back": "Product Backlog: an emergent, ordered list of what is needed to improve the product, the single source of work. Sprint Backlog: a plan by and for the Developers. Increment: a usable stepping stone toward the Product Goal.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m02c10",
+      "front": "Which commitment belongs to which artifact?",
+      "back": "Product Backlog to Product Goal. Sprint Backlog to Sprint Goal. Increment to Definition of Done. Exactly one each, and the pairing never varies.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m02c11",
+      "front": "Why does each artifact carry a commitment?",
+      "back": "To ensure it provides information that enhances transparency and focus against which progress can be measured. The commitments exist to reinforce empiricism and the Scrum values.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m02c12",
+      "front": "Name the five Scrum Values",
+      "back": "Commitment, Focus, Openness, Respect, Courage. Successful use of Scrum depends on people becoming more proficient in living them, and they are what bring the three pillars to life.",
+      "tag": "value"
+    }
+  ]
+}

@@ -1,0 +1,554 @@
+{
+  "id": "m14",
+  "num": 14,
+  "week": 5,
+  "title": "Capstone: Ein Sprint auf Ledgerline",
+  "subtitle": "Ein zusammenhängender Sprint, von Anfang bis Ende. Du bist der Product Owner, und jede Entscheidung fliesst in die nächste.",
+  "minutes": 40,
+  "why": "Das Framework kennen und es tatsächlich anwenden sind zwei verschiedene Fähigkeiten. Hier findest du heraus, welche du hast.",
+  "objectives": [
+    "Ein Product Goal setzen, gegen das ein Scrum Team tatsächlich planen kann",
+    "Ein Sprint Goal als Ziel formulieren statt als Einkaufsliste",
+    "Einen Notfall mitten im Sprint handhaben, ohne das Sprint Goal zu gefährden oder deine Accountability aufzugeben",
+    "Den Scope mit den Developers neu verhandeln, wenn die Arbeit grösser ist, als alle dachten",
+    "Ein Sprint Review mit vier Stakeholdern leiten, die nicht alle recht haben können - und eine Retrospective, in der du selbst drin bist"
+  ],
+  "beats": [
+    {
+      "type": "hook",
+      "body": "Sprint 12 startet am Montag. Du bist der Product Owner. Jede Entscheidung in diesem Modul wirkt weiter. Das Sprint Review, das du am Ende bekommst, ist also das, was deine früheren Entscheidungen gebaut haben.\n\nNiemand sagt dir bei jedem Schritt die richtige Antwort. Denn in den meisten dieser Momente gibt es keine. Es gibt einen vertretbaren Entscheid, einen zweiten vertretbaren Entscheid, der etwas anderes kostet, und zwei Wege, still und leise aufzuhören, accountable zu sein.\n\nLies die Situation, wähl aus und lies, was es bewirkt hat."
+    },
+    {
+      "type": "civic",
+      "title": "Wo du stehst",
+      "body": "Ein Engineer. Ein Scrum Master, der auch Delivery und den halben Support macht. Du trägst Product, Sales und die RFP-Antworten. Die Ledgerline-Demo hat jedes Roadmap-Item von R-01 bis R-16 gebaut, jedes als eigener Commit.\n\nDas Einzige, was nicht gebaut ist: der Reconciliation Tie-out zwischen Corvus Financials, dem Bank-File und dem Ledger. Die Discovery hat ihn als Adoption-Gate benannt. Er braucht ein echtes Backend, drei bis sechs Monate entfernt. Und Priya Raman, die Treasurer, sagt: Davon hängt ab, ob sie das Produkt überhaupt nutzen kann - denn ihr Name steht auf dem Warrant.\n\nAcht Towns sind in Pilot-Gesprächen. Ein RFP läuft. Du hast noch nie ein Product Goal aufgeschrieben."
+    },
+    {
+      "type": "sim",
+      "title": "Montag, vor dem Planning: Worauf zielst du eigentlich?",
+      "setup": "Dana Whitcomb stellt die Frage, der du ausgewichen bist: Worauf zielen wir? Sie macht keine Schwierigkeiten. Sie hat zwölf Sprints mit sichtbarem Fortschritt gesehen und kann nicht sagen, was das alles ergibt.\n\nWas immer du antwortest, wird zum Massstab, an dem sich der Rest des Backlogs rechtfertigen muss. Und der Scrum Guide sagt: Ein Product Goal muss erfüllt oder aufgegeben werden, bevor das Team das nächste angeht.\n\nDas ist also kein Slogan. Wähl eins.",
+      "choices": [
+        {
+          "label": "Bis Ende der Pilot-Saison kann ein Town Treasurer jede Zahl im Produkt mit ihrem Bankauszug und ihrem ERP abgleichen, ohne das Produkt zu verlassen.",
+          "outcome": "Es benennt einen zukünftigen Zustand des Produkts, und es benennt, für wen es ist. Du könntest vor dem Backlog stehen und zu jedem Item daran gemessen Ja oder Nein sagen.\n\nEs stellt auch das eine nicht gebaute Ding ins Zentrum. Das ist unbequem und richtig. Die Anomaly-Arbeit, Ask the Ledger und der Records Desk müssen sich jetzt alle ihren Platz erkämpfen.",
+          "verdict": "good",
+          "lesson": "Das Product Goal beschreibt einen zukünftigen Zustand des Produkts, der dem Scrum Team als Ziel dienen kann, gegen das es plant. Ein Goal, das keine bestehenden Backlog-Items schwach aussehen lässt, leistet keine Arbeit."
+        },
+        {
+          "label": "Die Demo über alle zehn Personas komplett machen.",
+          "outcome": "Klar, erreichbar, und alle wissen, wann es fertig ist. Es ist aber ein Goal über dein Sales-Artefakt statt über dein Produkt. Und es beschreibt Output.\n\nDu würdest es komplett erreichen, indem du genau das weitermachst, was du seit zwölf Sprints machst. Genau das ist das Warnsignal.",
+          "verdict": "mixed",
+          "lesson": "Eine Firma ohne Umsatz verkauft tatsächlich über die Demo. Das ist also nicht dumm. Aber ein Product Goal, das du erreichst, ohne etwas zu ändern, ist nur dein Plan in anderen Worten - kein Ziel dafür."
+        },
+        {
+          "label": "Bis Juni drei zahlende Town-Pilots gewinnen.",
+          "outcome": "Es fokussiert die Firma und ist messbar - mehr, als die meisten Goals schaffen. Es ist aber keine Aussage über das Produkt. Darum kann es dir nicht sagen, ob der Tie-out den Anomaly-Workflow schlägt. Zwei Leute können beide darauf hinarbeiten und gegensätzliche Dinge bauen.",
+          "verdict": "mixed",
+          "lesson": "Company Goals und Product Goals sind beide legitim, aber sie sind nicht dasselbe Artefakt. Das Product Goal steht im Product Backlog. Der Rest des Product Backlogs entsteht, um zu definieren, was es erfüllt."
+        },
+        {
+          "label": "Die vertrauenswürdigste kommunale Transparency-Plattform in New England werden.",
+          "outcome": "Nichts im Backlog lässt sich daran testen. Jedes Item besteht, also ordnet es nichts. Du kannst es auch weder erfüllen noch aufgeben. Das Scrum Team kann also nie legitim weiterziehen.",
+          "verdict": "bad",
+          "lesson": "Das Product Goal ist das langfristige Ziel für das Scrum Team. Es muss ein Ziel erfüllen oder aufgeben, bevor es das nächste angeht. Ein Goal ohne Endzustand ist ein Slogan im Kostüm eines Commitments."
+        }
+      ]
+    },
+    {
+      "type": "guide",
+      "quote": "The Product Goal describes a future state of the product which can serve as a target for the Scrum Team to plan against. The Product Goal is in the Product Backlog. The rest of the Product Backlog emerges to define \"what\" will fulfill the Product Goal.",
+      "cite": "Scrum Guide 2020, Commitment: Product Goal",
+      "gloss": "Das Backlog ist da, um dem Goal zu dienen - nicht umgekehrt. Wenn deine Items nicht an einem Goal gemessen ausgewählt wurden, hast du eine Liste guter Ideen, keinen Plan."
+    },
+    {
+      "type": "teach",
+      "title": "Was diese Entscheidung gerade bewirkt hat",
+      "body": "Nimm an, du hast das Tie-out-Goal gewählt. Denn an dem wird der Rest dieses Sprints gemessen. Du hast gerade dein schwierigstes, am stärksten blockiertes, am wenigsten demo-taugliches Item zum Schwerpunkt gemacht.\n\nDas ist kein Heldentum, sondern genau der Punkt: Ein Goal, das nur absegnet, was du sowieso tust, kann nichts neu ordnen.\n\nEs schafft auch sofort ein Ehrlichkeitsproblem, das dir im Sprint Review begegnen wird. Der Tie-out braucht ein Backend, drei bis sechs Monate entfernt, und Priya wird fragen.\n\nMerk dir die Falle jetzt schon: Ein Product Goal, das auf etwas zielt, das du noch nicht shippen kannst, lässt jeden Sprint wie einen Umweg aussehen. Ausser jeder Sprint räumt ein echtes Hindernis davor aus dem Weg.",
+      "callout": {
+        "kind": "why",
+        "text": "Ein Increment ist ein konkreter Stepping Stone auf dem Weg zum Product Goal. Das Wort Stepping Stone leistet in diesem Satz echte Arbeit. Frag bei jedem Sprint, was er zwischen dir und dem Goal weggeräumt hat."
+      }
+    },
+    {
+      "type": "sim",
+      "title": "Sprint Planning, Topic One: Warum ist dieser Sprint wertvoll?",
+      "setup": "Letzten Donnerstag hast du Carla Benitez durch die Demo geführt. Da zeigte der Data Connections Screen den Corvus-Financials-Feed im Error-Status: zuletzt synchronisiert vor zwei Tagen, heute null Records. Sonst stand das nirgends im Produkt.\n\nCarlas Kommentar: Damit ist still und leise jede Budget-Zahl im Produkt falsch. Feed-Monitoring ist als R-19 abgelegt, weit unten in der Reihenfolge.\n\nDu hast auch drei Anomaly-Review-Workflow-Items, geschätzt und bereit. Nach denen fragt Dana seit einem Monat jede Woche. Du schlägst vor, wie das Produkt in diesem Sprint seinen Value steigern könnte.",
+      "choices": [
+        {
+          "label": "Vorschlag: Users können darauf vertrauen, dass die Zahlen auf dem Screen aktuell sind, weil das Produkt ihnen sagt, wenn sie es nicht sind.",
+          "outcome": "Das Scrum Team kann jetzt über die Arbeit streiten, ohne über das Ziel zu streiten. Die Developers fragen sofort, ob ein Banner reicht. Genau dieses Gespräch wolltest du. Und die Anomaly-Items können trotzdem mitfahren, wenn sie reinpassen.\n\nEs räumt auch ein Hindernis direkt vor dem Tie-out weg. Denn eine Reconciliation auf einem toten Feed ist schlimmer als gar keine.",
+          "verdict": "good",
+          "lesson": "Der Product Owner schlägt vor, wie das Produkt seinen Value und Nutzen im aktuellen Sprint steigern könnte. Dann definiert das ganze Scrum Team gemeinsam ein Sprint Goal. Schlag das Warum vor, nicht das Was."
+        },
+        {
+          "label": "Vorschlag: Feed Health Monitoring plus die drei Anomaly-Workflow-Items liefern.",
+          "outcome": "Alle wissen, was zu bauen ist, und niemand weiss, was zu schützen ist. An Tag neun, wenn etwas nachgeben muss, sieht jeder mögliche Cut wie ein Verfehlen des Goals aus. Denn das Goal ist die Liste. Die Developers verlieren genau die Flexibilität, die ihnen das Sprint Goal eigentlich geben soll.",
+          "verdict": "mixed",
+          "lesson": "Das Sprint Goal ist das einzige Ziel für den Sprint. Es gibt Flexibilität bezüglich der genauen Arbeit, die nötig ist, um es zu erreichen. Eine Liste von Items nimmt genau diese Flexibilität weg."
+        },
+        {
+          "label": "Kein Sprint Goal vorschlagen. Die Feed-Arbeit und die Anomaly-Arbeit haben nichts miteinander zu tun. Ein Goal über beide zu erzwingen, ergäbe einen künstlichen Satz, den niemand glaubt.",
+          "outcome": "Ehrlicher Instinkt - aber das ist nicht erlaubt. Das Sprint Goal muss vor dem Ende des Sprint Planning finalisiert sein.\n\nSchlimmer noch: Das Unbehagen war eine Information. Zwei voneinander unabhängige Arbeitspakete in einem Sprint sind meist ein Zeichen, dass du danach ordnest, wer gefragt hat - statt danach, wohin du willst.",
+          "verdict": "bad",
+          "lesson": "Das Sprint Goal schafft Kohärenz und Fokus. Es ermutigt das Scrum Team, zusammenzuarbeiten statt an getrennten Initiativen. Wenn du keins schreiben kannst, ist das ein Befund über den Sprint - kein Grund, es auszulassen."
+        },
+        {
+          "label": "Vorschlag: Dana kann ein Flag clearen, snoozen und annotieren, ohne Anomaly Review zu verlassen. Feed-Monitoring bleibt, wo es ist.",
+          "outcome": "Du bedienst deinen glaubwürdigsten, hartnäckigsten Stakeholder mit einem Item, das wirklich ready ist. Du bekommst ein freundliches Sprint Review.\n\nDu baust aber auch Workflow auf Zahlen, von denen du persönlich weisst, dass sie still und leise falsch sein können. Und du bist die einzige Person im Haus, die das weiss.",
+          "verdict": "mixed",
+          "lesson": "Nach der Stärke des Requests zu ordnen ist vertretbar - bis du Informationen hast, die der Requester nicht hat. Transparency ist ein Pillar, und sie gilt auch für das, was du über deine eigenen Daten weisst."
+        }
+      ]
+    },
+    {
+      "type": "guide",
+      "quote": "Topic One: Why is this Sprint valuable? The Product Owner proposes how the product could increase its value and utility in the current Sprint. The whole Scrum Team then collaborates to define a Sprint Goal that communicates why the Sprint is valuable to stakeholders. The Sprint Goal must be finalized prior to the end of Sprint Planning.",
+      "cite": "Scrum Guide 2020, Sprint Planning",
+      "gloss": "Du schlägst vor, das Team definiert, und es ist fertig, bevor jemand den Raum verlässt. Drei separate Fakten - und die Prüfung testet alle drei."
+    },
+    {
+      "type": "sim",
+      "title": "Topic Two: Die Zahl, die dir die Developers geben",
+      "setup": "Das Sprint Goal: Ein User kann den Zahlen auf dem Screen vertrauen, weil das Produkt anzeigt, wenn sie nicht aktuell sind. Die Developers ziehen die Feed-Items rein und zerlegen sie.\n\nNach der Hälfte geben sie dir die ehrliche Zahl: Connection Health plus Alerting plus ein sichtbarer Staleness-Indikator auf jedem Screen, der den Feed liest - das ist der Grossteil des Sprints. Und beim letzten Teil sind sie nicht sicher.\n\nSie schlagen vor: Connection Health und Alerting nehmen, den Indikator pro Screen streichen. Du glaubst, dass genau der Indikator Dana wirklich schützt. Denn niemand öffnet je den Data-Connections-Screen. Dein einziger Engineer sitzt mit im Raum.",
+      "choices": [
+        {
+          "label": "Frag, was ein schlankerer Indikator kosten würde - ein Banner auf den zwei Screens, die Dana und Priya tatsächlich öffnen. Und lass sie entscheiden, ob das reinpasst.",
+          "outcome": "Du hast den Trade-off verändert, zwischen dem sie wählen - nicht ihre Antwort. Sie kommen mit einer abgespeckten Version zurück, bei der sie sicher sind.\n\nDas Sprint Goal bleibt intakt. Denn das Goal war nie jeder Screen, sondern dass der User Bescheid weiss.",
+          "verdict": "good",
+          "lesson": "Die Developers, die die Arbeit machen, sind für das Sizing verantwortlich. Der Product Owner darf die Developers beeinflussen, indem er ihnen hilft, Trade-offs zu verstehen und auszuwählen. Einfluss heisst Optionen anbieten, nicht die Schätzung overrulen."
+        },
+        {
+          "label": "Sag ihnen, der Indikator ist nicht verhandelbar, weil er der ganze Sinn des Sprint Goals ist. Und bitte sie, einen Weg zu finden.",
+          "outcome": "Vielleicht kriegst du ihn. Aber du kriegst ihn über den Weg, der noch übrig bleibt - und das ist meist die Qualität. Quality does not decrease ist eine Sprint-Regel, auf die du gerade Druck gemacht hast.\n\nUnd die Zahl, die sie dir im nächsten Sprint geben, wird gepolstert sein. Damit verlierst du das ehrliche Signal für immer.",
+          "verdict": "bad",
+          "lesson": "Wie die gewählte Arbeit erledigt wird, liegt allein im Ermessen der Developers. Niemand sonst sagt ihnen, wie sie Product Backlog Items in Increments of value verwandeln. Ownership über das Warum heisst nicht Ownership über das Wie."
+        },
+        {
+          "label": "Akzeptier ihren Vorschlag so, wie er ist, und schieb den Indikator für den nächsten Sprint ganz nach oben im Product Backlog.",
+          "outcome": "Du hast das Sizing respektiert, das ist richtig. Aber du hast den Einfluss ausgelassen, den dir der Guide ausdrücklich gibt - und das ist Waste.\n\nDer Sprint endet jetzt vielleicht mit Alerting, das niemand sieht. Das Goal ist also technisch erreicht und praktisch verfehlt. Und das merkst du erst im Review.",
+          "verdict": "mixed",
+          "lesson": "Zurückhaltung und Verantwortung-Abgeben sehen im Raum genau gleich aus. Was sie unterscheidet, ist eine Frage: Hast du ihnen einen Trade-off angeboten, den sie noch nicht bedacht hatten - bevor du die Antwort akzeptiert hast?"
+        },
+        {
+          "label": "Reduzier das Sprint Goal auf das, wo sie sicher sind: nur Alerting.",
+          "outcome": "Sicher, ehrlich - und du hast genau den Teil weggegeben, in dem der Value steckt. Das Goal beschreibt jetzt den Plan. Das heisst, der Plan kann nie mehr dagegen neu verhandelt werden.\n\nUnd an Tag neun hast du kein Prinzip mehr, mit dem du eine Entscheidung treffen kannst.",
+          "verdict": "mixed",
+          "lesson": "Wenn du das Goal schrumpfst, damit es zum Plan passt, drehst du ihre Beziehung um. Das Sprint Goal ist das, was dem Sprint Backlog erlaubt, sich zu ändern, ohne dass der Sprint scheitert."
+        }
+      ]
+    },
+    {
+      "type": "trap",
+      "myth": "Der Product Owner legt den Scope des Sprints fest. Wenn die Developers sagen, es sei zu viel, entscheidet der Product Owner, was reinpasst.",
+      "truth": "Im Gespräch mit dem Product Owner wählen die Developers Items aus dem Product Backlog für den aktuellen Sprint aus. Die Developers, die die Arbeit machen, sind für das Sizing verantwortlich. Der Product Owner darf die Developers beeinflussen, indem er ihnen hilft, Trade-offs zu verstehen und auszuwählen.",
+      "why": "PSPO I liebt diese Grenze, weil die richtige Antwort zwischen zwei offensichtlich falschen liegt. Die Schätzung zu overrulen ist falsch. Nichts zu sagen ist auch falsch. Denn über Trade-offs Einfluss nehmen ist ausdrücklich dein Job.\n\nDie richtige Option enthält fast immer die Wörter discussion oder trade-off."
+    },
+    {
+      "type": "sim",
+      "title": "Tag sechs: SOC 2 platzt mitten in deinen Sprint",
+      "setup": "Tag sechs eines zweiwöchigen Sprints. Carla Benitez, die IT-Koordinatorin beim laufenden RFP, schreibt per Mail: Ein SOC-2-Report ist Pflicht. Und das Submission-Fenster ist das Einzige, was niemand verschieben kann.\n\nDeine Compliance-Matrix führt Security, Availability, Processing Integrity und Privacy als controls implemented, audit not conducted. Jedes Datum in der Compliance-Roadmap mit zehn Punkten ist ein Platzhalter. WCAG 2.1 AA wurde nie geprüft. Und die Matrix selbst vermerkt, dass die meisten Government-RFPs eine Accessibility-Dokumentation verlangen.\n\nAlle auf deiner Seite stellen dieselbe Einzeiler-Frage: Können wir stoppen und das fixen? Nichts im Sprint Backlog betrifft Compliance.",
+      "choices": [
+        {
+          "label": "Antworte Carla heute mit dem genauen aktuellen Stand und dem Fallback über einen Contingent Contract. Lass das Sprint Backlog in Ruhe. Compliance kommt ins Product Backlog und wird beim nächsten Planning geordnet.",
+          "outcome": "Die Antwort kostet dich einen Nachmittag und die Developers nichts. Carla hat jetzt ein genaues Bild und ein echtes Instrument: einen Zuschlag unter Vorbehalt der Fertigstellung. Das Sprint Goal bleibt unberührt.\n\nUnd die Compliance-Entscheidung fällt nächste Woche gegen dein Product Goal - statt gegen die Temperatur einer E-Mail.",
+          "verdict": "good",
+          "lesson": "Es werden keine Änderungen gemacht, die das Sprint Goal gefährden würden. Das Dringende war eine Kommunikation, kein Build. Ein Product Owner, der das nicht auseinanderhalten kann, wird jeden Sprint stören, den er führt."
+        },
+        {
+          "label": "Brich den Sprint ab. Nur du hast diese Autorität, und ein RFP, das das ganze Jahr prägt, wiegt mehr als zwei Wochen Feed-Arbeit.",
+          "outcome": "Du hast den einzigen irreversiblen Hebel, den du hast, an einem Sprint Goal eingesetzt, das noch komplett gültig ist. Und dafür hast du die halbfertige Arbeit des Sprints verbrannt.\n\nDas RFP geht dadurch nicht schneller, denn der Blocker ist ein Audit, das du nicht kontrollierst. Wenn du das nächste Mal sagst, ein Sprint Goal sei wichtig, glaubt dir niemand mehr ganz.",
+          "verdict": "bad",
+          "lesson": "Laut Guide kann ein Sprint abgebrochen werden, wenn \"the Sprint Goal becomes obsolete\". Und nur der Product Owner hat die Autorität, den Sprint abzubrechen. Obsolete ist die Bedingung - nicht unbequem und nicht von etwas Wichtigerem übertrumpft."
+        },
+        {
+          "label": "Verhandle den Scope mit den Developers neu: den Indikator pro Screen streichen, zwei Tage Evidence-Sammeln und ein Accessibility-Assessment dazunehmen. Den Wortlaut des Sprint Goals so lassen, wie er ist.",
+          "outcome": "Nach dem Buchstaben der Regel vertretbar: Scope darf neu verhandelt werden, und das Goal überlebt auf dem Papier.\n\nIn der Praxis hast du deinen einzigen Engineer auf Arbeit gesetzt, die vor allem aus Dokumenten und Evidence-Sammeln besteht, nicht aus Engineering. Und das Goal ist jetzt ein Satz, auf den niemand hinarbeitet.",
+          "verdict": "mixed",
+          "lesson": "Scope darf mit dem Product Owner geklärt und neu verhandelt werden, wenn man mehr lernt. Eine Neuverhandlung, die die Worte behält und die Substanz rausnimmt - so wird ein Sprint Goal zur Deko."
+        },
+        {
+          "label": "Behandle das als Sales-Frage statt als Produkt-Frage und halt dich raus.",
+          "outcome": "Du schützt den Sprint - das ist halb richtig. Aber du gibst auch eine Frage ab: Was muss für das Produkt gelten, damit es gekauft wird? Die Antwort kommt als Versprechen zurück, das jemand anderes gegeben hat.\n\nSechs Wochen später merkst du, was in deinem Namen zugesagt wurde.",
+          "verdict": "mixed",
+          "lesson": "Der Product Owner ist accountable for maximizing the value of the product resulting from the work of the Scrum Team. Die Compliance-Lage gehört zu dem, was dieser Käufer kauft. Also liegt sie innerhalb der Accountability - auch wenn sie ausserhalb des Sprints liegt."
+        }
+      ]
+    },
+    {
+      "type": "guide",
+      "quote": "During the Sprint: No changes are made that would endanger the Sprint Goal; Quality does not decrease; The Product Backlog is refined as needed; and, Scope may be clarified and renegotiated with the Product Owner as more is learned.",
+      "cite": "Scrum Guide 2020, The Sprint",
+      "gloss": "Der Sprint ist nicht versiegelt. Scope bewegt sich, das Sprint Goal nicht, und die Neuverhandlung läuft mit dir. Fast jede Prüfungsfrage zur Mitte des Sprints testet, ob du weisst: Das sind drei verschiedene Aussagen."
+    },
+    {
+      "type": "sim",
+      "title": "Tag neun: Die Arbeit war grösser als gedacht",
+      "setup": "Für den Staleness-Indikator musste jemand lesen, wie jeder Screen seine Zahlen berechnet. Dabei kam das hier raus: Budget Pace zeigt vier Departments, die über Budget laufen. Die Executive Overview sagt drei.\n\nDer eine Screen rundet vor dem Filtern, der andere vergleicht ungerundet. Parks and Recreation mit 1.905 Prozent landet je nach Screen auf der einen oder anderen Seite. Das Paket fürs Select Board wird am Donnerstag aus einem der beiden gedruckt.\n\nDas richtig zu fixen heisst: sich einigen, was over budget bedeutet, und beide Screens ändern. Noch vier Tage im Sprint.",
+      "choices": [
+        {
+          "label": "Bring es als Scope-Neuverhandlung zurück zu den Developers. Gleiches Sprint Goal, andere Arbeit. Frag, was eine einzige gemeinsame Definition von over budget in vier Tagen kostet, und lass sie wählen, was sie dafür streichen.",
+          "outcome": "Das Sprint Goal war, dass ein User den Zahlen auf dem Screen vertrauen kann. Zwei Screens, die sich widersprechen - das ist dasselbe Goal in einem anderen Mantel.\n\nSie streichen das Banner auf dem zweiten Screen, um den Fix zu bezahlen. Der Sprint endet mit weniger gebaut und mehr wahr. Genau diesen Tausch sollte das Goal ermöglichen.",
+          "verdict": "good",
+          "lesson": "Das Sprint Goal gibt dir Flexibilität bei der genauen Arbeit, die nötig ist, um es zu erreichen. Genau dafür ist diese Flexibilität da. Und deshalb schlägt an Tag neun ein Goal eine Liste."
+        },
+        {
+          "label": "Erfass es als Defect im Product Backlog und lass den Sprint-Plan intakt. Ein Kurswechsel an Tag neun ist genau das, woran Sprints scheitern.",
+          "outcome": "Diszipliniert - und in diesem Fall falsch. Das Paket wird am Donnerstag gedruckt. Eine Diskrepanz, die du schon gefunden hast, landet also noch in diesem Sprint bei einem öffentlichen Gremium.\n\nQuality does not decrease ist eine der vier Sprint-Regeln. Wissentlich zwei widersprüchliche Antworten zu shippen heisst nicht, die Qualität stabil zu halten.",
+          "verdict": "mixed",
+          "lesson": "Den Plan schützen und das Goal schützen sind zwei verschiedene Jobs. Frag dich, welchem von beiden deine Disziplin wirklich dient, bevor du den Plan verteidigst."
+        },
+        {
+          "label": "Sag Dana, das Paket dieses eine Mal aus Budget Pace zu drucken, und plan den richtigen Fix für den nächsten Sprint ein.",
+          "outcome": "Billig, schnell, und diese Woche funktioniert's. Aber du hast auch eine Person zum Workaround für einen Produkt-Defect gemacht. Die nächste Person, die ein Paket druckt, weiss nicht, dass es diese Regel gibt.\n\nDana trägt jetzt ein Stück undokumentiertes Wissen, das nur ihr zwei teilt.",
+          "verdict": "mixed",
+          "lesson": "Ein menschlicher Workaround ist eine legitime kurzfristige Mitigation und ein schreckliches langfristiges Artefakt. Denn er ist unsichtbar für alle, die nicht beim Gespräch dabei waren. Transparency ist ein Pillar, und eine mündliche Ausnahme ist das Gegenteil davon."
+        },
+        {
+          "label": "Fix es übers Wochenende selbst im Data Layer, damit der Sprint-Plan unberührt bleibt.",
+          "outcome": "Du hast eine Änderung ins Produkt gebracht, die nicht über die Developers lief, nicht geschätzt wurde und die Definition of Done nicht erfüllt hat. Das Sprint Backlog ist ein Plan von und für die Developers. Und du hast das Produkt darunter verändert. Am Montag weiss niemand, welches Verhalten gewollt ist.",
+          "verdict": "bad",
+          "lesson": "Die Founder-Product-Owner-Falle in ihrer reinsten Form. Arbeit kann nicht als Teil eines Increments gelten, ausser sie erfüllt die Definition of Done. Und Speed, die du dir durch das Überspringen erkaufst, ist nur geliehen - auf Kosten der Transparency."
+        }
+      ]
+    },
+    {
+      "type": "teach",
+      "title": "Warum eine Rundungsregel ein Definition-of-Done-Problem ist",
+      "body": "Zwei Screens haben zwei Antworten geliefert, und beide wurden genau nach Spezifikation gebaut. Nichts war kaputt - und genau das ist das Beunruhigende.\n\nWas fehlte, war ein gemeinsames Verständnis davon, was over budget bedeutet. Und die Definition of Done existiert genau dafür: ein gemeinsames Verständnis zu schaffen, welche Arbeit abgeschlossen ist. Wenn der Value deines Produkts darin liegt, dass man einer Zahl vertrauen kann, dann ist eine schriftliche Definition für jede publizierte Metrik eine \"quality measure required for the product\". Genau so formuliert der Guide selbst, was in die Definition of Done gehört.\n\n[[PRACTICE]] Eine Regel wie no metric ships without a written definition einzuführen, ist Practice, nicht Scrum. Wo der Guide klar ist: wem sie gehört. Dem Scrum Team, nicht dir allein.",
+      "callout": {
+        "kind": "warn",
+        "text": "Wenn die Definition of Done kein organisationaler Standard ist, muss das Scrum Team eine Definition of Done erstellen, die zum Produkt passt. Als Product Owner eine von oben vorzugeben, ist ein häufiger und leiser Fehler."
+      }
+    },
+    {
+      "type": "sim",
+      "title": "Das Sprint Review: vier Leute, vier Wahrheiten",
+      "setup": "Das Alerting funktioniert, die zwei Screens stimmen jetzt überein, und das Staleness-Banner ist auf den wichtigen Screens live. Dann macht der Raum, was Räume halt machen.\n\nYusuf Adeyemi nennt Ask the Ledger zentral für seine Arbeit und will es noch weiter öffnen. Dana Whitcomb sagt, sie würde es morgen eintauschen - gegen Saved Views, denen sie vertraut. Priya Raman stellt die einzige Frage, die sie je stellt: Wann kann sie die Zahlen des Produkts mit ihrem Bankauszug abgleichen? Denn ihr Name steht auf dem Warrant. Glen Ostrowski will Alerts für Purchase-Order-Obergrenzen.\n\nJede und jeder von ihnen sagt die Wahrheit. Und du hast einen Engineer.",
+      "choices": [
+        {
+          "label": "Nutz den Raum. Frag Dana, was Saved Views zeigen müssten, damit sie Ask the Ledger nicht mehr weghaben will. Und frag Yusuf, was er damit macht, das keine View ersetzen könnte. Danach ordnest du mit dem, was du gelernt hast.",
+          "outcome": "Es zeigt sich: Der Konflikt dreht sich gar nicht um diesen Screen. Dana will Resultate, die sie vor einem Board-Mitglied verteidigen kann. Yusuf will beliebige Fragen beantwortet haben, ohne dich fragen zu müssen. Das ist kompatibel.\n\nDu gehst mit einer Scoping-Entscheidung raus statt mit einem Patt. Und Glen und Priya wurden offiziell gehört, voreinander.",
+          "verdict": "good",
+          "lesson": "Das Sprint Review ist eine Working Session, und das Scrum Team sollte vermeiden, es auf eine Präsentation zu beschränken. Die Teilnehmenden arbeiten zusammen daran, was als Nächstes zu tun ist. Das passiert aber nur, wenn du Fragen stellst, deren Antwort du nicht kennst."
+        },
+        {
+          "label": "Antworte zuerst Priya, und zwar öffentlich: Der Tie-out ist das Adoption-Gate, er braucht ein echtes Backend, drei bis sechs Monate entfernt. Hier ist die Range, und hier ist, wovon sie abhängt. Den Rest nimmst du mit.",
+          "outcome": "Die ehrliche Antwort an den wichtigsten Stakeholder, da, wo alle sie hören. Und sie kostet dich die Glaubwürdigkeit einer vagen Beruhigung, die du jetzt nicht mehr geben musst. Gleichzeitig verbrauchst du damit den grössten Teil des Raums für eine Person. Die anderen drei gehen mit nichts raus, worauf sie handeln können.",
+          "verdict": "mixed",
+          "lesson": "Nur was bereits passiert ist, darf für vorausschauende Entscheidungen genutzt werden. Deshalb ist eine Range mit benannten Dependencies die richtige Form von Antwort. Zu wählen, wessen Frage den Raum bekommt, bleibt trotzdem ein echter Preis, den du bezahlt hast."
+        },
+        {
+          "label": "Präsentier, was geshippt wurde, bedank dich bei allen und nimm alle vier Requests mit, um sie danach allein zu ordnen.",
+          "outcome": "An deiner Accountability ist hier nichts falsch, und die Reihenfolge wird wahrscheinlich passen. Aber du hast eine Working Session in eine Demo verwandelt. Und die Erkenntnis, dass Dana und Yusuf eigentlich nie in Konflikt waren, kannst du nur entdecken, wenn beide im Raum sind.",
+          "verdict": "mixed",
+          "lesson": "Allein entscheiden ist korrekt. Allein sammeln ist Waste: Du verschenkst das eine Event, das Scrum speziell für die Zusammenarbeit mit Stakeholdern baut."
+        },
+        {
+          "label": "Gib es dem Raum. Vier Stakeholder, eine Abstimmung, gebaut wird, was gewinnt.",
+          "outcome": "Du bekommst eine Antwort, die fair aussieht, und hast eine Entscheidung weggegeben, die deine ist. Ausserdem zerstörst du damit die eigentliche Erkenntnis: dass die vier gar nicht dieselbe Frage beantworten. Und du bringst allen bei, dass man das Backlog bewegt, indem man mehr Leute mitbringt.",
+          "verdict": "bad",
+          "lesson": "Der Product Owner ist eine Person, kein Komitee. Wer das Product Backlog ändern will, kann das tun, indem er versucht, \"convince the Product Owner\". Alle konsultieren, allein entscheiden."
+        }
+      ]
+    },
+    {
+      "type": "guide",
+      "quote": "During the event, the Scrum Team and stakeholders review what was accomplished in the Sprint and what has changed in their environment. Based on this information, attendees collaborate on what to do next. The Product Backlog may also be adjusted to meet new opportunities. The Sprint Review is a working session and the Scrum Team should avoid limiting it to a presentation.",
+      "cite": "Scrum Guide 2020, Sprint Review",
+      "gloss": "Zusammenarbeiten daran, was als Nächstes zu tun ist - und das Backlog darf angepasst werden. Nirgends steht approve, sign off, accept oder prioritize."
+    },
+    {
+      "type": "sim",
+      "title": "Immer noch im Review: der kleine Request, der nicht klein ist",
+      "setup": "Ruth Delgado, die Vorsitzende des Select Board, wünscht sich etwas Winziges. Kann die Demo immer das heutige Datum zeigen, damit sie fürs Board nicht veraltet wirkt?\n\nDas Dataset ist zu 75 Prozent verbraucht, bezogen auf ein Fiscal Year von Juli bis Juni. Das pinnt den Snapshot rechnerisch auf März 2026. Mit einer Live-Uhr sähe es so aus, als hätte die Gemeinde 75 Prozent ihrer Appropriation in sechs Wochen ausgegeben. Jede Projektion, jedes Pace-Flag und jede At-risk-Zahl auf dem Screen wäre dann falsch.\n\nSie macht nicht auf schwierig. Sie hat recht, dass ein veraltetes Datum schlecht aussieht.",
+      "choices": [
+        {
+          "label": "Zeig die Rechnung im Raum. Live-Datum, korrekte Pace-Mathe oder dieses Dataset. Beliebige zwei, nie alle drei. Frag sie, welches sie aufgeben will.",
+          "outcome": "Eine kurze, schlichte Erklärung macht aus deinem Urteil einen Constraint, den sie selbst prüfen kann. Sie wählt das fixe Datum, ohne dass du irgendetwas ablehnen musst. Und sie versteht jetzt eine Eigenschaft des Produkts, die sie dem nächsten Board-Mitglied erklären wird, das fragt.",
+          "verdict": "good",
+          "lesson": "Transparency, der erste Pillar, angewendet auf einen Constraint statt auf ein Backlog. Wenn du einen versteckten Constraint sichtbar machst, kann ein Stakeholder den Trade-off selbst machen. Das ist ein stärkerer Outcome, als die Diskussion zu gewinnen."
+        },
+        {
+          "label": "Biete die dritte Tür an: Behalte das fixe Datum und beschrifte es sichtbar als Snapshot von März 2026. So wirkt es bewusst gewählt statt veraltet.",
+          "outcome": "Das ist sehr wahrscheinlich das richtige Feature, denn ihr eigentliches Problem war, veraltet auszusehen - nicht das Datum selbst. Aber du hast es gelöst, bevor du ihr den Constraint gezeigt hast. So erfährt sie nie, warum sich das Datum nicht bewegen kann. Und derselbe Request kommt nächstes Quartal von jemand anderem wieder.",
+          "verdict": "mixed",
+          "lesson": "Das genannte Problem zu lösen statt das gewünschte Feature zu bauen, ist meistens richtig. Wenn du die Erklärung überspringst, tauschst du ein dauerhaftes Verständnis gegen einen einmaligen Fix."
+        },
+        {
+          "label": "Nimm es als Product Backlog Item mit und komm mit Optionen zurück.",
+          "outcome": "Sicher und nicht falsch. Aber es macht aus einem kurzen Gespräch ein Ticket, eine Entscheidung und eine Follow-up-Mail. Du verlierst ausserdem die Chance, korrigiert zu werden: Falls es einen Grund gibt, warum das Board wirklich ein Live-Datum braucht, war sie die einzige Person im Raum, die dir das hätte sagen können.",
+          "verdict": "mixed",
+          "lesson": "Eine Entscheidung zu vertagen ist manchmal Klugheit und manchmal Ausweichen. Der Test: Brauchst du Informationen, die du im Raum nicht hast? Hier hattest du alle."
+        },
+        {
+          "label": "Sag ja. Es ist eine einzeilige Änderung, und der Request kam von einem genehmigenden Gremium.",
+          "outcome": "Jede Projektion, jedes Pace-Flag und jede At-risk-Zahl bricht auf einmal. Und zwar plausibel statt offensichtlich - das ist schlimmer. Der Screen zeigt weiter selbstbewusst Zahlen, die falsch sind. Und das genau vor dem Publikum, für dessen Vertrauen das Produkt da ist.",
+          "verdict": "bad",
+          "lesson": "Die Organisation muss die Entscheidungen des Product Owners respektieren. Und dieser Respekt ist nichts wert, wenn du gar keine triffst. Seniorität ist kein Argument - sie ist ein Grund, sorgfältiger zu erklären."
+        }
+      ]
+    },
+    {
+      "type": "teach",
+      "title": "Was das Review tatsächlich gebracht hat",
+      "body": "Zähl, was sich verändert hat. Der Konflikt um Ask the Ledger hat sich als zwei kompatible Needs herausgestellt. Das ist ein Backlog Item, das du heute Morgen noch nicht hattest. Priya hat eine Range und eine Dependency statt einer Beruhigung - das heisst, sie kann planen. Ruth versteht einen Constraint. Glen wurde gehört und hat nichts bekommen. Das ist ein echter Outcome und braucht ein Follow-up.\n\nNichts davon ist ein Status-Update. Achte auch darauf, was nicht passiert ist: Niemand hat etwas approved, nichts wurde abgesegnet, und das Increment war releasebar, bevor das Review überhaupt angefangen hat. Der Guide sagt explizit, dass das Sprint Review nie ein Gate für das Releasen von Value ist.",
+      "callout": {
+        "kind": "note",
+        "text": "Das Sprint Review ist das zweitletzte Event des Sprints. Die Retrospective schliesst ihn ab - und genau die wirst du gleich versucht sein zu überspringen."
+      }
+    },
+    {
+      "type": "sim",
+      "title": "Die Retrospective - und das, was jemand vorsichtig sagt",
+      "setup": "Dein Scrum Master, der auch Delivery und die Hälfte vom Support macht, eröffnet die Retrospective. Die Developers bringen die Diskrepanz zwischen den zwei Screens auf. Sie sagen: Sie hat zwölf Sprints lang überlebt, weil nie jemand aufgeschrieben hat, was over budget bedeutet.\n\nDann sagt einer von ihnen, vorsichtig: Das Compliance-Gespräch an Tag sechs hat fast einen ganzen Tag deiner Aufmerksamkeit gekostet. Und sie waren die ganze Zeit wegen einer Entscheidung blockiert.\n\nDu bist der Product Owner, der Gründer und die Person, die die RFP-Antwort geschrieben hat. Was machst du in diesem Raum?",
+      "choices": [
+        {
+          "label": "Sag, dass die Unterbrechung auf deine Kappe ging. Frag sie, was sie weniger teuer gemacht hätte. Dann lass das Team die eine einzige Änderung wählen, die ins nächste Sprint Backlog kommt.",
+          "outcome": "Die Antwort ist am Ende klein und konkret: eine feste Regel, dass Entscheidungen, die sie blockieren, bis Ende Tag ein Ja, ein Nein oder einen Zeitpunkt bekommen. Das kommt ins nächste Sprint Backlog.\n\nAusserdem hast du vorgelebt, was Retrospectives zum Funktionieren bringt: Eine Person mit Macht steckt den ersten Treffer ein.",
+          "verdict": "good",
+          "lesson": "Das Scrum Team inspiziert, wie der letzte Sprint gelaufen ist - in Bezug auf individuals, interactions, processes, tools und ihre Definition of Done. Du bist Teil des Scrum Teams. Also sind auch deine Interactions im Scope, inklusive derer, die auf deine Kappe gingen."
+        },
+        {
+          "label": "Nimm beide Erkenntnisse in die Definition of Done auf: Keine Metrik geht live ohne schriftliche Definition. Und kein Screen geht live ohne Abgleich mit jedem Screen, den er dupliziert.",
+          "outcome": "Beide Regeln sind gut, und die Retrospective ist das richtige Event, um die Definition of Done zu inspizieren. Aber du hast sie verkündet.\n\nWenn es keinen organisatorischen Standard gibt, gehört die Definition of Done dem Scrum Team. Die Developers sind diejenigen, die sich daran halten müssen. Und sie waren kurz davor, das meiste davon selbst vorzuschlagen.",
+          "verdict": "mixed",
+          "lesson": "Richtiger Inhalt, falsche Hand am Stift. In der Retrospective inspiziert das Scrum Team die Definition of Done. Sie ist nicht der Ort, wo der Product Owner eine Quality Policy erlässt."
+        },
+        {
+          "label": "Notier beide Verbesserungen und schieb sie auf. Der nächste Sprint ist schon voll, und das Tie-out-Backend hat Priorität.",
+          "outcome": "Ehrlich bezüglich Kapazität. Aber es heisst auch: Das Definitionsproblem, das gerade ein öffentliches Board Packet erreicht hat, überlebt noch einen weiteren Sprint.\n\nDer Guide sagt, die wirkungsvollsten Verbesserungen werden so schnell wie möglich angegangen. Und diese hier hat dich schon einmal etwas gekostet.",
+          "verdict": "mixed",
+          "lesson": "Verbesserungen konkurrieren mit Features um dieselbe Kapazität, und diese Spannung ist real. Nicht vertretbar ist es, standardmässig aufzuschieben. Denn eine Verbesserung, die nie eingeplant wird, wurde eigentlich nie identifiziert."
+        },
+        {
+          "label": "Bleib still und lass die Developers machen. Die Retrospective ist dafür da, dass das Team sich selbst inspiziert. Ein Product Owner im Raum dämpft die Ehrlichkeit.",
+          "outcome": "Das Einzige, was über dich angesprochen wurde, bleibt unbeantwortet. Die Botschaft, die das Team mitnimmt: Über deine Unterbrechungen kann man nicht reden.\n\nDie Retrospective ist für das ganze Scrum Team, und du gehörst dazu. Du hast sie mit dem Daily Scrum verwechselt - das ist das Event, das für die Developers ist.",
+          "verdict": "bad",
+          "lesson": "Das Daily Scrum ist ein 15-Minuten-Event für die Developers. Die Retrospective ist für das Scrum Team, und dazu gehören der Product Owner und der Scrum Master. Andere Events, andere Teilnehmende - und die Prüfung fragt beides ab."
+        }
+      ]
+    },
+    {
+      "type": "guide",
+      "quote": "The Scrum Team inspects how the last Sprint went with regards to individuals, interactions, processes, tools, and their Definition of Done. Inspected elements often vary with the domain of work. Assumptions that led them astray are identified and their origins explored. The Scrum Team discusses what went well during the Sprint, what problems it encountered, and how those problems were (or were not) solved.",
+      "cite": "Scrum Guide 2020, Sprint Retrospective",
+      "gloss": "Assumptions that led them astray ist der Satz für diesen Sprint. Niemand hat aufgeschrieben, was over budget bedeutet. Und zwölf Sprints später hätte ein öffentliches Board Packet fast die falsche Zahl enthalten."
+    },
+    {
+      "type": "trap",
+      "myth": "Zwölf Sprints, jedes Roadmap-Item von R-01 bis R-16 geshipped, jedes mit eigenem Commit. Das ist ein Product Owner, der seinen Job gut macht.",
+      "truth": "Der Product Owner ist accountable for maximizing the value of the product resulting from the work of the Scrum Team. Und ein Increment ist ein konkreter Stepping Stone Richtung Product Goal.\n\nZwölf Sprints voller Increments, die sich nie auf das Adoption Gate zubewegen, sind Bewegung, nicht Fortschritt.",
+      "why": "Das ist das Antipattern, das man von innen am schwersten erkennt. Denn alles sieht gesund aus: Das Board bewegt sich, die Demo wird reichhaltiger, die Stakeholder sind zufrieden.\n\nDie Verteidigung des Guides ist das Product Goal. Genau deshalb muss ein Scrum Team ein Objective erfüllen oder aufgeben, bevor es das nächste angeht. Ohne das ersetzt Output fröhlich und für immer den Outcome."
+    },
+    {
+      "type": "write",
+      "prompt": "Schreib das Sprint Goal für Sprint 13. Berücksichtige alles, was in Sprint 12 passiert ist: Das Feed-Alerting ist geshipped, die zwei Screens stimmen jetzt überein, die Definitionslücke hat die Retrospective erreicht. Das Tie-out-Backend ist drei bis sechs Monate entfernt. Yusuf und Dana haben sich als kompatibel herausgestellt, Glen hat nichts bekommen, und ein laufendes RFP will SOC 2. Ein Satz.",
+      "starter": "Sprint Goal: ____\n\nWas ich zuerst streiche, falls es sich als zu gross herausstellt: ____\n\nWie ich im Review erkenne, ob wir es erreicht haben: ____\n\nDer Stakeholder, den das enttäuscht, und was ich ihm sagen werde: ____",
+      "rubric": [
+        "Ein Objective, keine Liste. Wenn darin das Wort and zwei unzusammenhängende Arbeitsblöcke verbindet, ist es ein Plan, der sich als Goal ausgibt.",
+        "Es sagt, warum der Sprint für jemand Benennbaren wertvoll ist. Und zwar in einer Sprache, die Dana oder Priya wiedererkennen würden - nicht in einer, die nur dein Engineer versteht.",
+        "Es lässt die genaue Arbeit offen, damit die Developers an Tag neun etwas streichen können, ohne das Goal zu verfehlen. Teste das: Frag dich, was du streichen würdest und ob das Goal den Schnitt überlebt.",
+        "Es räumt etwas aus dem Weg, das zwischen dir und dem Product Goal steht. Benenne das Hindernis, das es beseitigt.",
+        "Du nennst, wen das enttäuscht und was du ihnen sagen wirst. Ein Sprint Goal, das niemanden etwas kostet, hat keine Wahl getroffen."
+      ],
+      "model": "Sprint Goal: Ein Treasurer kann für die echten Daten einer Gemeinde sehen, dass eine publizierte Zahl und ihre Quelle übereinstimmen - und wo nicht.\n\nWas ich zuerst streiche: die Daten der zweiten Gemeinde und den Export. Lieber eine Gemeinde end to end als zwei Gemeinden halb.\n\nWie ich es im Review erkenne: Priya kann auf eine Zahl zeigen, ihre Quelle öffnen und mir selbst sagen, ob sie aufgeht. Ohne dass ich steuere.\n\nDer Stakeholder, den das enttäuscht: Glen, der jetzt schon zwei Sprints auf Ceiling-Alerts wartet. Was ich ihm sage: Es hat gegen das Tie-out verloren. Das Tie-out ist das Product Goal, die Ceiling-Arbeit nicht. Und falls ein überschrittenes Not-to-exceed einen Zuschlag kostet oder eine zweite Gemeinde dasselbe Risiko nennt, ziehe ich es vor die Anomaly-Arbeit statt dahinter."
+    },
+    {
+      "type": "keypoints",
+      "points": [
+        "Das Product Goal ist ein zukünftiger Zustand des Produkts, auf den du hin planen kannst. Es muss einen Teil deines bestehenden Backlogs schwach aussehen lassen - sonst ordnet es gar nichts.",
+        "Schlag das Warum vor, lass das Team das Sprint Goal definieren und finalisiere es, bevor das Sprint Planning endet. Eine Liste von Items ist kein Goal.",
+        "Die Developers schätzen den Umfang und entscheiden über das Wie. Du nimmst Einfluss, indem du Trade-offs anbietest. Gar nichts zu sagen ist genauso ein Fehler, wie sie zu überstimmen.",
+        "Der Scope darf mitten im Sprint mit dir neu verhandelt werden. Das Sprint Goal darf nicht gefährdet werden. Und ein Sprint wird nur abgebrochen, wenn sein Goal obsolet wird.",
+        "Hol dir von allen Input, entscheide allein und sag laut, wen du gerade enttäuscht hast und was deine Meinung ändern würde."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "m14q1",
+      "kind": "mcq",
+      "stem": "Halfway through the Sprint, the Developers discover the selected work is roughly twice the size they thought. The Sprint Goal is still valuable and still achievable in a reduced form. What does the Scrum Guide 2020 support?",
+      "options": [
+        "Extend the Sprint by a week so the committed items can be completed.",
+        "The Developers collaborate with the Product Owner to renegotiate the scope of the Sprint Backlog within the Sprint, without affecting the Sprint Goal.",
+        "Cancel the Sprint, since the plan is no longer accurate.",
+        "Move the unfinished items to the next Sprint at the Sprint Review and mark the Sprint failed."
+      ],
+      "answer": 1,
+      "explain": "This is the Guide almost verbatim: if the work turns out to be different than they expected, they collaborate with the Product Owner to negotiate the scope of the Sprint Backlog within the Sprint without affecting the Sprint Goal. Option 1 breaks the fixed-length rule that makes empiricism possible, and it is the most common real-world wrong answer. Option 3 misapplies cancellation, which requires the Sprint Goal to become obsolete, and only the Product Owner may do it. Option 4 invents a failure ceremony; unfinished items simply return to the Product Backlog.",
+      "cite": "Scrum Guide 2020, Commitment: Sprint Goal and The Sprint",
+      "tag": "events"
+    },
+    {
+      "id": "m14q2",
+      "kind": "sort",
+      "stem": "Sort each Sprint 12 decision by who the Scrum Guide 2020 puts it with.",
+      "buckets": [
+        "Product Owner",
+        "Developers",
+        "The whole Scrum Team"
+      ],
+      "items": [
+        {
+          "text": "The order of the Product Backlog",
+          "bucket": "Product Owner"
+        },
+        {
+          "text": "How much work is taken into the Sprint",
+          "bucket": "Developers"
+        },
+        {
+          "text": "Defining the Sprint Goal",
+          "bucket": "The whole Scrum Team"
+        },
+        {
+          "text": "How selected items are turned into an Increment",
+          "bucket": "Developers"
+        },
+        {
+          "text": "Whether to cancel the Sprint",
+          "bucket": "Product Owner"
+        },
+        {
+          "text": "The sizing of Product Backlog items",
+          "bucket": "Developers"
+        },
+        {
+          "text": "Creating a Definition of Done where the organization has no standard",
+          "bucket": "The whole Scrum Team"
+        },
+        {
+          "text": "Developing and explicitly communicating the Product Goal",
+          "bucket": "Product Owner"
+        }
+      ],
+      "explain": "The two people get mixed up most often. The Sprint Goal is defined by the whole Scrum Team collaborating after the Product Owner proposes why the Sprint is valuable, so it is neither purely yours nor purely theirs, and it is a commitment by the Developers once made. The Definition of Done follows the organizational standard if one exists, and otherwise the Scrum Team creates it. Everything about how much and how belongs to the Developers, and everything about what and in what order belongs to you. Cancellation is the one unilateral lever you hold alone.",
+      "cite": "Scrum Guide 2020, Product Owner, Developers, Sprint Planning, The Sprint, Definition of Done",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m14q3",
+      "kind": "mcq",
+      "stem": "Your Product Goal is that a treasurer can tie every number to her bank statement and ERP. A stakeholder with budget authority pushes hard for purchase-order ceiling alerts, an unrelated and genuinely valuable capability. What is the strongest Product Owner response?",
+      "options": [
+        "Add it to the current Sprint, since the organization must respect a budget holder and the request is legitimate.",
+        "Refuse and cite the Guide's statement that the organization must respect the Product Owner's decisions.",
+        "Tell him what it is currently behind and why, and name the specific evidence that would move it ahead, so he knows how to convince you rather than how to escalate.",
+        "Put it to the leadership team, since a disagreement between the Product Owner and a budget holder needs a neutral decision."
+      ],
+      "answer": 2,
+      "explain": "Both halves of the Product Owner passage have to hold at once. Those wanting to change the Product Backlog can do so by trying to convince the Product Owner, which is only meaningful if you can be convinced, and the organization must respect the decisions, which is only meaningful if you make them. Option 1 endangers the Sprint Goal and hands away the ordering. Option 2 quotes the Guide accurately and weaponises it, producing the bottleneck antipattern. Option 4 hands the accountability to a committee, and the Product Owner is one person, not a committee.",
+      "cite": "Scrum Guide 2020, Product Owner",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m14q4",
+      "kind": "multi",
+      "stem": "Two screens report different department counts because one rounds before filtering. Select the TWO statements that are supported by the Scrum Guide 2020.",
+      "options": [
+        "Quality does not decrease during the Sprint, so knowingly leaving both screens live is a quality decision, not a scheduling one.",
+        "The Definition of Done creates transparency by providing everyone a shared understanding of what work was completed as part of the Increment.",
+        "The Product Owner must accept or reject the affected items at the Sprint Review before they can be released.",
+        "A defect found mid-Sprint automatically cancels the Sprint.",
+        "The Sprint Review is the gate at which the Increment becomes releasable."
+      ],
+      "answer": [
+        0,
+        1
+      ],
+      "explain": "The first two are the Guide. Option 3 is a favourite trap because acceptance rituals are everywhere in practice; the Guide has no acceptance step, and work either meets the Definition of Done or it does not. Option 4 misuses cancellation, which requires the Sprint Goal to become obsolete and is the Product Owner's decision alone. Option 5 is directly contradicted: an Increment may be delivered to stakeholders prior to the end of the Sprint, and the Sprint Review should never be considered a gate to releasing value.",
+      "cite": "Scrum Guide 2020, The Sprint, Definition of Done, Increment",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m14q5",
+      "kind": "tf",
+      "stem": "Twelve Sprints have each produced a Done Increment and stakeholders are pleased, so the Product Owner is demonstrably maximizing the value of the product.",
+      "answer": false,
+      "explain": "Done Increments are necessary and not sufficient. An Increment is described as a concrete stepping stone toward the Product Goal, so the question is always what each one removed from between the team and that goal. A run of Increments that never touches the adoption gate is output rather than outcome, and stakeholder satisfaction is a poor detector because the pleasant items and the necessary ones are rarely the same items. This is exactly why the Guide requires a Product Goal and requires the team to fulfill or abandon one before taking on the next.",
+      "cite": "Scrum Guide 2020, Increment, Commitment: Product Goal, Product Owner",
+      "tag": "value"
+    },
+    {
+      "id": "m14q6",
+      "kind": "mcq",
+      "stem": "A live RFP requires SOC 2. Your controls are implemented, no audit has been conducted, and every roadmap date is a placeholder. The Sprint Goal is unrelated and still valid. Which combination is correct?",
+      "options": [
+        "Cancel the Sprint and reorder around compliance, because a Sprint may be cancelled when a more valuable opportunity appears.",
+        "Answer the buyer with the precise current state, leave the Sprint Goal intact, and order the compliance work against the Product Goal at the next Sprint Planning.",
+        "Commit a completion date to the buyer, then work backwards to make it true, since a public commitment creates the urgency to deliver.",
+        "Add the compliance work to the current Sprint without removing anything, since the Sprint still has eight days left."
+      ],
+      "answer": 1,
+      "explain": "Three module threads meet here. A Sprint is cancelled only when the Sprint Goal becomes obsolete, so option 1 misstates the condition. Only what has already happened may be used for forward-looking decision making, which rules out option 3: the audit window is not yours to control, so the date has no evidence under it. Option 4 endangers the Sprint Goal, and how much fits is the Developers' call, not yours. Option 2 separates the urgent communication from the build, which is the distinction that keeps Sprints stable.",
+      "cite": "Scrum Guide 2020, The Sprint, Sprint Planning, Product Owner",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m14q7",
+      "kind": "mcq",
+      "stem": "At the Retrospective, a Developer says a mid-Sprint interruption from you cost them most of a day. What is the best Product Owner behaviour, given who the Retrospective is for?",
+      "options": [
+        "Stay silent. The Retrospective is for the team to inspect itself and a Product Owner in the room suppresses honesty.",
+        "Acknowledge it, ask what would have made it cost less, and let the Scrum Team choose which improvement to carry into the next Sprint Backlog.",
+        "Explain why the interruption was necessary, so the team understands the commercial context and the finding is corrected.",
+        "Take the feedback offline with that Developer so the Retrospective stays focused on process rather than individuals."
+      ],
+      "answer": 1,
+      "explain": "The Retrospective is for the Scrum Team, which includes the Product Owner, and it explicitly inspects individuals and interactions alongside processes, tools, and the Definition of Done. Option 1 confuses it with the Daily Scrum, which is the 15-minute event for the Developers. Option 3 converts an inspection into a defence and teaches everyone that raising your name has a cost. Option 4 sounds considerate and removes a team-level pattern from the only event designed to catch it, and the most impactful improvements are supposed to be addressed as soon as possible.",
+      "cite": "Scrum Guide 2020, Sprint Retrospective and Daily Scrum",
+      "tag": "events"
+    }
+  ],
+  "cards": [
+    {
+      "id": "m14c1",
+      "front": "What makes a Product Goal usable rather than a slogan?",
+      "back": "It describes a future state of the product the team can plan against, it sits in the Product Backlog, and it can be fulfilled or abandoned. If every backlog item passes it, it orders nothing.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m14c2",
+      "front": "Sprint Planning Topic One, in the right order of actors",
+      "back": "The Product Owner proposes how the product could increase its value. The whole Scrum Team then collaborates to define the Sprint Goal. It must be finalized prior to the end of Sprint Planning.",
+      "tag": "events"
+    },
+    {
+      "id": "m14c3",
+      "front": "Why is a Sprint Goal better than a list of items?",
+      "back": "The Sprint Goal is a single objective that provides flexibility about the exact work needed to achieve it. A list removes that flexibility, so every mid-Sprint cut looks like failure.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m14c4",
+      "front": "What can a Product Owner do about a Developers' estimate?",
+      "back": "Influence it by helping them understand and select trade-offs. The Developers who will be doing the work are responsible for the sizing, and how the work gets done is at their sole discretion.",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m14c5",
+      "front": "The four rules that hold during a Sprint",
+      "back": "No changes are made that would endanger the Sprint Goal. Quality does not decrease. The Product Backlog is refined as needed. Scope may be clarified and renegotiated with the Product Owner as more is learned.",
+      "tag": "events"
+    },
+    {
+      "id": "m14c6",
+      "front": "When may a Sprint be cancelled, and by whom?",
+      "back": "A Sprint could be cancelled if the Sprint Goal becomes obsolete. Only the Product Owner has the authority to cancel the Sprint. Obsolete, not merely inconvenient or outranked.",
+      "tag": "events"
+    },
+    {
+      "id": "m14c7",
+      "front": "Retrospective versus Daily Scrum, on attendance",
+      "back": "The Daily Scrum is a 15-minute event for the Developers. The Sprint Retrospective is for the whole Scrum Team, so the Product Owner is in it and their own interactions are in scope.",
+      "tag": "events"
+    },
+    {
+      "id": "m14c8",
+      "front": "How do you tell output from outcome as a Product Owner?",
+      "back": "Ask what each Increment removed from between the team and the Product Goal. Twelve Done Increments and pleased stakeholders can still be motion toward nothing.",
+      "tag": "value"
+    }
+  ]
+}

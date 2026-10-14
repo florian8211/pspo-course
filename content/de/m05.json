@@ -1,0 +1,465 @@
+{
+  "id": "m05",
+  "num": 5,
+  "week": 2,
+  "title": "The Product Backlog",
+  "subtitle": "Eine Liste, in einer Reihenfolge, die alles enthält, woran das Team je arbeiten wird.",
+  "minutes": 30,
+  "why": "Jede Entscheidung, die du als Product Owner wirklich triffst, zeigt sich in einem einzigen Artifact. Und wenn dieses Artifact eine Wunschliste ist, auf der fünf Dinge alle als high markiert sind, hast du noch gar nichts entschieden.",
+  "objectives": [
+    "Die Definition des Product Backlog aus dem Scrum Guide wiedergeben und sagen, was jeder Teil davon ausschliesst",
+    "Erklären, warum ein ordered Backlog dich zu einer Entscheidung zwingt, der du mit einem prioritized Backlog ausweichen kannst",
+    "Refinement als laufende Aktivität behandeln, nicht als Meeting im Kalender",
+    "Benennen, wer für das Sizing verantwortlich ist, und den einen Hebel, den ein Product Owner ziehen darf",
+    "Definition of Ready, Story Points, Velocity und Grooming als Practice erkennen, nicht als Scrum"
+  ],
+  "beats": [
+    {
+      "type": "hook",
+      "body": "Dana Whitcomb, deine Finance Director Persona, öffnet Anomaly Review und sagt, sie liebt es. Fast im gleichen Atemzug sagt sie, dass sie ihm nicht traut. Denn sie sieht die Regel hinter einem Flag nicht und kann einen False Positive nicht clearen.\n\nAngela Pike im Accounts Payable lebt den ganzen Tag auf genau diesem Screen und kann ihn nur anschauen. Du hast einen Engineer. Was du also als Nächstes machst, machst du anstelle von allem anderen.\n\nDiese Liste, und die Reihenfolge, in die du sie bringst, ist das Product Backlog."
+    },
+    {
+      "type": "guide",
+      "quote": "The Product Backlog is an emergent, ordered list of what is needed to improve the product. It is the single source of work undertaken by the Scrum Team.",
+      "cite": "Scrum Guide 2020, Product Backlog",
+      "gloss": "Vier tragende Wörter in zwei Sätzen: emergent, ordered, needed, single. Jedes davon schliesst etwas aus. Der Rest dieses Moduls zeigt, was jedes davon ausschliesst."
+    },
+    {
+      "type": "teach",
+      "title": "Die einzige Quelle für Arbeit",
+      "body": "Single Source heisst genau das, wonach es klingt. Wenn das Scrum Team es macht, kommt es von hier. Kein Seitenkanal, kein Gefallen, um den ein Board-Mitglied im Gang gebeten hat, kein Bug, den jemand dem Engineer direkt geschickt hat.\n\nSobald Arbeit ausserhalb des Backlogs existiert, kann niemand mehr auf eine Liste schauen und wissen, was läuft. Dann läuft die Inspect-and-Adapt-Maschine mit einem unvollständigen Bild.\n\nBei Ledgerline ist das dein wahrscheinlichstes Leck. Du bist Founder, du machst die Sales Calls, und du sitzt neben dem einen Engineer. Der Gang ist sehr kurz.",
+      "callout": {
+        "kind": "warn",
+        "text": "Founder-Falle: Ein Request, den du persönlich stellst, ist trotzdem ein Request. Wenn er nicht im Backlog steht, ist er unsichtbare Arbeit, die mit sichtbarer Arbeit konkurriert. Und sie gewinnt immer, weil niemand gegen etwas argumentieren kann, das er nicht sieht."
+      }
+    },
+    {
+      "type": "analogy",
+      "title": "Die einspurige Brücke",
+      "body": "Fünf Lastwagen fahren an eine einspurige Brücke, und auf jedem steht URGENT an der Seite. Die Aufschrift entscheidet nichts. Irgendwer muss trotzdem sagen, wer zuerst rüberfährt und wer als Zweiter.\n\nDiese zweite Entscheidung ist die, der die Leute ausweichen. Denn genau da hört eine Präferenz auf, privat zu sein.\n\nEine Priority ist ein Label, und beliebig viele Dinge können dasselbe tragen. Eine Order ist eine Sequenz, und eine Sequenz hat keine Gleichstände. Das ist keine bürokratische Ordnungsliebe. Es ist der Unterschied zwischen einem Dokument, das die Meinung aller festhält, und einem Dokument, das deine Entscheidung enthält."
+    },
+    {
+      "type": "teach",
+      "title": "Ordered, nicht prioritized",
+      "body": "Schau, was sich ändert, wenn sich das Wort ändert. Ein prioritized Backlog beantwortet: Wie wichtig ist das? Das kann jeder beantworten, und jeder sagt high. Denn bei jemandes Request low zu sagen, ist ein Gespräch, das niemand führen will.\n\nEin ordered Backlog beantwortet eine härtere Frage: Welches von diesen beiden machen wir zuerst? Du kannst nicht ausweichen, du kannst dich nicht in der Mitte treffen, und eine Person muss die Entscheidung tragen.\n\nDarum sagt der Guide ordered. Und darum steht Ordering Product Backlog items bei den vier Accountabilities des Product Owners und nirgendwo sonst im Framework.",
+      "callout": {
+        "kind": "why",
+        "text": "Beim Ordering wird dein Urteil öffentlich und inspectable. Der Guide sagt, die Entscheidungen eines Product Owners sind im Inhalt und im Ordering des Product Backlogs sichtbar."
+      }
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m05k1",
+        "kind": "mcq",
+        "stem": "Your roadmap has three items sitting at the top, R-01 through R-03, and eleven more below them. Your engineer asks which of the three he should start on Monday. You answer that all three are P0 and equally critical. In Scrum Guide terms, what has gone wrong?",
+        "options": [
+          "Nothing. P0 is a valid priority level, and since the Developers self-manage, choosing among P0 items is their call.",
+          "The Product Backlog is ordered, not merely labelled. Leaving three items tied hands the ordering decision to whoever happens to pick, and ordering Product Backlog items is your accountability.",
+          "You should have assigned story points first, so the engineer can pick the smallest of the three.",
+          "The Scrum Master should break the tie, since they are accountable for the Scrum Team's effectiveness."
+        ],
+        "answer": 1,
+        "explain": "The Guide calls the Product Backlog an ordered list and names Ordering Product Backlog items as one of the four things the Product Owner is accountable for. Option 1 is half true and that is what makes it dangerous: the Developers absolutely decide how the work gets done and they select the items in Sprint Planning, but they should be selecting from a sequence you have already taken a position on. Option 3 borrows story points, which are useful practice and appear nowhere in the Guide, and size was never the missing information here. Option 4 hands a product decision to the Scrum Master.",
+        "cite": "Scrum Guide 2020, Product Backlog and Product Owner",
+        "tag": "backlog"
+      }
+    },
+    {
+      "type": "civic",
+      "title": "Das Flag, das du nicht clearen kannst",
+      "body": "Dana öffnet Anomaly Review: eine Restaurant-Belastung auf der Karte der Bibliothek, dazu zwei Schreibweisen desselben Treibstofflieferanten, geflaggt als Duplicate Vendors. Echte Detections, abgeleitet aus echten Veruntreuungsmustern.\n\nSie liebt es und misstraut ihm gleichzeitig, weil sie die Regel nicht sieht, die angeschlagen hat, und keinen False Positive clearen kann. Angela, die die Rechnungen erfasst, läuft in dieselbe Wand: Das Produkt lässt sie schauen, aber nicht handeln.\n\nDas Fazit der Discovery selbst ist unverblümt. Was fehlt, ist die Fähigkeit zu handeln, nicht mehr Detection. Schau, was das mit deinem Backlog macht. Das verlockende Item ist ein neuer Detector. Das wertvolle Item ist, den Workflow fertigzubauen, der schon halb existiert."
+    },
+    {
+      "type": "guide",
+      "quote": "Product Backlog items that can be Done by the Scrum Team within one Sprint are deemed ready for selection in a Sprint Planning event. They usually acquire this degree of transparency after refining activities.",
+      "cite": "Scrum Guide 2020, Product Backlog",
+      "gloss": "Ready beschreibt einen Zustand, kein Gate, durch das du durchmusst: klein genug, um innerhalb eines Sprints fertig zu werden, und klar genug, dass die Leute es verstehen."
+    },
+    {
+      "type": "analogy",
+      "title": "Der Brennholzstapel",
+      "body": "Geh nach hinten zum Holzstapel, und du findest ganze Stämme. Niemand hat bisher entschieden, was aus ihnen wird. Auf halbem Weg nach vorne sind sie in Rugel gesägt. Ganz vorne sind sie gespalten, gestapelt und trocken genug, um heute Abend zu brennen.\n\nDu spaltest nicht den ganzen Wald im Voraus. Du weisst nicht, wie kalt der Winter wird, und gespaltenes Holz fault schneller als Stämme. Du spaltest gerade so weit voraus, dass der Ofen immer etwas zu fressen hat.\n\nEin Product Backlog hat diese Form. Oben: klein, klar und brennbar. Unten: ein Stamm mit einem Namen drauf. Unten früh zu spalten ist Arbeit, die du wahrscheinlich wegwirfst.",
+      "visual": "backlog-funnel"
+    },
+    {
+      "type": "teach",
+      "title": "Refinement ist ein Verb, kein Meeting",
+      "body": "Der Guide nennt Refinement eine laufende Aktivität, um Details hinzuzufügen, etwa eine Beschreibung, Order und Size. Es ist kein Scrum Event. Es gibt genau fünf Events, und Refinement ist keines davon.\n\nTeams buchen durchaus eine wiederkehrende Session, und das ist ok. Aber die Prüfung testet, ob du glaubst, die Session sei die eigentliche Sache. Ist sie nicht.\n\nRefinement ist alles, was ein Item kleiner oder klarer macht. Auch innerhalb des Sprint Planning, wo der Guide sagt, dass das Scrum Team Items während des Prozesses refinen darf.\n\n[[PRACTICE]] Eine fixe wöchentliche Refinement-Stunde ist eine nützliche Gewohnheit, keine Regel von Scrum.",
+      "callout": {
+        "kind": "note",
+        "text": "Der Guide führt das auch unter den Regeln auf, die während des Sprints selbst gelten: The Product Backlog is refined as needed."
+      }
+    },
+    {
+      "type": "trap",
+      "myth": "Ein Product Backlog Item muss eine Definition of Ready erfüllen, bevor es im Sprint Planning ausgewählt werden kann.",
+      "truth": "Den Begriff Definition of Ready gibt es im Scrum Guide 2020 nicht. Der Guide sagt: Items, die das Scrum Team innerhalb eines Sprints Done machen kann, gelten in einem Sprint Planning Event als ready for selection. Und diesen Grad an Transparency erreichen sie meistens nach Refining-Aktivitäten.",
+      "why": "[[PRACTICE]] Eine Definition of Ready ist eine echte Team-Vereinbarung, die viele Teams nützlich finden. Die Prüfung wird sie dir als Regel verkleidet anbieten.\n\nSie scheitert ausserdem auf eine bestimmte, vorhersehbare Art, die du kennen solltest. Eine strikte Version verhärtet sich zu einem Stage Gate. Und ein Stage Gate macht Refinement zu einer Übergabe zwischen dem Product Owner und den Developers - genau das Gegenteil von dem, wofür Refinement da ist."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m05k2",
+        "kind": "order",
+        "instruction": "Order these five real Ledgerline items by what has to be true before the next one can be trusted. Put the thing everything else depends on first.",
+        "stem": "Five items from your own discovery roadmap. Put them into one defensible sequence.",
+        "items": [
+          "Alert someone when the Corvus feed dies, instead of showing the error only to whoever opens the Data Connections tab",
+          "Reconcile to Corvus and to the bank, and state in the product whether Ledgerline is the system of record, a mirror, or a reconciliation layer",
+          "Let a finance user clear, snooze, assign, and annotate an anomaly flag, with the detection rule shown and an audit log of who cleared what",
+          "Adapt the console by role, so the Town Manager lands on three numbers and the exceptions instead of a fund filter",
+          "Assemble and sign the Select Board warrant inside the product"
+        ],
+        "explain": "This is dependency ordering, not taste. Feed alerting goes first because while a feed can die silently every number downstream is unverifiable, and your own roadmap notes that reconciliation depends on feed monitoring to be meaningful. Reconciliation is next because discovery named it the adoption gate: Priya's name is on the warrant and she needs to know what this product is. Anomaly workflow follows, since clearing a flag only means something once the number behind it ties out. Role-aware views shape what people see, so shape them once the thing being shown is right. Warrant assembly sits last: largest commitment, legal constraints, and it presumes everything above it. Reasonable people can argue positions three and four. Nobody can argue that a P0 label settles it.",
+        "cite": "Scrum Guide 2020, Product Backlog",
+        "tag": "backlog"
+      }
+    },
+    {
+      "type": "civic",
+      "title": "Der Feed, der starb, und niemand wurde gepaged",
+      "body": "In einem Live-Click-through zeigt Data Connections den Corvus-Feed im Error-Status: letzter Sync zwei Tage alt, null Records. Das Bankfile ist grün.\n\nJede Budgetzahl auf jedem anderen Screen baut auf diesem Feed auf. Und der einzige Ort, wo der Fehler auftaucht, ist ein Tab, den die meisten Personas nie öffnen. Carla Benitez, die IT-Ansprechperson, die sich drei Gemeinden teilen, spricht offen aus, was keiner sagen will: Das macht still und leise jede Zahl im Produkt falsch.\n\nFeed Monitoring ist als R-09 erfasst, ein P1. Reconciliation, das Item, das die Discovery als Adoption Gate benannt hat, ist R-04, ein P0, und es hängt von R-09 ab. Also liegt ein P1 unter einem P0, der ohne ihn nicht funktionieren kann."
+    },
+    {
+      "type": "sim",
+      "title": "Auf dem Papier P1, in Wirklichkeit P0",
+      "setup": "Du bist der Product Owner. Feed Monitoring und Alerting ist R-09, letzten Monat mit dem Team als P1 vereinbart. Reconciliation ist R-04, als P0 vereinbart. Die Discovery nennt es das Adoption Gate, das entscheidet, ob der Treasurer das Produkt überhaupt nutzen kann.\n\nDie Roadmap selbst hält fest, dass R-04 von R-09 abhängt, um sinnvoll zu sein. Du hast einen Engineer. Der rote Feed-Status erscheint im Moment nur im Data Connections Tab. Der Finanzabteilung einer Gemeinde wird das Produkt demnächst vorgeführt.",
+      "choices": [
+        {
+          "label": "Feed Alerting an die Spitze der Order setzen und den Grund in einem Satz nennen: Solange ein Feed still sterben kann, kann man nichts anderem im Produkt trauen.",
+          "outcome": "Der Engineer beginnt mit Alerting. Reconciliation rutscht um ungefähr einen Sprint nach hinten, und du sagst das laut, dem Team und der Pilot-Gemeinde.\n\nKeines der Labels hat sich geändert, und die Labels waren nie das Problem. Geändert hat sich die Sequenz, und die Sequenz ist der Teil, den die Leute inspecten können.",
+          "verdict": "good",
+          "lesson": "Das Product Backlog ist ordered. Wenn eine Dependency und ein Label sich widersprechen, gewinnt die Dependency. Denn die Reihenfolge muss eine Sequenz sein, die jemand tatsächlich ausführen kann."
+        },
+        {
+          "label": "Die Order lassen, wie sie ist, und ein Stale-Feed-Banner auf jedem Screen shippen, damit wenigstens niemand eine falsche Zahl ohne Warnung liest.",
+          "outcome": "Wirklich gut und wirklich unvollständig. Transparency kommt günstig zurück, und das kleinste nützliche Ding shippt schnell.\n\nAber Carlas eigentlicher Wunsch ist, nicht erst durch das Öffnen eines Tabs von einem toten Feed zu erfahren. Und ein Banner braucht trotzdem jemanden, der hinschaut.\n\nDas echte Risiko: Das Banner schliesst das Item in allen Köpfen, während der Failure Mode darunter unberührt bleibt.",
+          "verdict": "mixed",
+          "lesson": "Der dünnste Slice, der Transparency wiederherstellt, lohnt sich meist, jetzt zu shippen. Das Shippen schliesst das Item aber nicht ab. Im Backlog hältst du diese Unterscheidung ehrlich."
+        },
+        {
+          "label": "R-09 bleibt, wo es ist. Die Priorities wurden mit dem Team vereinbart, und wenn du sie jedes Mal neu aufmachst, sobald etwas dringend aussieht, werden die Labels wertlos.",
+          "outcome": "Das Team baut Reconciliation auf einem Feed, der still und leise ausfallen kann. Am ersten Tag, an dem ein Sync fehlschlägt, gleicht es gegen nichts ab.\n\nUnd es scheitert genau vor der einen Persona, deren persönliche Haftung auf dem Spiel steht. Die Abmachung hat gehalten. Das Produkt nicht.",
+          "verdict": "bad",
+          "lesson": "Stabilität in der Reihenfolge hat echten Value. Sich angesichts neuer Information zu weigern umzusortieren, ist aber keine Stabilität. Es ist das Fehlen von Adaptation.\n\nVon einem Scrum Team wird erwartet, dass es sich anpasst, sobald es durch Inspection etwas Neues lernt."
+        },
+        {
+          "label": "Trotzdem zuerst Reconciliation bauen, weil es das benannte Adoption Gate ist, und Feed Health als Teil dieser Arbeit behandeln.",
+          "outcome": "Der Instinkt stimmt, aber beim Bündeln geht es schief. Feed Health wird still und leise zu einem Subtask in einem grossen Item. Damit hat es keine eigene Position und kein separates Done.\n\nWenn das grosse Item länger dauert, wird als Erstes der Teil gestrichen, für den sich niemand starkgemacht hat.",
+          "verdict": "mixed",
+          "lesson": "Wenn du eine Dependency in ein grösseres Item hineinpackst, versteckst du sie. Wenn etwas zuerst wahr sein muss, gib ihm einen Platz in der Reihenfolge - nicht einen Bullet in jemand anderes Item."
+        },
+        {
+          "label": "Den Data Connections Tab vor dem Walkthrough verstecken, damit der rote Status nicht vor einem Prospect auftaucht.",
+          "outcome": "Die Session läuft glatt. Aber du hast bewusst ein Artifact weniger transparent gemacht - und zwar in einem Produkt, dessen ganze Value Proposition ist, dass man den Zahlen trauen kann.\n\nWenn der Feed während des Pilots veraltet ist, erfährt die Gemeinde es so, wie Dana es am meisten fürchtet: nachdem es schon jemand anderes bemerkt hat.",
+          "verdict": "bad",
+          "lesson": "Artifacts mit tiefer Transparency können zu Entscheidungen führen, die Value mindern und Risiko erhöhen. Einen Defect vor einer Inspection zu verstecken, ist keine Produktentscheidung. Es ist das Entfernen einer Entscheidung."
+        }
+      ]
+    },
+    {
+      "type": "guide",
+      "quote": "The Developers who will be doing the work are responsible for the sizing. The Product Owner may influence the Developers by helping them understand and select trade-offs.",
+      "cite": "Scrum Guide 2020, Product Backlog",
+      "gloss": "Du legst die Size nicht fest, und du verhandelst sie nicht runter. Du darfst aber ändern, was das Item verlangt. Das ist ein anderer Hebel - und ein viel stärkerer."
+    },
+    {
+      "type": "trap",
+      "myth": "Schätzungen in Scrum sind Story Points, und mit Velocity macht ein Product Owner seinen Forecast.",
+      "truth": "Der Guide verwendet die Wörter Story Point, Velocity oder Planning Poker nie. Er sagt, dass die Developers, die die Arbeit machen werden, für das Sizing verantwortlich sind. Und er zählt Description, Order und Size zu den Details, die beim Refinement dazukommen.\n\nZum Forecasting sagt er nur, dass Praktiken wie Burn-downs, Burn-ups und Cumulative Flows sich als nützlich erwiesen haben und die Bedeutung von Empiricism nicht ersetzen.",
+      "why": "[[PRACTICE]] Story Points, Velocity und Planning Poker sind weit verbreitet und oft wirklich hilfreich - und keines davon ist Scrum. Die Prüfung baut Distraktoren aus Dingen, die in den meisten Firmen stimmen, aber im Guide fehlen.\n\nAchte auch auf die zweite Hälfte dieser Falle: Jede Option, in der der Product Owner eine Schätzung festlegt, genehmigt oder runterverhandelt, ist falsch - egal in welchen Einheiten."
+    },
+    {
+      "type": "teach",
+      "title": "Du musst sie nicht alle selber schreiben",
+      "body": "Zwei Dinge bringen Leute hier ins Stolpern. Erstens die Terminologie: Grooming ist ausgemustert. Der Guide sagt seit 2017 Product Backlog Refinement. Eine Prüfungsoption mit Grooming zitiert also eine Version, die es nicht mehr gibt.\n\nZweitens die Autorschaft: Nirgends im Guide steht, dass der Product Owner jedes Item persönlich schreibt. Er sagt, du bist accountable dafür, Product Backlog Items zu erstellen und klar zu kommunizieren. Und dann sagt er klar, dass du die Arbeit selber machen oder delegieren darfst.\n\nDein Engineer kann Items schreiben. Ein Scrum Master kann facilitaten. Dana kann dir eine Seite mit dem geben, was sie braucht. Was du nicht delegieren kannst, ist die Accountability."
+    },
+    {
+      "type": "guide",
+      "quote": "The Product Owner may do the above work or may delegate the responsibility to others. Regardless, the Product Owner remains accountable.",
+      "cite": "Scrum Guide 2020, Product Owner",
+      "gloss": "Delegation verschiebt das Tippen. Sie verschiebt nie die Antwort auf die Frage, wer geradestehen muss."
+    },
+    {
+      "type": "trap",
+      "myth": "Ein guter Product Owner bringt das Product Backlog in einen vollständigen, stabilen Zustand und pflegt es dann.",
+      "truth": "Das allererste Wort des Guides für das Product Backlog ist emergent: eine emergent, ordered Liste dessen, was nötig ist, um das Produkt zu verbessern. Items tauchen auf, ändern sich und werden gelöscht, während das Scrum Team und seine Stakeholder dazulernen.",
+      "why": "Die Prüfung stellt das als Frage, wann das Backlog fertig ist - oder ob alle Requirements vor dem ersten Sprint bekannt sein müssen. Ein fertiges Backlog würde heissen, dass nichts gelernt wurde. Und Scrum gibt es für complex Probleme, bei denen mehr entdeckt wird, als sich vorhersagen lässt.\n\nBeachte aber die Grenze: Emergent ist keine Lizenz für Vagheit zuoberst. Items weit oben müssen trotzdem klein und klar genug sein, um innerhalb eines Sprints Done zu werden."
+    },
+    {
+      "type": "keypoints",
+      "points": [
+        "Das Product Backlog ist eine emergent, ordered Liste dessen, was nötig ist, um das Produkt zu verbessern. Und es ist die einzige Quelle der Arbeit, die das Scrum Team übernimmt.",
+        "Ordered schlägt prioritized, weil eine Sequenz keine Gleichstände hat. Und auf Platz zwei liegt die eigentliche Entscheidung.",
+        "Refinement ist eine laufende Aktivität, kein Scrum Event. Es gibt fünf Events, und das hier ist keines davon.",
+        "Die Developers, die die Arbeit machen werden, sind für das Sizing verantwortlich. Du beeinflusst sie, indem du Trade-offs erklärst - nie, indem du die Zahl festlegst.",
+        "Definition of Ready, Story Points, Velocity und Grooming sind Practice oder ausgemusterte Sprache. Keines davon kommt im Guide vor."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "m05q1",
+      "kind": "mcq",
+      "stem": "A Select Board member catches you after a meeting and asks for one small change to the public ledger page. You mention it to your engineer that evening and he builds it the next morning. Which statement from the Scrum Guide 2020 did that just work against?",
+      "options": [
+        "None. The Product Owner may take work directly from stakeholders at any time.",
+        "The Product Backlog is the single source of work undertaken by the Scrum Team, so work that never entered it is invisible to everyone inspecting the artifact.",
+        "Only the Scrum Master may accept requests from stakeholders.",
+        "No changes may be made during a Sprint under any circumstances."
+      ],
+      "answer": 1,
+      "explain": "The Guide calls the Product Backlog the single source of work undertaken by the Scrum Team. Work that bypasses it cannot be inspected, ordered, or weighed against anything else, which is how side channels quietly corrode transparency. Option 1 is the specific failure mode of a founder Product Owner with a short hallway. Option 3 invents a Scrum Master gatekeeper: the Guide says those wanting to change the Product Backlog can do so by trying to convince the Product Owner. Option 4 overstates the Sprint rule, which is that no changes are made that would endanger the Sprint Goal, and that scope may be clarified and renegotiated with the Product Owner as more is learned.",
+      "cite": "Scrum Guide 2020, Product Backlog and The Sprint",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05q2",
+      "kind": "mcq",
+      "stem": "Your Scrum Master proposes a recurring Backlog Refinement meeting and describes it as the fifth Scrum event. What is the accurate response?",
+      "options": [
+        "Agree. Refinement is the fifth event and the Product Owner is accountable for running it.",
+        "Refuse. Booking a refinement session is not permitted by the Scrum Guide.",
+        "Book it if it helps, and be clear it is a team choice. The Guide describes refinement as an ongoing activity, and the events are the Sprint, Sprint Planning, the Daily Scrum, the Sprint Review, and the Sprint Retrospective.",
+        "Agree, but insist the Scrum Master timebox it to three hours for a one-month Sprint."
+      ],
+      "answer": 2,
+      "explain": "Refinement is an ongoing activity to add details, such as a description, order, and size. Because it is not an event it has no Guide timebox, which is what makes option 4 wrong (three hours is the Sprint Retrospective). Option 1 promotes a practice into the framework, which is the exact substitution PSPO I is testing for. Option 2 overcorrects: the framework is purposefully incomplete and Scrum wraps around existing practices, so a standing session is perfectly allowed as a team agreement. [[PRACTICE]] Hold the session, just do not call it Scrum.",
+      "cite": "Scrum Guide 2020, Product Backlog and Scrum Events",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05q3",
+      "kind": "mcq",
+      "stem": "Your engineer sizes the reconciliation tie-out as far too large for one Sprint. You suspect he is padding. According to the Scrum Guide 2020, what may you do about it?",
+      "options": [
+        "Set the size yourself, since you are accountable for the Product Backlog.",
+        "Ask the Scrum Master to arbitrate the estimate.",
+        "Help him understand and select trade-offs, for example narrowing the item to reconciliation against the bank only for one account, and then let him size it again.",
+        "Accept the size and delete the item, since anything larger than a Sprint cannot sit in the Product Backlog."
+      ],
+      "answer": 2,
+      "explain": "The Guide is unusually direct here: the Developers who will be doing the work are responsible for the sizing, and the Product Owner may influence the Developers by helping them understand and select trade-offs. Your lever is the content of the item, not the number attached to it. Option 1 takes a Developer responsibility. Option 2 makes the Scrum Master a referee on a technical judgment. Option 4 has it backwards: large items belong in the Product Backlog and get broken down through refinement, and only items that can be Done within one Sprint are deemed ready for selection in Sprint Planning.",
+      "cite": "Scrum Guide 2020, Product Backlog",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05q4",
+      "kind": "tf",
+      "stem": "The Scrum Guide 2020 requires Product Backlog items to meet a Definition of Ready before they may be selected in Sprint Planning.",
+      "answer": false,
+      "explain": "The phrase Definition of Ready appears nowhere in the Scrum Guide 2020. What the Guide says is that items that can be Done by the Scrum Team within one Sprint are deemed ready for selection in a Sprint Planning event, and that they usually acquire this degree of transparency after refining activities. That describes a state, not a checklist an item must pass. [[PRACTICE]] Plenty of teams adopt a Definition of Ready and it can help. It hurts the moment it hardens into a gate, because refinement then becomes a handoff instead of a shared activity.",
+      "cite": "Scrum Guide 2020, Product Backlog",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05q5",
+      "kind": "multi",
+      "stem": "Select the TWO statements the Scrum Guide 2020 actually makes about the Product Backlog.",
+      "options": [
+        "It is an emergent, ordered list of what is needed to improve the product.",
+        "It must be fully estimated in story points before the first Sprint.",
+        "It is the single source of work undertaken by the Scrum Team.",
+        "It is owned jointly by the Product Owner and the Scrum Master.",
+        "It must be reordered at every Sprint Retrospective."
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explain": "The two correct options are the Guide's opening sentences on the Product Backlog, word for word. Story points do not appear in the Guide at all, and a fully estimated backlog would contradict emergent. There is no joint ownership: the Product Owner is one person, accountable for ordering, while the Scrum Master serves by helping find techniques for effective Product Backlog management. Nothing ties reordering to the Sprint Retrospective, whose purpose is to plan ways to increase quality and effectiveness.",
+      "cite": "Scrum Guide 2020, Product Backlog and Product Owner",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05q6",
+      "kind": "mcq",
+      "stem": "You are the founder, the Product Owner, and the person taking every sales call. Writing each backlog item yourself has become the bottleneck. What does the Scrum Guide 2020 allow?",
+      "options": [
+        "Nothing. The Product Owner must personally create every Product Backlog item.",
+        "You may delegate the work of creating items to others, for example your engineer or a Scrum Master, and you remain accountable.",
+        "You may hand the Product Backlog to a small product committee so decisions do not depend on one person.",
+        "You may transfer the accountability to the Scrum Master during periods of heavy sales load."
+      ],
+      "answer": 1,
+      "explain": "The Guide says the Product Owner may do the work or may delegate the responsibility to others, and that regardless, the Product Owner remains accountable. That single sentence disposes of option 1. Options 3 and 4 break the same rule from opposite directions: the Product Owner is one person, not a committee, and accountability is not a thing you hand to the Scrum Master because another part of your job got busy. Delegation moves the work; it does not move who answers for it.",
+      "cite": "Scrum Guide 2020, Product Owner",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m05q7",
+      "kind": "sort",
+      "stem": "Drop each item into the right bucket. On this topic specifically, this distinction is where most PSPO I points are won or lost.",
+      "buckets": [
+        "In the Scrum Guide 2020",
+        "Useful practice, not Scrum"
+      ],
+      "items": [
+        {
+          "text": "The Product Backlog is an emergent, ordered list of what is needed to improve the product.",
+          "bucket": "In the Scrum Guide 2020"
+        },
+        {
+          "text": "Story points and velocity.",
+          "bucket": "Useful practice, not Scrum"
+        },
+        {
+          "text": "The Developers who will be doing the work are responsible for the sizing.",
+          "bucket": "In the Scrum Guide 2020"
+        },
+        {
+          "text": "A Definition of Ready that items must pass before Sprint Planning.",
+          "bucket": "Useful practice, not Scrum"
+        },
+        {
+          "text": "Refinement is an ongoing activity to add details, such as a description, order, and size.",
+          "bucket": "In the Scrum Guide 2020"
+        },
+        {
+          "text": "Calling the activity backlog grooming.",
+          "bucket": "Useful practice, not Scrum"
+        },
+        {
+          "text": "Items that can be Done within one Sprint are deemed ready for selection in a Sprint Planning event.",
+          "bucket": "In the Scrum Guide 2020"
+        },
+        {
+          "text": "MoSCoW, planning poker, and a two-week refinement cadence.",
+          "bucket": "Useful practice, not Scrum"
+        }
+      ],
+      "explain": "Everything on the left is lifted from the Product Backlog section of the Guide. Everything on the right comes from Certified Scrum Product Owner material, Extreme Programming, or general product practice. Grooming is a special case: it is not wrong, it is retired, replaced by refinement in the 2017 Guide and kept out of the 2020 one. Both columns are worth knowing and only one is graded.",
+      "cite": "Scrum Guide 2020, Product Backlog",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05q8",
+      "kind": "mcq",
+      "stem": "Feed monitoring is agreed as a P1. Reconciliation is agreed as a P0 and is the adoption gate for your pilot town. Refinement then reveals that reconciliation is meaningless while a data feed can fail silently. What is the Product Owner's move?",
+      "options": [
+        "Hold the order. The priorities were agreed with the team, and reopening them every time something looks urgent makes the labels meaningless.",
+        "Reorder so feed monitoring comes first, and communicate both the change and the reason. The Product Backlog is ordered and emergent, and this is exactly the kind of thing it is supposed to absorb.",
+        "Ask the Developers to vote on the new order.",
+        "Commit to delivering both in the same Sprint so the ordering question never has to be answered."
+      ],
+      "answer": 1,
+      "explain": "Ordering Product Backlog items is your accountability, the backlog is emergent, and a Scrum Team is expected to adapt the moment it learns anything new through inspection. A priority label is a category that many things can share; the order is the executable sequence, so when the two disagree the sequence must win. Option 1 mistakes stability for correctness. Option 3 turns a Product Owner decision into a vote. Option 4 is the most common real-world dodge, and with one engineer it is just an unordered backlog wearing a Sprint Goal.",
+      "cite": "Scrum Guide 2020, Product Backlog, Product Owner, and Adaptation",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05q9",
+      "kind": "tf",
+      "stem": "According to the Scrum Guide 2020, the Product Backlog should be complete and stable before the first Sprint begins.",
+      "answer": false,
+      "explain": "The Guide's first word for the Product Backlog is emergent. It holds what is currently known to be needed to improve the product, and it changes as the Scrum Team and its stakeholders learn. A complete backlog would imply the work was not complex, and Scrum exists for complex problems where more is discovered than can be predicted up front. The limit is worth remembering too: emergent does not excuse vagueness at the top, because items near the top must be small and clear enough to be Done within one Sprint.",
+      "cite": "Scrum Guide 2020, Product Backlog and Scrum Definition",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m05q10",
+      "kind": "mcq",
+      "stem": "Who may refine Product Backlog items?",
+      "options": [
+        "Only the Product Owner, since the Product Backlog is the Product Owner's accountability.",
+        "Only the Developers, since they are the ones responsible for sizing.",
+        "The Scrum Team. Refinement is an ongoing activity of breaking down and further defining items, the Scrum Team may refine items during Sprint Planning, and the Product Backlog is refined as needed during the Sprint.",
+        "Any stakeholder who has an item in the Product Backlog."
+      ],
+      "answer": 2,
+      "explain": "The Guide describes refinement as an ongoing activity and places it inside the team's work: the Scrum Team may refine items during Sprint Planning, and the Product Backlog is refined as needed during the Sprint. Option 1 confuses accountability for the artifact with a monopoly on the activity, which is the single most common conflation on this topic. Option 2 generalizes one true sentence about sizing into something the Guide never says. Option 4 breaks the ownership model: stakeholders change the Product Backlog by convincing the Product Owner, not by editing it.",
+      "cite": "Scrum Guide 2020, Product Backlog, Sprint Planning, and The Sprint",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05q11",
+      "kind": "mcq",
+      "stem": "Discovery concludes that Anomaly Review is already half a workflow, and that what is missing is the ability to act on a flag rather than more detection. A stakeholder asks instead for three new detection rules. What is the strongest reason to order the workflow item above the new detectors?",
+      "options": [
+        "New detection is harder to build, and easier work should come first.",
+        "The Product Backlog is a list of what is needed to improve the product, and more flags nobody can clear does not improve it. Finishing the half-built workflow is what changes the daily experience of the people who live on that screen.",
+        "Requests from stakeholders always rank below findings from discovery.",
+        "The Developers sized the detectors as larger, so the Product Owner must reorder accordingly."
+      ],
+      "answer": 1,
+      "explain": "The Guide's definition is a list of what is needed to improve the product, and improve is judged by outcome, not by feature count. More detectors on a screen where nobody can clear a false positive adds noise and erodes the one thing your finance director already likes. Option 1 makes effort the only input, which is not a value argument at all. Option 3 invents a hierarchy of sources, when a Product Owner weighs both. Option 4 reverses the relationship: sizing informs ordering, it does not decide it, and sizing belongs to the Developers while ordering belongs to you.",
+      "cite": "Scrum Guide 2020, Product Backlog",
+      "tag": "value"
+    }
+  ],
+  "cards": [
+    {
+      "id": "m05c1",
+      "front": "Define the Product Backlog, in the Guide's words.",
+      "back": "An emergent, ordered list of what is needed to improve the product. It is the single source of work undertaken by the Scrum Team.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05c2",
+      "front": "Why ordered rather than prioritized?",
+      "back": "A priority is a label many items can share, so five things can all be high. An order is one sequence with no ties, which forces a real decision about what goes second.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05c3",
+      "front": "What does single source of work rule out?",
+      "back": "Any work the Scrum Team does that never entered the Product Backlog: hallway favours, direct messages to the engineer, side projects. Invisible work cannot be inspected or ordered.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05c4",
+      "front": "What is Product Backlog refinement?",
+      "back": "The act of breaking down and further defining Product Backlog items into smaller more precise items. An ongoing activity to add details, such as a description, order, and size.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05c5",
+      "front": "Is refinement a Scrum event?",
+      "back": "No. There are five events: the Sprint, Sprint Planning, the Daily Scrum, the Sprint Review, the Sprint Retrospective. Refinement is an ongoing activity with no Guide timebox.",
+      "tag": "events"
+    },
+    {
+      "id": "m05c6",
+      "front": "When is a Product Backlog item ready?",
+      "back": "Items that can be Done by the Scrum Team within one Sprint are deemed ready for selection in a Sprint Planning event. They usually acquire that transparency after refining activities.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05c7",
+      "front": "Who is responsible for sizing?",
+      "back": "The Developers who will be doing the work. The Product Owner may influence them by helping them understand and select trade-offs, which means changing the item, never the number.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05c8",
+      "front": "Definition of Ready: Scrum or not?",
+      "back": "Not Scrum. The phrase does not appear in the Guide. It is a useful team agreement that goes wrong when it hardens into a stage gate.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05c9",
+      "front": "Story points, velocity, planning poker, grooming.",
+      "back": "None are in the Scrum Guide 2020. The first three are useful practice. Grooming is retired terminology, replaced by refinement.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05c10",
+      "front": "Must the Product Owner write every backlog item?",
+      "back": "No. The Product Owner may do the work or delegate the responsibility to others. Regardless, the Product Owner remains accountable.",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m05c11",
+      "front": "What does emergent mean for the Product Backlog?",
+      "back": "It is never finished. Items appear, change, and get deleted as the team and stakeholders learn. A complete backlog would mean nothing was learned.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m05c12",
+      "front": "A dependency and a priority label disagree. Which wins?",
+      "back": "The dependency. The order has to be a sequence you can actually execute, so if B cannot be trusted until A is true, A goes first no matter what label B carries.",
+      "tag": "backlog"
+    }
+  ]
+}

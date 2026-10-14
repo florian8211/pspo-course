@@ -1,0 +1,525 @@
+{
+  "id": "m12",
+  "num": 12,
+  "week": 4,
+  "title": "Ordnen, Forecasten und Nein sagen",
+  "subtitle": "Wie du entscheidest, was als Nächstes kommt, wie du über die Zukunft redest, ohne zu lügen, und wie du einen Request so ablehnst, dass du die Person nicht verlierst.",
+  "minutes": 30,
+  "why": "Ein Product Owner, der nicht ordnen, nicht ehrlich forecasten und nicht Nein sagen kann, trifft keine Entscheidungen. Er schreibt einfach mit, wer zuletzt gesprochen hat.",
+  "objectives": [
+    "Genau wiedergeben, was der Scrum Guide 2020 übers Ordnen sagt, und erkennen, dass alles andere Practice ist",
+    "Einen Weighted Score mit expliziten Kriterien bauen und die Gewichte verteidigen statt das Total",
+    "Cost of Delay nutzen, um zwei Items zu unterscheiden, die bei Value und Effort identisch aussehen",
+    "Einem kommunalen Käufer den Unterschied zwischen einem Forecast und einem Commitment erklären, ohne ausweichend zu klingen",
+    "Auf vier verschiedene Arten Nein sagen und die wählen, die die Situation wirklich braucht"
+  ],
+  "beats": [
+    {
+      "type": "hook",
+      "body": "Carla Benitez ist die IT-Koordinatorin, die sich drei Gemeinden teilen. Sie steckt seit drei Wochen in einem gemeinsamen RFP und stellt eine Frage on the record: Seid ihr SOC 2 compliant?\n\nDeine eigene Compliance-Matrix führt Security, Availability, Processing Integrity und Privacy als controls implemented, audit not conducted. Jedes Datum auf der Compliance-Roadmap mit zehn Items ist ein Platzhalter. Der Deal ist echt, die Frage ist fair, und es gibt genau eine ehrliche Antwort.\n\nDieses Modul spielt in den drei Momenten, in denen ein Product Owner entweder die Wahrheit sagt oder sich still ein Problem einkauft: wie du ordnest, was du forecastest und wie du ablehnst."
+    },
+    {
+      "type": "guide",
+      "quote": "The Product Owner is also accountable for effective Product Backlog management, which includes: Developing and explicitly communicating the Product Goal; Creating and clearly communicating Product Backlog items; Ordering Product Backlog items; and, Ensuring that the Product Backlog is transparent, visible and understood.",
+      "cite": "Scrum Guide 2020, Product Owner",
+      "gloss": "Lies den dritten Bullet nochmals. Ordering Product Backlog items. Drei Wörter, keine Methode, keine Kriterien, keine Erwähnung von Value, ROI oder einem Scoring-Modell."
+    },
+    {
+      "type": "teach",
+      "title": "Drei Wörter, dann Schweigen",
+      "body": "Das ist die ganze Anweisung. Der Guide sagt nie, dass du nach Business Value ordnen sollst. Er nennt keine Technik. Und er sagt nie, dass oben im Backlog das wertvollste Item stehen muss. Er sagt, dass die Liste geordnet ist und dass du accountable dafür bist, sie zu ordnen.\n\n[[PRACTICE]] Alles, was du jetzt gleich lernst - Value versus Effort, Weighted Scoring, Cost of Delay - liegt komplett ausserhalb des Guides. Lern es, weil es dich gut im Job macht. Schreib es aber nie in der Prüfung hin, als ob Scrum es verlangen würde.",
+      "callout": {
+        "kind": "why",
+        "text": "Das Framework ist absichtlich unvollständig. Dieses Schweigen ist eine Weigerung zu raten, was deine Domäne braucht. Ein Backlog für kommunale Finanzen und ein Backlog für ein Mobile Game können nicht dieselbe Ordering-Regel teilen."
+      }
+    },
+    {
+      "type": "analogy",
+      "title": "Der Baumarkt vor dem Sturm",
+      "body": "Am Donnerstag kommt der Wind. Du hast eine Fahrt, eine Ladefläche und eine Liste: Dachplane, Benzin für den Generator, Batterien, ein neuer Briefkastenpfosten und die Schleifmaschine, die du seit April willst.\n\nNiemand braucht ein Framework, um zu wissen: Die Schleifmaschine kommt zuletzt. Spannend ist der Briefkastenpfosten. Er ist billig, schnell erledigt, nervt dich seit Wochen und ist das mit Abstand am einfachsten zu kaufende Ding auf der Liste. Genau diese Leichtigkeit ist der Grund, warum er den Platz klaut, der dem Benzin gehört hätte.\n\nOrdnen ist kein Ranking, wie sehr du Dinge willst. Es ist ein Ranking, was es dich kostet, sie weiterhin nicht zu haben."
+    },
+    {
+      "type": "teach",
+      "title": "Value versus Effort, und die Ecke, die lügt",
+      "body": "[[PRACTICE]] Zwei Achsen, vier Felder. High Value mit Low Effort kommt zuerst, Low Value mit High Effort zuletzt - und über beides streitet niemand. Die zwei umstrittenen Felder sind die eigentliche Übung.\n\nHigh Value mit High Effort ist meist dort, wo dein eigentliches Produkt lebt. Und dieses Feld verliert jede Woche gegen das Feld daneben, Low Value und Low Effort. Denn das fühlt sich nach Fortschritt an.\n\nIn Ledgerline sitzt der Reconciliation Tie-out in der teuren Ecke. Er ist das Adoption Gate: Priya Raman sagt, davon hängt ab, ob sie das Produkt überhaupt nutzen kann. Und er braucht ein Backend, das drei bis sechs Monate entfernt ist. Kleine Wins schlagen ihn jeden Sprint - ausser du zwingst den Vergleich offen auf den Tisch.",
+      "visual": "ordering-matrix"
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m12k1",
+        "kind": "mcq",
+        "stem": "Every item on the Ledgerline roadmap from R-01 to R-16 is built in the demo. The one thing not built is the reconciliation tie-out between Corvus Financials, the bank file, and the ledger, which discovery named the adoption gate and which the Treasurer says decides whether she can use the product at all. Your value-versus-effort grid keeps placing it last. What is the grid telling you?",
+        "options": [
+          "That the tie-out is genuinely low priority. A two-axis grid is a standard technique and it has now given you the same answer repeatedly.",
+          "That effort is dominating value in your model. An item that gates adoption is not comparable to an item that polishes a screen, so either the value score is wrong or the model is too coarse for this decision.",
+          "That you should slice the tie-out into pieces small enough to score well, then build those.",
+          "That the ordering violates the Scrum Guide, which requires the highest-value item at the top of the Product Backlog."
+        ],
+        "answer": 1,
+        "explain": "A model that keeps returning an answer you distrust is data about the model, not confirmation of the answer. Here effort is real and large, and the value axis is flattening the difference between nice and necessary. Option 1 mistakes repetition for evidence, since a model with the wrong inputs is consistent, not correct. Option 3 is the most tempting wrong answer because slicing is usually good practice, but slicing an item whose blocker is a backend three to six months out produces small pieces that still cannot ship. Option 4 invents a rule: the Guide says only that Product Backlog items are ordered.",
+        "cite": "Scrum Guide 2020, Product Owner. The grid itself is practice, not Scrum.",
+        "tag": "backlog"
+      }
+    },
+    {
+      "type": "teach",
+      "title": "Weighted Scoring, durchgerechnet",
+      "body": "[[PRACTICE]] Nicht Scrum. Wähl Kriterien, gewichte sie auf total 1.0, bewerte jedes Item von 1 bis 5, multiplizier, summier.\n\n| Item | Value .40 | Risk cut .30 | Effort .20 | Strategy .10 | Total |\n|---|---|---|---|---|---|\n| Reconciliation tie-out | 5 | 5 | 1 | 5 | 4.2 |\n| Feed health alerting | 3 | 5 | 5 | 2 | 3.9 |\n| Anomaly clear workflow | 4 | 3 | 4 | 3 | 3.6 |\n\nEffort ist invertiert, also heisst 5 billig. Die Arithmetik ist nicht der Punkt. Der Punkt ist: Du musstest laut sagen, dass Value viermal so viel zählt wie Strategy Fit. Jetzt können die Leute über diese Zahl streiten statt über deinen Geschmack.",
+      "callout": {
+        "kind": "note",
+        "text": "Beachte: Der Tie-out gewinnt trotzdem, obwohl er bei Effort nur eine 1 hat. Das passiert nur, weil du Risk Reduction echtes Gewicht gegeben hast. Ändere die Gewichte, und die Reihenfolge ändert sich. Genau das macht es lohnenswert, über sie zu streiten."
+      }
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m12k2",
+        "kind": "mcq",
+        "stem": "Dana Whitcomb looks at your weighted score sheet and says the totals are meaningless because you chose the weights yourself. Is she right?",
+        "options": [
+          "Yes. Subjective weights produce a subjective output, so the model adds nothing over intuition and wastes an hour dressing a hunch as arithmetic.",
+          "No, and the subjectivity is the feature. The weights move the argument from which item is better, which cannot be checked, to whether value should count four times strategy fit, which can. The total records a stated position rather than discovering a fact.",
+          "No. Once the weights are agreed by stakeholders the score becomes objective and the ordering follows automatically.",
+          "Yes, and the fix is to derive the weights from historical revenue data so no judgment enters the model."
+        ],
+        "answer": 1,
+        "explain": "Option 1 is the strongest wrong answer because its premise is true: the output is subjective. It just draws the wrong conclusion, since the value of the model is transparency of reasoning, not objectivity of result. Option 3 is the failure this module keeps circling: agreement is not objectivity, and the ordering never follows automatically because the accountability sits on a person. Option 4 sounds rigorous and quietly hides the judgment inside a data choice, which is worse than stating it, and you have no revenue history to derive anything from.",
+        "cite": "Pragmatic and general product practice. Not in the Scrum Guide 2020.",
+        "tag": "backlog"
+      }
+    },
+    {
+      "type": "teach",
+      "title": "Die Variable, die alle weglassen",
+      "body": "[[PRACTICE]] Value und Effort sind beide statisch. Sie beschreiben ein Item, als ob die Welt stillsteht, während du entscheidest. Cost of Delay stellt eine andere Frage: Was kostet uns ein weiterer Monat, in dem wir das nicht haben? Manchmal nichts. Manchmal ist die Zahl gross, und das Item sieht trotzdem klein aus.\n\nDrei Formen solltest du kennen. Steady: Der Verlust wiederholt sich jeden Monat, wie die verschwendeten Nachmittage eines AP-Clerks. Deadline: fast null bis zu einem Datum, dann eine Klippe. Decaying: jetzt am höchsten und später wertlos, weil jemand anderes das Problem löst oder das Fenster zugeht.\n\nTeil Cost of Delay durch Effort, und du bekommst ein Urgency-Ranking, das Value versus Effort nicht liefern kann.",
+      "callout": {
+        "kind": "why",
+        "text": "Zwei Items können identischen Value und identischen Effort haben und in der richtigen Reihenfolge trotzdem sechs Monate auseinanderliegen. Ein Modell ohne Zeit kann diesen Unterschied nicht sehen. Also wird es dir auch nie davon erzählen."
+      }
+    },
+    {
+      "type": "analogy",
+      "title": "Der Zahn und das Zaunelement",
+      "body": "Du hast einen angeknacksten Backenzahn, und ein Zaunelement ist umgefallen. Der Zaun ist das Hässliche. Du siehst ihn jeden Morgen, und die Reparatur dauert einen Nachmittag. Der Zahn tut noch nicht weh. Beide Jobs kosten heute ungefähr gleich viel.\n\nIn vier Monaten ist das Zaunelement immer noch ein Zaunelement. Der Zahn ist dann eine Wurzelbehandlung, die achtmal mehr kostet und eine Woche dauert. Am Value der beiden Jobs hat sich nichts geändert. Geändert hat sich nur: Beim einen sind Kosten aufgelaufen, beim anderen nicht.\n\nCost of Delay heisst einfach, vor der Wahl zu fragen: Welches davon wird still und leise teurer, während ich auf das andere schaue?"
+    },
+    {
+      "type": "civic",
+      "title": "Drei Uhren, die du nicht gestellt hast",
+      "body": "Deine Delay-Kosten sind ungewöhnlich leicht zu benennen, weil fast keine davon von dir kommen. Northfield stimmt im März an der Gemeindeversammlung über die Budgetkredite ab. Alles, was eine Budget-Genehmigung braucht, hat also eine harte Klippe und ist eine Woche danach fast nichts mehr wert.\n\nDie Audit-Saison setzt eine zweite Klippe für alles, was Yusuf Adeyemi betrifft. Die Konferenz der State Finance Officers dauert eine Woche, und dann ist sie vorbei.\n\nGegen alle drei hat Feed Health Monitoring einen Steady Cost: Jeden Tag, an dem die Verbindung zu Corvus Financials auf Error steht, ist jede Budgetzahl im Produkt falsch, und niemand wird gepaged. Steady Costs fühlen sich billiger an als Klippen, weil kein einzelner Tag dramatisch ist. Zähl sechzig davon zusammen, bevor du das glaubst."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m12k3",
+        "kind": "order",
+        "instruction": "It is early January. Northfield's appropriation vote is in March. Order these four Ledgerline items from highest cost of delay to lowest.",
+        "stem": "Cost of delay, not value and not effort. Ask what one more month of not having each thing actually costs.",
+        "items": [
+          "Feed health monitoring: the Corvus Financials feed has sat in Error for two days with zero records, and every budget number in the product is silently wrong",
+          "The board-ready budget pack aimed at the March appropriation vote, which has one window a year",
+          "Anomaly Review clear and annotate workflow, which burns Dana Whitcomb's time every week it is missing",
+          "Vendor Register cosmetic polish, which no town-side persona currently uses"
+        ],
+        "explain": "Feed health goes first because it is a correctness precondition: while the feed is dead, every other item is producing confident wrong numbers, including the budget pack. The budget pack is second because it is a pure deadline shape, worth a lot until March and close to nothing after, and January leaves just enough runway to matter. Anomaly workflow is a steady cost, real and recurring but not accelerating. Vendor Register polish has almost no delay cost because nobody is currently paying it. Reasonable people could swap the first two. What is not reasonable is ordering these by effort and never asking the question at all.",
+        "cite": "Cost of delay is practice, not Scrum. The Scrum Guide 2020 says only that Product Backlog items are ordered.",
+        "tag": "backlog"
+      }
+    },
+    {
+      "type": "trap",
+      "myth": "Ein gutes Ordering-Modell sagt dir, was du als Nächstes bauen sollst. Scores rein, Antwort in der untersten Zeile ablesen.",
+      "truth": "Der Scrum Guide 2020 sagt, der Product Owner ist accountable für das Ordering der Product Backlog Items. Er nennt kein Modell, und kein Modell kann eine Accountability tragen.",
+      "why": "PSPO I baut Distraktoren aus allem, was die Entscheidung von der Person wegnimmt: eine Scoring-Matrix, ein Stakeholder-Vote, ein Steering Committee, ein Prioritization Tool, der lauteste Kunde.\n\nWenn die Option einen Prozess entscheiden lässt, ist sie falsch. Denn der Guide legt die Entscheidung auf eine Person und verlangt, dass die Organisation sie respektiert."
+    },
+    {
+      "type": "teach",
+      "title": "Ein Modell ist ein Argument, kein Orakel",
+      "body": "Jedes Ordering-Modell hat denselben echten Job: deine Begründung inspectable machen, damit die Leute den richtigen Teil davon angreifen. Wenn Glen Ostrowski sagt, Purchase-Order-Ceilings sollten zuerst kommen, kannst du nicht sinnvoll darüber streiten, ob er recht hat. Du kannst aber darüber streiten, ob sein Item bei Value eine 3 oder eine 5 bekommt. Und dieses Gespräch hat ein Ende.\n\nDer Failure Mode ist, das Total als Urteil zu behandeln. Wenn das Modell eine Reihenfolge ausspuckt, die sich falsch anfühlt: Gehorch ihr nicht, und frisier auch nicht still die Inputs. Frag, welches Kriterium fehlt. Denn das Unbehagen weiss meist etwas, das deine Spalten nicht wissen.",
+      "callout": {
+        "kind": "note",
+        "text": "Das Spreadsheet darfst du delegieren. Die Accountability darfst du nicht delegieren. Der Product Owner darf die Arbeit selbst machen oder delegieren und bleibt in jedem Fall accountable."
+      }
+    },
+    {
+      "type": "guide",
+      "quote": "Various practices exist to forecast progress, like burn-downs, burn-ups, or cumulative flows. While proven useful, these do not replace the importance of empiricism. In complex environments, what will happen is unknown. Only what has already happened may be used for forward-looking decision making.",
+      "cite": "Scrum Guide 2020, The Sprint",
+      "gloss": "Lies den letzten Satz langsam. Das einzige Rohmaterial, aus dem du einen Forecast bauen darfst, ist Evidenz von Dingen, die schon passiert sind. Alles andere ist ein Wunsch mit einem Chart drumherum."
+    },
+    {
+      "type": "teach",
+      "title": "Ein Forecast ist kein Versprechen",
+      "body": "Ein Forecast ist eine Aussage über die Vergangenheit, nach vorne gerichtet: Das haben wir tatsächlich gemacht, das folgt daraus, so falsch könnte es sein. Ein Commitment ist eine Aussage über die Zukunft, für die du Konsequenzen akzeptierst.\n\nScrum hat genau drei Commitments: das Product Goal, das Sprint Goal und die Definition of Done. Ein Datum gehört nicht dazu.\n\n[[PRACTICE]] Burn-downs, Burn-ups und Cumulative Flows kommen im Guide nur als Practices vor, die es gibt und die Empiricism nicht ersetzen. Velocity kommt gar nicht vor. Worauf du dich als Product Owner committest, ist das Ziel und die Ehrlichkeit, nicht der Kalender.",
+      "callout": {
+        "kind": "warn",
+        "text": "Das Sprint Goal ist ein Commitment der Developers, nicht deins. Und es ist ein Ziel, keine Liste von Items. In ihrem Namen einen Scope und ein Datum zu committen, sind zwei Fehler in einem Satz."
+      }
+    },
+    {
+      "type": "sim",
+      "title": "SOC 2, mitten in einem RFP",
+      "setup": "Drei Wochen läuft schon eine RFP, die drei Gemeinden gemeinsam durchführen. Da fragt Carla Benitez, ihre gemeinsame IT-Koordinatorin, ob ihr SOC 2 compliant seid. Sie sagt, das sei Pflicht.\n\nDeine Compliance-Matrix führt Security, Availability, Processing Integrity und Privacy als controls implemented, audit not conducted. Jedes Datum in der Compliance-Roadmap mit zehn Punkten ist ein Platzhalter. WCAG 2.1 AA wurde nie geprüft. Und die Matrix selbst hält fest, dass die meisten RFPs von Behörden eine Accessibility-Dokumentation verlangen.\n\nDer Fallback in deinem Objection Guide ist ein Vertrag, der an den Abschluss von SOC 2 geknüpft ist. Alle auf deiner Seite wollen diesen Deal unbedingt. Was sagst du?",
+      "choices": [
+        {
+          "label": "Sag, die Controls sind implementiert und das Audit ist geplant. Dann geh los und mach ein Datum wahr.",
+          "outcome": "Du hast einen Platzhalter in ein Versprechen verwandelt - und zwar vor genau dem einen Stakeholder, dessen Job es ist, das zu überprüfen. Ein Type-II-Audit braucht ein Observation Window, das du nicht kontrollierst.\n\nUnd das Erste, was eine IT-Koordinatorin mit einem Datum macht: Sie schreibt es in den Vertrag. Wenn es sich verschiebt, bist du nicht spät dran, du bist vertragsbrüchig. Die Accessibility-Lücke, die du nicht erwähnt hast, liegt immer noch da und wartet.",
+          "verdict": "bad",
+          "lesson": "Nur was bereits passiert ist, darf für forward-looking decision making verwendet werden. Ein Datum ohne Evidenz darunter ist kein Optimismus. Es ist ein Forecast, der aus nichts gebaut ist."
+        },
+        {
+          "label": "Antworte präzise. Nicht zertifiziert. Controls über vier Trust Criteria implementiert, Audit nicht durchgeführt. Biete den bedingten Vertrag an, den dein Objection Guide schon vorschlägt, und sprich die WCAG-Lücke ungefragt von dir aus an.",
+          "outcome": "Du verlierst die Möglichkeit, Compliance zu behaupten, und behältst die Möglichkeit, dass man dir glaubt. Die bedingte Struktur gibt ihr ein echtes Instrument in die Hand: Zuschlag unter der Bedingung des Abschlusses, mit einem Exit, falls du es nicht schaffst.\n\nDie Accessibility-Lücke von dir aus anzusprechen, kostet dich eine unangenehme Minute. Dafür kaufst du dir das Einzige, was einen Beschaffungsprozess überlebt: dass deine Aussagen der Überprüfung standhalten.",
+          "verdict": "good",
+          "lesson": "Transparency ist ein Scrum-Pillar, und sie gilt für den Zustand deines Produkts, nicht nur für dein Backlog. Du darfst dich zu einem Objective committen und zur Wahrheit. Zur Zertifizierung durch eine Drittpartei kannst du dich nicht committen - die liegt nicht bei dir."
+        },
+        {
+          "label": "Lenk ab. Sag, Security habe top Priorität, geh die Verschlüsselung und die Access Controls im Detail durch und wechsle zur Demo.",
+          "outcome": "Im Raum funktioniert es, auf dem Bewertungsbogen scheitert es. Procurement bewertet gegen die angegebenen Anforderungen. Ein unbeantworteter Pflichtpunkt zählt also als nicht erfüllt, egal wie gut du darum herumgeredet hast.\n\nAusserdem verbrauchst du Glaubwürdigkeit, die du später noch brauchst. Sie hat eine Ja-oder-Nein-Frage gestellt und einen ganzen Absatz bekommen - und das hat sie gemerkt.",
+          "verdict": "bad",
+          "lesson": "Ausweichen und ein Nein kosten nicht gleich viel. Ein klares Nein lässt dir eine Verhandlungsposition und einen nächsten Zug. Ausweichen lässt dir nur eine Bewertung, die du nie zu sehen bekommst."
+        },
+        {
+          "label": "Antworte ehrlich. Dann zieh SOC 2 an die Spitze des Backlogs und richte die nächsten zwei Sprints darauf aus, die Audit-Lücke zu schliessen.",
+          "outcome": "Halb richtig und teuer. Die ehrliche Antwort ist korrekt. Aber wenn du das Backlog um die Anforderung eines einzelnen Interessenten herum neu ordnest, wird genau so ein einzelner Deal still und leise zu deinem Product Goal.\n\nEin grosser Teil der SOC-2-Readiness ist Prozess- und Nachweisarbeit, nicht Engineering. Und sie konkurriert direkt mit dem Reconciliation Tie-out, der laut Treasurer über die Adoption entscheidet.",
+          "verdict": "mixed",
+          "lesson": "Der Product Owner ist accountable for maximizing the value of the product, nicht für den Value des aktuellen Gesprächs. Du darfst das trotzdem wählen. Wähl es, weil der Markt es braucht, nicht weil es im Raum ungemütlich wurde."
+        }
+      ]
+    },
+    {
+      "type": "teach",
+      "title": "Es laut sagen, ohne schwach zu wirken",
+      "body": "Die Angst ist, dass Ehrlichkeit nach wir wissen es nicht klingt. Tut sie nicht, wenn du drei Dinge in dieser Reihenfolge sagst.\n\nErstens, was tatsächlich passiert ist: vier Sprints fertig, so viel ausgeliefert, hier ist die Evidenz. Zweitens, was das bedeutet, als Range statt als Punkt: Mit unserem aktuellen Tempo landet der Tie-out zwischen März und Juni. Drittens, die konkret benannten Dinge, die das verschieben würden, und welche davon du kontrollierst.\n\nEine Range plus eine Liste von Dependencies klingt nach jemandem, der aufgepasst hat. Ein einzelnes, selbstsicheres Datum klingt etwa einen Monat lang hervorragend. Danach klingt es genau wie der letzte Vendor, den sie gefeuert haben.",
+      "callout": {
+        "kind": "note",
+        "text": "Jeder Käufer in der öffentlichen Verwaltung wurde schon mal bei einem Datum angelogen. Der Vendor zu sein, der eine Range nennt und sie dann hält, ist ein Differentiator, keine Schwäche."
+      }
+    },
+    {
+      "type": "civic",
+      "title": "Die Grenze bei siebentausendfünfhundert",
+      "body": "Zwei Zahlen in deinen Plänen sind keine Preise. Ein Northfield-Pilot ist mit $4,800 pro Jahr gelistet. Der Grund: Alles über $7,500 fällt aus der alleinigen Unterschriftsberechtigung des Town Manager und braucht drei schriftliche Offerten. Über $25,000 bist du in einer formellen RFP mit einer Abstimmung im Select Board, und das verlängert den Verkauf um Monate.\n\nKeine der beiden Zahlen kommt daher, was das Produkt wert ist. Beide kommen daher, was ein Schwellenwert mit der Länge und der Form eines Verkaufs macht. Dein Pricing Sheet hat immer noch Platzhalter, und deine Pitch-Skripte verbieten, überhaupt eine Zahl zu nennen. Das ist ein zweiter Constraint aus derselben Familie.\n\nOrdnen nach Value ist unvollständig, wenn du die Constraints nicht siehst, die entscheiden, ob der Value überhaupt eingesammelt werden kann."
+    },
+    {
+      "type": "teach",
+      "title": "Vier Arten, Nein zu sagen und die Person zu behalten",
+      "body": "Nein, weil. Ein Grund verwandelt eine Absage in Information. Ohne Grund bist du eine Wand, und um Wände wird einfach herumgeroutet.\n\nNein, aber. Nenn die Alternative, die dasselbe Problem günstiger löst - oft das Kleinere, das sie zuerst akzeptiert hätten.\n\nNein, und hier ist die Rechnung. Zeig den Trade-off in denselben Einheiten. Die Demo-Uhr: Du kannst das Live-Datum haben oder die Pace Flags und die Projections, nie beides. Denn die Daten sind zu 75 Prozent verbraucht, gemessen an einem Fiscal Year mit Stichmonat Juli.\n\nNicht jetzt, und das würde meine Meinung ändern. Nenn die Evidenz, die dich umstimmen würde. Das ist ein Commitment, überzeugbar zu bleiben - und das ist die andere Hälfte des Jobs.",
+      "callout": {
+        "kind": "why",
+        "text": "Schau, was alle vier gemeinsam haben. Jede gibt der anderen Person etwas, das sie als Nächstes tun kann. Ein nacktes Nein gibt ihr nichts. Also macht sie den einzigen Zug, der noch bleibt: Sie geht über deinen Kopf hinweg."
+      }
+    },
+    {
+      "type": "guide",
+      "quote": "For Product Owners to succeed, the entire organization must respect their decisions. These decisions are visible in the content and ordering of the Product Backlog, and through the inspectable Increment at the Sprint Review. The Product Owner is one person, not a committee. The Product Owner may represent the needs of many stakeholders in the Product Backlog. Those wanting to change the Product Backlog can do so by trying to convince the Product Owner.",
+      "cite": "Scrum Guide 2020, Product Owner",
+      "gloss": "Beide Hälften des Nein-Sagens stecken in dieser Passage. Du musst wirklich überzeugbar sein, denn Überzeugen ist der vorgesehene Weg zu dir. Und du musst standhalten können, denn die Organisation muss respektieren, wo du landest."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m12k5",
+        "kind": "mcq",
+        "stem": "Dana Whitcomb, the Finance Director and the person closest to the buyer, pushes hard for a feature you have ordered fourth. She is not wrong about the problem and you are not moving it. Which response best fits the Scrum Guide 2020 and keeps her able to influence you?",
+        "options": [
+          "Move it to first. She is closest to the customer and the organization must respect that.",
+          "Tell her the order is set and that the Guide requires the organization to respect the Product Owner's decisions.",
+          "Tell her what it is currently behind and why, then name the specific evidence that would move it: a second town describing the same problem, or a number showing what the delay costs.",
+          "Put it to the leadership team and take whatever they land on, since she and you disagree."
+        ],
+        "answer": 2,
+        "explain": "Option 3 satisfies both halves of the passage: you hold the decision and you tell her exactly how to convince you, which is the route the Guide actually names. Option 1 is capitulation dressed as customer focus, and respect for decisions runs toward the Product Owner, not away. Option 2 quotes the Guide accurately and uses it as a shield, which makes you unconvincable and therefore a bottleneck. Option 4 hands the accountability to a committee, and the Product Owner is one person, not a committee.",
+        "cite": "Scrum Guide 2020, Product Owner",
+        "tag": "accountabilities"
+      }
+    },
+    {
+      "type": "write",
+      "prompt": "Glen Ostrowski, Purchasing Officer, hat dir gemailt. Er will ein Live-Burn-down der Purchase-Order-Ceilings, mit Alerts, bevor ein Not-to-exceed überschritten wird - und zwar im nächsten Sprint. Das Problem ist echt: Zwei von zwölf Demo-Verträgen liegen schon über dem Ceiling, bei 105 und 128 Prozent. Es kommt nicht in den nächsten Sprint. Schreib die Antwort, höchstens sechs Sätze.",
+      "starter": "Glen,\n\nWo das steht: ____\n\nWofür der Sprint stattdessen da ist, und warum: ____\n\nWas es nach vorne bringen würde: ____\n\n",
+      "rubric": [
+        "Du nennst einen echten Grund, keine Kategorie. Capacity, eine Dependency oder ein konkretes Item, gegen das es verloren hat. Prioritized differently ist kein Grund, sondern nur eine Umformulierung.",
+        "Der Trade-off ist sichtbar. Er sieht, wogegen es verloren hat, und kann beurteilen, ob du richtig abgewogen hast. Wenn er das andere Item nicht sieht, kann er dich nicht überzeugen - und er kann auch nicht überzeugt werden.",
+        "Kein Weichspülen zu einem Vielleicht. Kein Datum, das du nicht verteidigen kannst, kein we will try, kein it is on the roadmap als Mittel, um das Gespräch zu beenden.",
+        "Eine Tür bleibt offen, mit einem benannten Trigger. Sag, welche Evidenz oder welches Ereignis deine Reihenfolge ändern würde. So weiss er, wie er argumentieren kann, statt wie er eskalieren muss.",
+        "Du zeigst, dass du das Problem in seinen Begriffen verstanden hast - Ceilings und Awards -, bevor du es ablehnst."
+      ],
+      "model": "Glen, du hast recht, das ist echt. Zwei der zwölf Verträge, die ich vor mir habe, liegen schon drüber, bei 105 und 128 Prozent - es ist also nicht hypothetisch. Es kommt nicht in den nächsten Sprint.\n\nDer Sprint geht ans Feed Health Monitoring. Denn die Verbindung zu Corvus Financials hängt im Error-Status fest. Und jede Budgetzahl im Produkt, inklusive der Ceiling-Rechnung, auf die du Alerts setzen würdest, wird aus einem Feed berechnet, der vor zwei Tagen stehen geblieben ist. Ceiling Alerts auf einem toten Feed wären schlimmer als gar keine Alerts. Das ist also teilweise ein Sequencing-Problem und kein Ranking-Problem.\n\nWas es nach vorne bringen würde: Wenn die nächsten zwei Gemeinden dasselbe Ceiling-Risiko beschreiben, oder wenn ein gerissenes Not-to-exceed einen Award kostet - bring mir eins davon, und ich ziehe es vor die Anomaly-Arbeit statt dahinter. Mir ist lieber, du streitest mit mir über die Reihenfolge, als dass du sie umgehst."
+    },
+    {
+      "type": "keypoints",
+      "points": [
+        "Der Guide sagt ordering Product Backlog items und hört dann auf. Jedes Ordering-Modell, das du nutzt, ist Practice, nicht Scrum - und muss in der Prüfung auch so eingeordnet werden.",
+        "Value und Effort sind statisch. Cost of Delay ist der einzige der drei Faktoren, in dem Zeit steckt. Und genau diese Variable rechnen die meisten Backlogs nie aus.",
+        "Ein Modell existiert, damit deine Argumentation an der richtigen Stelle angreifbar wird. Es kann keine Accountability tragen, und es kann nicht entscheiden.",
+        "Nur was bereits passiert ist, darf für forward-looking decision making verwendet werden. Eine Range mit benannten Dependencies schlägt ein selbstsicheres Datum jedes Mal.",
+        "Vier Formen von Nein: mit einem Grund, mit einer Alternative, mit der Rechnung dazu, und nicht jetzt plus genau die Evidenz, die deine Meinung ändern würde."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "m12q1",
+      "kind": "mcq",
+      "stem": "According to the Scrum Guide 2020, which statement about ordering the Product Backlog is correct?",
+      "options": [
+        "The Product Backlog must be ordered by business value, highest first.",
+        "The Product Owner is accountable for ordering Product Backlog items. The Guide prescribes no ordering method or criteria.",
+        "The Developers order the Product Backlog because they understand the dependencies.",
+        "The Product Backlog is ordered by a combination of value, risk, and dependency, as defined in the Guide."
+      ],
+      "answer": 1,
+      "explain": "Product Backlog management includes exactly four bullets, and the third is ordering Product Backlog items. That is all the Guide says. Option 1 is the most common wrong answer on this topic because it is what everyone teaches and it feels obviously right; the Guide simply never says it, and risk and dependency often justify ordering something less valuable first. Option 3 confuses ordering with sizing: the Developers who will do the work are responsible for the sizing, not the order. Option 4 invents criteria and attributes them to the Guide.",
+      "cite": "Scrum Guide 2020, Product Owner and Product Backlog",
+      "tag": "backlog"
+    },
+    {
+      "id": "m12q2",
+      "kind": "tf",
+      "stem": "The Scrum Guide 2020 requires the Product Owner to use a prioritization technique such as weighted scoring, cost of delay, or MoSCoW when ordering the Product Backlog.",
+      "answer": false,
+      "explain": "None of those words appear in the Guide, and the framework is described as purposefully incomplete precisely so that domain-appropriate techniques can be added. Ordering is a Product Owner accountability; the method is entirely open. This is a favourite exam shape because the practices are genuinely useful, taught in every course, and completely absent from the source document. Use them at work, label them as practice, and never cite them as Scrum.",
+      "cite": "Scrum Guide 2020, Product Owner and Purpose of the Scrum Guide",
+      "tag": "backlog"
+    },
+    {
+      "id": "m12q3",
+      "kind": "mcq",
+      "stem": "Two Product Backlog items score identically on value and on effort. One supports a board vote that happens once a year in March, the other reduces a recurring monthly waste. It is early January. Which consideration separates them, and does the Scrum Guide 2020 name it?",
+      "options": [
+        "Cost of delay separates them, and the Guide requires it to be recorded as a Product Backlog attribute.",
+        "Cost of delay separates them, and the Guide does not name it. Attributes often vary with the domain of work, so the criterion is yours to add.",
+        "Nothing separates them. Items with equal value and equal effort may be ordered arbitrarily under the Guide.",
+        "The Developers separate them, because sizing determines order."
+      ],
+      "answer": 1,
+      "explain": "The deadline shape means one item is worth a great deal until March and close to nothing afterwards, while the other loses a steady amount every month. That is a real and decisive difference the two static axes cannot see. The Guide does not contain the phrase cost of delay; it says refinement adds details such as a description, order, and size, and that attributes often vary with the domain. Option 1 fabricates a requirement. Option 3 is a trap for people who over-learn that the Guide is silent: silence means you must decide, not that the decision does not matter. Option 4 confuses sizing with ordering.",
+      "cite": "Scrum Guide 2020, Product Backlog. Cost of delay is practice, not Scrum.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m12q4",
+      "kind": "multi",
+      "stem": "Select the TWO statements the Scrum Guide 2020 actually makes about forecasting.",
+      "options": [
+        "Various practices exist to forecast progress, like burn-downs, burn-ups, or cumulative flows.",
+        "The Product Owner must maintain a release burndown chart visible to stakeholders.",
+        "Only what has already happened may be used for forward-looking decision making.",
+        "Velocity is the Scrum Team's official measure of forecast accuracy.",
+        "The Product Owner commits to a delivery date at the start of each release."
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explain": "Both correct options are verbatim from The Sprint. The Guide mentions those practices, notes they are proven useful, and immediately says they do not replace the importance of empiricism. Option 2 turns an example into an obligation. Option 4 is the sharpest distractor because velocity is universally taught alongside Scrum and appears nowhere in the Guide. Option 5 inverts the artifact commitments entirely: the three commitments are the Product Goal, the Sprint Goal, and the Definition of Done, and a date is not among them.",
+      "cite": "Scrum Guide 2020, The Sprint and Scrum Artifacts",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m12q5",
+      "kind": "mcq",
+      "stem": "A government IT Director asks whether you are SOC 2 compliant. Your controls are implemented across four trust criteria, no audit has been conducted, and every date on your compliance roadmap is a placeholder. What may a Product Owner commit to here?",
+      "options": [
+        "A completion date, since committing publicly is what creates the internal urgency to hit it.",
+        "The current state stated precisely, the objective of getting audited, and a contract structure contingent on completion. Not a date you do not control.",
+        "Nothing. Compliance is a legal and sales matter and sits outside the Product Owner accountability.",
+        "Whatever the RFP requires, on the basis that the contract can be renegotiated later if the timeline slips."
+      ],
+      "answer": 1,
+      "explain": "The audit window and the auditor's schedule are not yours, so a date is a forecast with no evidence under it, and the Guide is explicit that only what has already happened may be used for forward-looking decision making. Option 1 is a real management theory and a genuinely bad fit here, because the consequence lands on a counterparty rather than on you. Option 3 is tempting for a founder who wants to stay technical, but compliance posture is part of the product's value to this buyer and therefore squarely inside maximizing value. Option 4 treats a signed obligation as a draft.",
+      "cite": "Scrum Guide 2020, The Sprint and Product Owner",
+      "tag": "value"
+    },
+    {
+      "id": "m12q6",
+      "kind": "sort",
+      "stem": "Sort each statement by whether it appears in the Scrum Guide 2020 or is a useful practice from outside it.",
+      "buckets": [
+        "In the Scrum Guide 2020",
+        "Useful practice, not Scrum"
+      ],
+      "items": [
+        {
+          "text": "Ordering Product Backlog items is part of Product Backlog management",
+          "bucket": "In the Scrum Guide 2020"
+        },
+        {
+          "text": "Weighted scoring with explicit criteria and weights",
+          "bucket": "Useful practice, not Scrum"
+        },
+        {
+          "text": "Only what has already happened may be used for forward-looking decision making",
+          "bucket": "In the Scrum Guide 2020"
+        },
+        {
+          "text": "Cost of delay divided by effort to rank urgency",
+          "bucket": "Useful practice, not Scrum"
+        },
+        {
+          "text": "Various practices exist to forecast progress, like burn-downs, burn-ups, or cumulative flows",
+          "bucket": "In the Scrum Guide 2020"
+        },
+        {
+          "text": "Velocity as a planning input",
+          "bucket": "Useful practice, not Scrum"
+        },
+        {
+          "text": "The Developers who will be doing the work are responsible for the sizing",
+          "bucket": "In the Scrum Guide 2020"
+        },
+        {
+          "text": "MoSCoW categories of must, should, could and will not",
+          "bucket": "Useful practice, not Scrum"
+        }
+      ],
+      "explain": "The four Guide statements are close to verbatim. The four practices are all things a competent Product Owner may use and none of them are Scrum. The one worth staring at is burn-downs: they are named in the Guide, which people then read as an endorsement, when the sentence immediately following says these do not replace the importance of empiricism. Mentioned is not required, and required is what exam distractors are built from.",
+      "cite": "Scrum Guide 2020, Product Owner, Product Backlog, The Sprint",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m12q7",
+      "kind": "mcq",
+      "stem": "A stakeholder demands the demo always show today's date. The data is 75 percent consumed against a July to June fiscal year, which pins the snapshot to March. Switching to the live clock would make the town look like it spent 75 percent of its appropriation in six weeks and would break every projection, pace flag, and at-risk number on screen. What is the best Product Owner move?",
+      "options": [
+        "Refuse and explain that the request is technically impossible.",
+        "Implement it, since the stakeholder is entitled to have their request built and the numbers can be corrected later.",
+        "Show the arithmetic: live date, correct pace maths, or the existing dataset, pick any two. Let them choose which property to give up.",
+        "Escalate the decision to the Scrum Master, who owns process disagreements."
+      ],
+      "answer": 2,
+      "explain": "This is no with the arithmetic attached, and it is the strongest form of refusal available because it converts your judgment into a constraint the other person can verify. It is also not impossible, which is why option 1 is both wrong and easy to disprove, and disproving your objection costs you the argument. Option 2 abandons the accountability and ships a screen that lies. Option 4 misreads the Scrum Master, who removes barriers and coaches rather than deciding product questions.",
+      "cite": "Scrum Guide 2020, Product Owner and Scrum Master",
+      "tag": "backlog"
+    },
+    {
+      "id": "m12q8",
+      "kind": "mcq",
+      "stem": "Which of these is the weakest way to say no to a stakeholder request you have genuinely decided against?",
+      "options": [
+        "It is not going in this Sprint. It lost to feed monitoring, and here is why that ordering may be wrong.",
+        "Not now. If a second town describes the same problem, I will move it ahead of the anomaly work.",
+        "Good idea, it is on the roadmap.",
+        "No, but there is a smaller version that solves the same problem for a fifth of the work. Do you want that instead?"
+      ],
+      "answer": 2,
+      "explain": "It is on the roadmap is the most popular sentence in product management and it does the least work of any of these. It is not a no, so the person does not know they were refused; it names no reason, so they cannot argue; it offers no alternative and no trigger, so they cannot act. The three predictable outcomes are that they wait, they escalate, or they stop bringing you things. The other three each hand the other person something to do, which is the property that keeps the relationship intact and keeps you convincible.",
+      "cite": "Scrum Guide 2020, Product Owner. The four forms are practice.",
+      "tag": "stakeholders"
+    },
+    {
+      "id": "m12q9",
+      "kind": "tf",
+      "stem": "Because the entire organization must respect the Product Owner's decisions, a Product Owner who has decided an ordering question is not obliged to reconsider it.",
+      "answer": false,
+      "explain": "Both sentences in that passage matter and they pull in opposite directions on purpose. The organization must respect the decisions, and those wanting to change the Product Backlog can do so by trying to convince the Product Owner. Convince is only meaningful if you can be convinced. Quoting the respect clause as a shield produces a Product Owner nobody can reach, which is the bottleneck antipattern, and it also cuts you off from the empirical inputs the accountability depends on. If you cannot be convinced you are a bottleneck. If you can be overridden you are a mailbox.",
+      "cite": "Scrum Guide 2020, Product Owner",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m12q10",
+      "kind": "mcq",
+      "stem": "A Ledgerline pilot is deliberately priced at $4,800 a year, under the Town Manager's $7,500 unilateral signing authority, so buying it never needs three written quotes and never approaches the $25,000 line where a formal RFP and a Select Board vote begin. How should a Product Owner treat that constraint when ordering the Product Backlog?",
+      "options": [
+        "As a sales concern with no bearing on product ordering.",
+        "As a hard input to ordering. If the collectible value of an item depends on staying inside an approval path, then packaging, scope, and sequencing are product decisions, not just commercial ones.",
+        "As a reason to raise the price, since a threshold means the market will bear more.",
+        "As a temporary distortion to be ignored until the product is mature enough to price properly."
+      ],
+      "answer": 1,
+      "explain": "The threshold changes what can actually be bought, which changes what an item is worth in practice rather than in theory. That makes it exactly the kind of constraint a Product Owner accountable for maximizing value has to carry into the ordering. Option 1 is the founder trap running in reverse: keeping product pure of commercial reality produces a beautifully ordered backlog nobody can purchase. Option 3 reads the threshold backwards. Option 4 postpones a constraint that is currently deciding whether pilots close at all.",
+      "cite": "Scrum Guide 2020, Product Owner. Procurement thresholds are market context, not Scrum.",
+      "tag": "value"
+    },
+    {
+      "id": "m12q11",
+      "kind": "mcq",
+      "stem": "Your ordering model, with weights everyone agreed to, outputs an order that you are convinced is wrong. What should you do?",
+      "options": [
+        "Follow the model. Overriding it undermines the agreement and reintroduces the bias the model existed to remove.",
+        "Adjust the scores until the output matches your judgment, so the sheet and the decision agree.",
+        "Ask which criterion is missing or mis-weighted, discuss it openly, and decide. The model informs the decision and cannot make it.",
+        "Discard the model as unfit and order by intuition from now on."
+      ],
+      "answer": 2,
+      "explain": "The accountability sits on a person and cannot be transferred to a spreadsheet, so following an output you believe is wrong is an abdication, however collaborative the weights were. Option 2 is the most common thing people actually do and it is the worst of the four, because it destroys the only thing the model provides, which is a visible record of the reasoning. Option 4 throws away a working instrument over one disagreement. Discomfort with an output is usually information about a missing criterion, and finding it is how the model gets better.",
+      "cite": "Scrum Guide 2020, Product Owner",
+      "tag": "antipatterns"
+    }
+  ],
+  "cards": [
+    {
+      "id": "m12c1",
+      "front": "What does the Scrum Guide 2020 say about how to order the Product Backlog?",
+      "back": "Nothing beyond the fact that the Product Owner is accountable for ordering Product Backlog items. No method, no criteria, no requirement to order by value.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m12c2",
+      "front": "The four bullets of Product Backlog management",
+      "back": "Developing and explicitly communicating the Product Goal. Creating and clearly communicating Product Backlog items. Ordering Product Backlog items. Ensuring the Product Backlog is transparent, visible and understood.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m12c3",
+      "front": "Value versus effort: which box does the damage?",
+      "back": "High value with high effort. It is where the real product lives and it loses weekly to low value with low effort, because small wins feel like progress. Practice, not Scrum.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m12c4",
+      "front": "What is weighted scoring actually for?",
+      "back": "Not the total. It forces you to state criteria and weights, so people argue about whether value should count four times strategy fit instead of arguing with your taste. Practice, not Scrum.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m12c5",
+      "front": "Cost of delay, and its three shapes",
+      "back": "What one more month of not having this costs. Steady, the same loss every month. Deadline, near zero then a cliff. Decaying, highest now and worthless later. Practice, not Scrum.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m12c6",
+      "front": "Why is cost of delay the variable people leave out?",
+      "back": "Value and effort are static and describe the item as if the world holds still. Two items with identical value and effort can be six months apart in the correct order.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m12c7",
+      "front": "The Scrum Guide on forecasting practices",
+      "back": "Various practices exist to forecast progress, like burn-downs, burn-ups, or cumulative flows. While proven useful, these do not replace the importance of empiricism.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m12c8",
+      "front": "The one sentence that governs every forecast you give",
+      "back": "Only what has already happened may be used for forward-looking decision making. Anything else is a wish with a chart around it.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m12c9",
+      "front": "Forecast versus commitment",
+      "back": "A forecast is the past pointed forward, with a range. A commitment is a future you take consequences for. Scrum has three commitments: Product Goal, Sprint Goal, Definition of Done. A date is not one.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m12c10",
+      "front": "How to give a forecast without sounding weak",
+      "back": "What has actually happened, then what it implies as a range not a point, then the named dependencies and which you control. A confident single date sounds like the last vendor they fired.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m12c11",
+      "front": "The four ways to say no",
+      "back": "No, because. No, but here is the alternative. No, and here is the arithmetic. Not now, and here is exactly what would change my mind. Each hands the other person something to do.",
+      "tag": "stakeholders"
+    },
+    {
+      "id": "m12c12",
+      "front": "Both halves of the Product Owner's authority",
+      "back": "The organization must respect the Product Owner's decisions, and those wanting to change the Product Backlog do so by trying to convince the Product Owner. Unconvincable is a bottleneck. Overridable is a mailbox.",
+      "tag": "accountabilities"
+    }
+  ]
+}

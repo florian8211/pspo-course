@@ -1,0 +1,464 @@
+{
+  "id": "m04",
+  "num": 4,
+  "week": 2,
+  "title": "Produkt, Vision und das Product Goal",
+  "subtitle": "Was als Produkt zählt und wie du ein einziges langfristiges Ziel formulierst, auf das ein ganzes Team hinarbeiten kann.",
+  "minutes": 30,
+  "why": "Wenn du nicht sagen kannst, was dein Produkt ist und wo es aufhört, ist jede Ordering-Entscheidung danach geraten. Ein Raten, das sich als Plan verkleidet.",
+  "objectives": [
+    "Wende den Vier-Punkte-Test aus dem Scrum Guide selbst an: Was zählt als Produkt?",
+    "Erkläre, was ein Product Goal ist, wo es lebt und warum immer nur eines aktiv ist",
+    "Trenne Vision, eine nützliche Practice, vom Product Goal, das Teil von Scrum ist",
+    "Schreib ein Product Goal, das einen zukünftigen Zustand beschreibt - statt einer Feature-Liste oder eines Datums",
+    "Entscheide, was zu tun ist, wenn Validated Learning deine eigene Positionierung untergräbt"
+  ],
+  "beats": [
+    {
+      "type": "hook",
+      "body": "Öffne die Ledgerline-Website, und man verkauft dir same-day Vendor Payments. Öffne die Roadmap, und jedes Item darauf baut ein Spend-Monitoring-Dashboard. Es hängt am Finance-System, das die Gemeinde schon betreibt. Deine eigenen Notizen nennen es in drei Worten: zwei verschiedene Produkte.\n\nNiemand hat gelogen. Zwei ehrliche Antworten sind auseinandergedriftet. Bevor du ein Backlog ordnen kannst, musst du eine Frage beantworten, die sich zu banal anfühlt, um sie laut zu sagen: Was ist das Produkt?"
+    },
+    {
+      "type": "teach",
+      "title": "Die Frage, die niemand laut stellt",
+      "body": "Die meisten Teams definieren ihr Produkt nie. Sie erben es. Dann wird die Grenze am schlechtesten möglichen Ort ausdiskutiert: mitten im Sprint, wenn jemand sagt, das sei eigentlich nicht unser Produkt.\n\nDer Scrum Guide definiert es tatsächlich, in einem kleinen eingerückten Absatz, versteckt unter dem Product Goal. Man übersieht ihn leicht, und PSPO I liebt ihn. Lies ihn als Test mit vier Bedingungen, nicht als netten Satz über Value.",
+      "callout": {
+        "kind": "why",
+        "text": "Eine Grenze ist keine Bürokratie. Sie entscheidet, wer deine Stakeholder sind, was als Verbesserung zählt und wessen Beschwerden du dir anhören musst."
+      }
+    },
+    {
+      "type": "guide",
+      "quote": "A product is a vehicle to deliver value. It has a clear boundary, known stakeholders, well-defined users or customers. A product could be a service, a physical product, or something more abstract.",
+      "cite": "Scrum Guide 2020, Commitment: Product Goal",
+      "gloss": "Vier Bedingungen: Es liefert Value, es hat eine Grenze, du weisst, wem es wichtig ist, und du weisst, wer es nutzt. Nichts davon handelt von Code, Teams oder Repositories."
+    },
+    {
+      "type": "analogy",
+      "title": "Die Lunch-Theke",
+      "body": "Stell dir vor, du führst eine Lunch-Theke, und frag dich, was du verkaufst. Das Sandwich? Das ist Output. Lunch? Schon näher. Was die Leute kaufen, ist: in zwanzig Minuten satt werden, ohne darüber nachdenken zu müssen.\n\nWählst du das Sandwich als dein Produkt, optimierst du dein Leben lang Brot. Wählst du satt in zwanzig Minuten, sind plötzlich die Schlange, die Kasse und der Parkplatz alle im Scope. Gleiche Küche, gleiches Personal, komplett anderes Backlog.\n\nDie Grenze, die du ziehst, ist keine Beschreibung des Produkts. Sie ist eine Entscheidung darüber, was du fixen darfst."
+    },
+    {
+      "type": "civic",
+      "title": "Zwei verschiedene Produkte, ein Engineer",
+      "body": "Lass den Test aus dem Guide zweimal über Ledgerline laufen. Antwort A: eine Vendor-Payments-Plattform. Die Grenze reicht von der genehmigten Rechnung bis zur abgewickelten Zahlung. Nutzer: Town Manager, Vendor, Resident.\n\nAntwort B: ein Spend-Monitoring-Ledger, angebunden an das Finance-System, das die Gemeinde schon betreibt - ausdrücklich kein Ersatz für das General Ledger. Nutzer: Finance-Staff, Oversight, Auditors, Residents.\n\nBeide bestehen den Vier-Punkte-Test. Genau das ist das Problem. Zwei gültige Produkte, ein Backlog, ein Engineer.\n\nDas Leadership hat die Positionierung letzten Frühling Richtung Payments entschieden. Trotzdem ist jeder Screen, der tatsächlich geshippt wurde, das Monitoring-Produkt. Das verkaufte und das gebaute Produkt sind auseinandergedriftet."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m04k1",
+        "kind": "mcq",
+        "stem": "The Ledgerline dashboard connects to a town's Corvus Financials system, is used by finance staff, oversight bodies, auditors, and residents, and covers the town's money from appropriation through settlement. An advisor tells you it is not really a product because it does not replace the general ledger. Using the Scrum Guide 2020, which response is correct?",
+        "options": [
+          "The advisor is right. A product must be a complete system of record, otherwise it is a feature of somebody else's product.",
+          "The advisor is wrong. The Guide's test is value, a clear boundary, known stakeholders, and well-defined users or customers. Completeness is not on the list.",
+          "The advisor is right. The Guide requires a product to have its own dedicated Scrum Team before it counts as a product.",
+          "It depends. You cannot answer until the organization has approved a product vision statement."
+        ],
+        "answer": 1,
+        "explain": "The Guide's definition is four conditions and nothing else: a vehicle to deliver value, a clear boundary, known stakeholders, well-defined users or customers. Option 1 invents a completeness rule that does not exist. Option 3 confuses product with team structure, and the Guide says the opposite: multiple teams share the same Product Goal, Product Backlog, and Product Owner. Option 4 imports vision, a word the Scrum Guide 2020 never uses.",
+        "cite": "Scrum Guide 2020, Commitment: Product Goal",
+        "tag": "artifacts"
+      }
+    },
+    {
+      "type": "teach",
+      "title": "Das Product Goal in einer Zeile",
+      "body": "Ein Product Goal ist das eine langfristige Ziel, auf das das Scrum Team gerade hinarbeitet. Kein Quartal voller Features. Kein Launch-Datum. Sondern ein beschriebener zukünftiger Zustand des Produkts, den du erkennen würdest, wenn du ihn siehst.\n\nZwei Fakten testet die Prüfung gnadenlos. Erstens: Es ist kein separates Dokument, es lebt im Product Backlog. Zweitens: Es gibt immer nur eines. Du erfüllst es oder du gibst es auf, dann nimmst du das nächste.\n\nDiese zweite Regel ist die ganze Disziplin."
+    },
+    {
+      "type": "guide",
+      "quote": "The Product Goal describes a future state of the product which can serve as a target for the Scrum Team to plan against. The Product Goal is in the Product Backlog. The rest of the Product Backlog emerges to define \"what\" will fulfill the Product Goal.",
+      "cite": "Scrum Guide 2020, Commitment: Product Goal",
+      "gloss": "Das Goal ist das Ziel. Alles darunter im Backlog ist deine aktuell beste Antwort darauf, wie du dorthin kommst. Und diese Antwort darf sich ändern, ohne dass sich das Goal ändert."
+    },
+    {
+      "type": "guide",
+      "quote": "The Product Goal is the long-term objective for the Scrum Team. They must fulfill (or abandon) one objective before taking on the next.",
+      "cite": "Scrum Guide 2020, Commitment: Product Goal",
+      "gloss": "Ein Objective nach dem anderen. Aufgeben zählt als Abschliessen. Was nicht zählt: still und leise drei Goals parallel fahren und das dann Focus nennen."
+    },
+    {
+      "type": "analogy",
+      "title": "Die lange Fahrt",
+      "body": "Du fährst quer durchs Land, und das Ziel steht fest. Alles wird daran gemessen: Das ist das Product Goal. Heute schaffst du es nur bis zur Hälfte: Das ist ein Sprint Goal, ein Objective, gewählt, weil es dich Richtung Ziel bringt.\n\nDie Abzweigungen, die du heute nimmst, sind Backlog Items. Wegen des Wetters änderst du sie gern, ohne zu ändern, wo du heute Nacht schläfst.\n\nZoom raus, und alles ist ineinander verschachtelt. Zoom rein, und jede Ebene darf für sich falsch liegen, ohne die Ebene darüber kaputt zu machen. Genau diese Toleranz ist der ganze Sinn dieser Anordnung.",
+      "visual": "goal-nesting"
+    },
+    {
+      "type": "trap",
+      "myth": "Scrum verlangt eine Product Vision, und der Product Owner ist accountable dafür.",
+      "truth": "Der Scrum Guide 2020 verwendet das Wort vision kein einziges Mal. Das Commitment für das Product Backlog ist das Product Goal. Und der Product Owner ist accountable dafür, das Product Goal zu entwickeln und explizit zu kommunizieren.",
+      "why": "PSPO I schreibt Distraktoren, die nach Senior klingen. Vision, Roadmap, Release-Plan und fünf Planning-Ebenen sind alle real, alle nützlich und alle nicht im Guide. Nennt eine Option ein Artefakt, das der Guide nicht definiert, ist sie meistens die falsche Antwort."
+    },
+    {
+      "type": "teach",
+      "title": "Ist Vision also nutzlos? Nein.",
+      "body": "[[PRACTICE]] Vision, Roadmaps und Elevator Pitches kommen von ausserhalb von Scrum, grösstenteils aus Material zum Certified Scrum Product Owner und aus allgemeiner Product-Practice. Sie sind wirklich nützlich, und du wirst sie bei Ledgerline einsetzen. Denn Investoren und Town Managers brauchen eine Richtung, keinen Sprint.\n\nHalte die beiden in deinem Kopf einfach getrennt. Vision ist Richtung und kann jahrelang gültig bleiben. Das Product Goal ist ein Ziel, das du treffen und dann ersetzen darfst.\n\nVision inspiriert. Das Product Goal ist falsifizierbar. Nur eines von beiden wird in der Prüfung bewertet."
+    },
+    {
+      "type": "civic",
+      "title": "Die Stadt, die es schon gelöst hat",
+      "body": "Der grösste Prospect in deiner Pipeline ist eine Stadt, etwa zwölfmal so gross wie Northfield. Sie veröffentlicht schon jeden Check, den sie ausstellt, und ist stolz darauf. Ihr Finance Office hat dieses Portal selbst gebaut.\n\nDeine eigenen Marktnotizen sind unverblümt: Spend Transparency kannst du dort überhaupt nicht verkaufen. Steig stattdessen mit dem ein, was eine veröffentlichte Liste von Checks nicht beantworten kann: ob ein Department auf Kurs ist, seine Appropriation vor Jahresende zu überziehen. Pitche nie gegen das, was sie gebaut haben. Immer: erweitert, sitzt vorgelagert, vervollständigt.\n\nJetzt schau, was das mit einem Product Goal macht. Das Produkt, das du tatsächlich gebaut hast, ist ein Spend-Transparency-Dashboard. In einem deiner zwei Zielsegmente ist genau das, was du gebaut hast, schon der grösste Stolz des Incumbent."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m04k2",
+        "kind": "mcq",
+        "stem": "Your Lead Engineer asks where the Product Goal should live so the team can actually see it. Which answer matches the Scrum Guide 2020?",
+        "options": [
+          "In the Sprint Backlog, beside the Sprint Goal, so the Developers see it every day.",
+          "In the Product Backlog. The rest of the Product Backlog emerges to define what will fulfill it.",
+          "In a separate roadmap document owned by the Product Owner and reviewed each quarter.",
+          "Anywhere convenient, as long as the Scrum Master publishes it after the Sprint Retrospective."
+        ],
+        "answer": 1,
+        "explain": "The Guide states it plainly: the Product Goal is in the Product Backlog, and the rest of the Product Backlog emerges to define what will fulfill it. Option 1 describes the Sprint Goal, which is the Sprint Backlog's commitment. Option 3 is a real and useful practice but the roadmap is not a Scrum artifact. Option 4 invents a Scrum Master duty that does not exist.",
+        "cite": "Scrum Guide 2020, Commitment: Product Goal",
+        "tag": "artifacts"
+      }
+    },
+    {
+      "type": "sim",
+      "title": "Der Proof Trail ist nicht der Grund, warum sie sich einloggen",
+      "setup": "Zehn grounded Persona-Sessions sind durch, und die Synthese gibt dir einen Satz, den du nicht hören wolltest: Trust kommt von Reconciliation und klaren Definitionen, nicht vom tamper-evident Ledger.\n\nDie Empfehlung: Die Proof-Story aus den Operator- und Oversight-Views rausnehmen. Und sie als Primary Value für den Auditor behalten, denn der Auditor ist die eine Persona, für die der Proof der eigentliche Punkt ist. Jede Operator-Persona hat irgendeine Version davon gesagt.\n\nDieser Ledger ist die erste Zeile jedes Decks, das du je gezeigt hast. Dein struktureller Differentiator-Claim ist, dass sich ein veränderter Record nicht verstecken lässt. Und du bist auch die Person, die diese Story den Investoren erzählt.",
+      "choices": [
+        {
+          "label": "Passe das Product Goal an das an, was du gelernt hast: ein zukünftiger Zustand, in dem ein Finance Director jede Zahl bis zum Source-System zurückverfolgen und verteidigen kann - mit Proof dort, wo Proof das ist, was die Leute wollen.",
+          "outcome": "Das Goal beschreibt jetzt einen Zustand, bei dem du falschliegen könntest, und das Backlog darunter ordnet sich neu. Reconciliation und gemeinsame Definitionen steigen nach oben.\n\nDie Proof-Story verschwindet von den Operator-Screens und bleibt im Workspace des Auditors, wo sie ihren Wert tatsächlich bringt. An der Technologie ändert sich nichts. Was sich ändert, ist der Claim, den du darüber machst.",
+          "verdict": "good",
+          "lesson": "Ein Product Goal beschreibt einen zukünftigen Zustand des Produkts, keine Technologie, die du schon gewählt hast. Validated Learning darf das Goal verschieben, und das Goal ist das Schnellste, was du besitzt."
+        },
+        {
+          "label": "Halte am Goal fest. Die Discovery hat grounded Simulationen genutzt, keine echten Interviews. Also warte, bis zahlende Kunden dasselbe sagen.",
+          "outcome": "Vertretbar, und das Discovery-Dokument sagt das selbst über sich. Aber im Finding geht es nicht wirklich um den Proof Trail. Es geht darum, welches Versprechen Operators kaufen.\n\nUnd das kannst du in einer einzigen Live-Session mit einem echten Finance Office testen, für praktisch nichts. Sitzt du darauf, baust du die nächsten zwei Sprints Proof-Features, für die sich niemand einloggt.",
+          "verdict": "mixed",
+          "lesson": "Schwache Evidence ist ein Grund, schneller zu testen - nicht ein Grund zu warten. Inspect and adapt in dem Tempo, das die Evidence erlaubt, nicht in dem Tempo, das bequem ist."
+        },
+        {
+          "label": "Triff dich in der Mitte. Lass die Proof-Story vorne und zentral und nimm Reconciliation daneben in die Roadmap auf.",
+          "outcome": "Jetzt trägst du zwei Headline-Versprechen und hast einen Engineer. Operators landen immer noch auf einem Screen, der mit einem Claim aufmacht, nach dem sie nie gefragt haben.\n\nUnd Reconciliation, das eigentliche Adoption-Gate, steht hinter Arbeit, die bloss nach Fortschritt aussieht. Genau so sind das gebaute und das verkaufte Produkt beim ersten Mal auseinandergedriftet.",
+          "verdict": "bad",
+          "lesson": "Hinzufügen ist nicht Entscheiden. Ein Product Goal, das jedem Stakeholder entgegenkommt, ist kein Objective. Es ist ein Waffenstillstand."
+        },
+        {
+          "label": "Eskaliere an die Co-Founder und lass das Leadership die Positionierung entscheiden.",
+          "outcome": "Du wirst sie brauchen. Das betrifft den Pitch und die Fundraising-Story, und eine Entscheidung dieser Grösse trifft man nicht allein.\n\nAber achte darauf, was du nicht abgeben kannst. Der Product Owner ist eine Person, kein Komitee. Und wenn die Antwort als Kompromiss zurückkommt, den niemand ownt, ist das Product Goal immer noch deins.",
+          "verdict": "mixed",
+          "lesson": "Breit konsultieren, allein entscheiden. Der Product Owner darf die Bedürfnisse vieler Stakeholder vertreten. Trotzdem hat das Product Backlog genau einen Owner."
+        }
+      ]
+    },
+    {
+      "type": "teach",
+      "title": "Wie du ein Product Goal schreibst, das wirklich ein Goal ist",
+      "body": "Drei typische Fehlformen. Eine Feature-Liste im Goal-Kostüm: Reconciliation, Alerting und Role Views bis Q4 ausliefern. Ein Datum: bis Januar mit der ersten zahlenden Gemeinde live gehen. Ein Slogan: der Trust Layer für Municipal Finance sein.\n\nKeine der drei kann je falsch sein - genau daran erkennst du das Problem. Ein echtes Product Goal benennt einen zukünftigen Zustand des Produkts. Es gilt für Monate, nicht für Jahre. Und man kann es als erreicht erkennen oder aufgeben.\n\nSag das als Test laut: Wenn wir das erreicht hätten, was wäre dann wahr, das heute nicht wahr ist - und wer würde es merken? Wenn die Antwort eine Shipping-Liste ist, schreib es neu."
+    },
+    {
+      "type": "trap",
+      "myth": "Ein Product Goal ist im Grunde ein Release-Datum mit einem Namen dran.",
+      "truth": "Laut Guide beschreibt das Product Goal \"a future state of the product which can serve as a target for the Scrum Team to plan against\". Und es ist \"the long-term objective for the Scrum Team\".",
+      "why": "Die Prüfung stellt gern eine Option in Goal-Form neben eine in Datums-Form und eine in Scope-Form. Daten und Scope gehören in Forecasts.\n\nDas Goal ist der Zustand, auf den du zielst. Und jeder Sprint macht aus einem Stück davon Evidence."
+    },
+    {
+      "type": "write",
+      "prompt": "Schreib ein Product Goal für Ledgerline, bei dem die Finanzverwaltung einer Gemeinde erkennen könnte, dass es erreicht ist. Ziel auf einen Horizont von ein paar Sprints, nicht von ein paar Jahren. Nenn keine Technologie, kein Datum und keine Liste von Screens.",
+      "starter": "Heute kann ein Finance Director einer Gemeinde nicht ____.\nWenn wir dieses Goal erreichen, ist ____ wahr.\nWir merken es daran, dass ____.",
+      "rubric": [
+        "Beschreibt einen zukünftigen Zustand des Produkts, nicht Arbeit, die ausgeliefert wird. Das Hauptverb ist nicht build, add, launch oder ship.",
+        "Nennt, wer den Unterschied merken würde - in echten Northfield-Begriffen: Dana Whitcomb (Finance Director), Priya Raman (Treasurer), Angela Pike im Accounts Payable, Yusuf Adeyemi (Auditor) oder ein Resident.",
+        "Ist falsifizierbar. Es gibt eine beobachtbare Bedingung, die dir sagt, dass das Goal erreicht ist - oder dass es aufgegeben werden sollte.",
+        "Enthält kein Datum, keine Release-Nummer und keine Feature-Liste.",
+        "Ist ein Objective, nicht drei. Wenn du einen Teilsatz streichen kannst und immer noch ein Goal hast, hattest du zwei Goals."
+      ],
+      "model": "Die Finance-Leute in Northfield können jede Zahl, die Ledgerline zeigt, auf ihr eigenes Source System zurückführen. Und sie können sie vor einem Auditor oder dem Select Board verteidigen, ohne das Produkt zu verlassen.\n\nWir wissen, dass wir dort sind, wenn ein Finance Director einen monatlichen Board Report unterschreibt, der aus Ledgerline generiert wurde. Sein Reconciliation-Status stimmt sowohl mit Corvus als auch mit der Bank überein. Und der Finance Director baut ihn nicht zuerst in einem Spreadsheet nach."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m04k3",
+        "kind": "sort",
+        "stem": "Drop each item into the right bucket. This distinction is most of what separates a pass from a fail on PSPO I.",
+        "buckets": [
+          "In the Scrum Guide 2020",
+          "Useful practice, not Scrum"
+        ],
+        "items": [
+          {
+            "text": "The Product Goal is in the Product Backlog.",
+            "bucket": "In the Scrum Guide 2020"
+          },
+          {
+            "text": "A product vision statement that captures the imagination.",
+            "bucket": "Useful practice, not Scrum"
+          },
+          {
+            "text": "They must fulfill (or abandon) one objective before taking on the next.",
+            "bucket": "In the Scrum Guide 2020"
+          },
+          {
+            "text": "A product roadmap with dated milestones.",
+            "bucket": "Useful practice, not Scrum"
+          },
+          {
+            "text": "A product is a vehicle to deliver value.",
+            "bucket": "In the Scrum Guide 2020"
+          },
+          {
+            "text": "The elevator pitch template: FOR, WHO, THE, THAT, UNLIKE.",
+            "bucket": "Useful practice, not Scrum"
+          },
+          {
+            "text": "Multiple Scrum Teams on one product share the same Product Goal.",
+            "bucket": "In the Scrum Guide 2020"
+          },
+          {
+            "text": "Five levels of planning, with vision and roadmap as levels one and two.",
+            "bucket": "Useful practice, not Scrum"
+          }
+        ],
+        "explain": "Everything in the left bucket is quoted or paraphrased directly from the Scrum Guide 2020. Everything in the right bucket comes from Certified Scrum Product Owner material or general product management practice. Both columns are worth knowing. Only one column is graded.",
+        "cite": "Scrum Guide 2020, Commitment: Product Goal and Scrum Team",
+        "tag": "artifacts"
+      }
+    },
+    {
+      "type": "keypoints",
+      "points": [
+        "Ein Produkt liefert Value, hat eine klare Grenze, bekannte Stakeholder und klar definierte User. Zieh die Grenze bewusst.",
+        "Das Product Goal ist das langfristige Objective für das Scrum Team, und es lebt im Product Backlog.",
+        "Ein Objective nach dem anderen. Erfüll es oder gib es auf, dann nimm das nächste.",
+        "Vision, Roadmaps und Elevator Pitches sind nützliche Practice, aber nicht Scrum. Die Prüfung kennt den Unterschied - und du solltest ihn auch kennen.",
+        "Wenn validiertes Learning deine Positionierung untergräbt, ist das Goal von allem, was du hast, am billigsten zu ändern."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "m04q1",
+      "kind": "mcq",
+      "stem": "A vendor payment service, a public ledger website, and an internal analytics console are all maintained by the one Scrum Team building Ledgerline. Leadership asks whether these are one product or three. Which reasoning follows the Scrum Guide 2020?",
+      "options": [
+        "Three, because each has its own codebase and deployment pipeline.",
+        "One, because one Scrum Team can only ever have one product.",
+        "It depends on where you draw a clear boundary with known stakeholders and well-defined users. That boundary is a decision, and it determines the Product Goal and the Product Backlog.",
+        "Three, because each has different users, and different users always mean different products."
+      ],
+      "answer": 2,
+      "explain": "The Guide gives conditions, not a formula: value, a clear boundary, known stakeholders, well-defined users or customers. Where the boundary falls is a judgment you make and then live with. Option 1 uses a technical fact the Guide never mentions. Option 2 is backwards, since the Guide only constrains the other direction, several teams sharing one product. Option 4 is close but too absolute: one product routinely serves several kinds of user, and Ledgerline's own ten personas prove it.",
+      "cite": "Scrum Guide 2020, Commitment: Product Goal",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04q2",
+      "kind": "mcq",
+      "stem": "A Scrum Team is two Sprints into a Product Goal when discovery shows the objective is no longer worth reaching. What does the Scrum Guide 2020 permit?",
+      "options": [
+        "Nothing. A Product Goal is a commitment and must be fulfilled before another is taken on.",
+        "The team may abandon the objective, and then take on the next one.",
+        "The Scrum Master decides whether the Product Goal may be replaced.",
+        "The team may run the new objective in parallel until the original one is fulfilled."
+      ],
+      "answer": 1,
+      "explain": "The exact wording is that they must fulfill (or abandon) one objective before taking on the next. Abandoning is explicitly allowed, and that parenthesis is the whole point. Option 1 misreads commitment as an obligation to finish. Option 3 hands a product decision to the Scrum Master. Option 4 breaks the one-objective-at-a-time rule the same sentence establishes.",
+      "cite": "Scrum Guide 2020, Commitment: Product Goal",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04q3",
+      "kind": "multi",
+      "stem": "Select the TWO statements the Scrum Guide 2020 actually makes about the Product Goal.",
+      "options": [
+        "The Product Goal is in the Product Backlog.",
+        "The Product Goal must be expressed as a measurable OKR.",
+        "The Product Goal is the long-term objective for the Scrum Team.",
+        "The Product Goal is agreed at the Sprint Review with stakeholders.",
+        "The Product Goal is reviewed and re-approved every quarter."
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explain": "Both correct options are lifted from the Guide's Product Goal commitment. OKRs, quarterly re-approval, and Sprint Review agreement are all common practice in real organizations and none of them appear in the Guide. Note that stakeholders do inspect progress toward the Product Goal at the Sprint Review, but the Guide never says the Goal is agreed there.",
+      "cite": "Scrum Guide 2020, Commitment: Product Goal",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04q4",
+      "kind": "tf",
+      "stem": "The Scrum Guide 2020 makes the Product Owner accountable for creating and maintaining a product vision.",
+      "answer": false,
+      "explain": "The word vision does not appear in the Scrum Guide 2020. The Product Owner is accountable for developing and explicitly communicating the Product Goal, creating and clearly communicating Product Backlog items, ordering them, and ensuring the Product Backlog is transparent, visible and understood. A vision is a useful practice you may still choose to keep, and it is not a Scrum accountability.",
+      "cite": "Scrum Guide 2020, Product Owner",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m04q5",
+      "kind": "mcq",
+      "stem": "Ledgerline grows to two Scrum Teams working on the same product. According to the Scrum Guide 2020, what must they share?",
+      "options": [
+        "The same Sprint Goal and the same Sprint length.",
+        "The same Product Goal, Product Backlog, and Product Owner.",
+        "The same Scrum Master and the same Daily Scrum.",
+        "The same velocity baseline and estimation scale."
+      ],
+      "answer": 1,
+      "explain": "The Guide is explicit: teams reorganized around one product should share the same Product Goal, Product Backlog, and Product Owner, and they must mutually define and comply with the same Definition of Done. Sprint Goals are per Sprint and per team's commitment, so option 1 is wrong. Nothing requires a shared Scrum Master or a shared Daily Scrum. Velocity and estimation scales are practice, not Scrum.",
+      "cite": "Scrum Guide 2020, Scrum Team",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04q6",
+      "kind": "mcq",
+      "stem": "Which of these is best formed as a Product Goal?",
+      "options": [
+        "Ship reconciliation, feed alerting, and role-aware views by the end of Q4.",
+        "Become the trust layer for municipal finance in New England.",
+        "A finance director can tie every number in the product to the source system and defend it to an auditor without leaving the product.",
+        "Go live with the Northfield pilot on January 1."
+      ],
+      "answer": 2,
+      "explain": "Option 3 describes a future state of the product, names who would notice, and could be shown to be reached or abandoned. Option 1 is a feature list plus a date. Option 4 is a date and a milestone, which belongs in a forecast. Option 2 is a slogan: inspiring, unfalsifiable, and closer to a vision, which the Guide does not define at all.",
+      "cite": "Scrum Guide 2020, Commitment: Product Goal",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04q7",
+      "kind": "mcq",
+      "stem": "Discovery concludes that operators trust Ledgerline because of reconciliation and clear definitions, not because of the tamper-evident ledger every pitch leads with. The Product Goal currently leads with that proof trail. What is the most Scrum-consistent next move for the Product Owner?",
+      "options": [
+        "Keep the Product Goal, because changing it would undermine the company's differentiator and its funding story.",
+        "Reconsider the Product Goal against the new evidence, and change it if the evidence holds, since the Goal exists to be a target you can plan against, not a promise to a technology.",
+        "Ask the Developers to vote on whether the Product Goal should change.",
+        "Wait for the Sprint Review, because only stakeholders may approve a change to the Product Goal."
+      ],
+      "answer": 1,
+      "explain": "Scrum is founded on empiricism: you adapt when inspection reveals something new. The Product Goal describes a future state of the product, so evidence about what creates value for users is exactly the input that should move it. Option 1 protects positioning at the expense of learning. Option 3 turns a Product Owner decision into a committee vote, and the Guide says the Product Owner is one person, not a committee. Option 4 invents an approval gate the Guide does not contain.",
+      "cite": "Scrum Guide 2020, Scrum Theory and Commitment: Product Goal",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m04q8",
+      "kind": "order",
+      "kindNote": "",
+      "instruction": "Order these from the longest-lived to the shortest-lived, as the Scrum Guide 2020 describes them.",
+      "stem": "Put these four in order, longest-lived first.",
+      "items": [
+        "The Product Goal, the long-term objective for the Scrum Team",
+        "The Sprint Goal, the single objective for one Sprint",
+        "A Product Backlog item selected for the Sprint",
+        "The Developers' actionable plan for the next day of work"
+      ],
+      "explain": "The Product Goal outlives Sprints, and the Guide calls it the long-term objective. The Sprint Goal lasts exactly one Sprint and is finalized before Sprint Planning ends. Selected items live inside that Sprint and may be renegotiated with the Product Owner. The daily plan is produced at the Daily Scrum and is expected to change tomorrow. Each layer is allowed to be adjusted without invalidating the one above it.",
+      "cite": "Scrum Guide 2020, Commitment: Product Goal, Commitment: Sprint Goal, Daily Scrum",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04q9",
+      "kind": "mcq",
+      "stem": "Your largest prospect already runs a celebrated public spend-transparency portal it built itself. Ledgerline's shipped product is a spend-transparency dashboard. Which framing is the strongest Product Owner response?",
+      "options": [
+        "Keep the same value proposition everywhere. Consistency is what makes a product a product.",
+        "Treat the boundary and the Goal as fixed, and let sales find a way to position around the incumbent.",
+        "Treat the segment as evidence about value: the same product boundary can serve a different unmet need, so re-derive what is genuinely unmet here rather than repeating a claim already satisfied.",
+        "Split into two products immediately, one per market, so each gets its own Product Goal."
+      ],
+      "answer": 2,
+      "explain": "A product is a vehicle to deliver value, and value is judged by stakeholders, not by your slide deck. Where the market already has the outcome you offer, the unmet need moves, so the honest work is finding it, in this case whether a department is on pace to overrun its appropriation, which a published list of checks cannot answer. Option 1 mistakes consistency for strategy. Option 2 outsources a product decision. Option 4 doubles your backlog and your Goals while you have one engineer, and the Guide's one-objective-at-a-time rule exists to stop exactly that.",
+      "cite": "Scrum Guide 2020, Commitment: Product Goal",
+      "tag": "value"
+    },
+    {
+      "id": "m04q10",
+      "kind": "tf",
+      "stem": "According to the Scrum Guide 2020, an Increment is a concrete stepping stone toward the Product Goal.",
+      "answer": true,
+      "explain": "That is the Guide's own sentence, word for word, opening the Increment section. It matters because it links delivery back to the objective: each Increment is judged by whether it moves the team toward the Product Goal, not by how much work it contains. It also explains why an Increment must be usable and must meet the Definition of Done to count.",
+      "cite": "Scrum Guide 2020, Increment",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04q11",
+      "kind": "mcq",
+      "stem": "A stakeholder insists the Scrum Team should pursue two Product Goals at once because both matter to the business. What does the Scrum Guide 2020 support?",
+      "options": [
+        "Two Goals are fine as long as each has its own section of the Product Backlog.",
+        "Two Goals are fine as long as the Scrum Team is larger than ten people.",
+        "The Scrum Team is a cohesive unit of professionals focused on one objective at a time, and must fulfill or abandon one objective before taking on the next.",
+        "Two Goals are fine as long as the Product Owner tracks both at the Sprint Review."
+      ],
+      "answer": 2,
+      "explain": "The Guide states focus twice, once in Scrum Team and once in the Product Goal commitment. Options 1 and 4 are administrative workarounds that leave the focus problem untouched. Option 2 has it backwards: the Guide says a team growing too large should reorganize into multiple teams focused on the same product, sharing one Product Goal, so size never buys you a second objective.",
+      "cite": "Scrum Guide 2020, Scrum Team and Commitment: Product Goal",
+      "tag": "artifacts"
+    }
+  ],
+  "cards": [
+    {
+      "id": "m04c1",
+      "front": "What are the four conditions in the Scrum Guide's definition of a product?",
+      "back": "A vehicle to deliver value, a clear boundary, known stakeholders, and well-defined users or customers. It may be a service, a physical product, or something more abstract.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04c2",
+      "front": "Where does the Product Goal live?",
+      "back": "In the Product Backlog. It is the Product Backlog's commitment, and the rest of the backlog emerges to define what will fulfill it.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04c3",
+      "front": "How many Product Goals are active at once?",
+      "back": "One. The Scrum Team must fulfill or abandon one objective before taking on the next. Abandoning counts as finishing.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04c4",
+      "front": "Does the Scrum Guide 2020 define a product vision?",
+      "back": "No. The word vision never appears. Vision is a useful practice from outside Scrum. The Guide's long-term target is the Product Goal.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04c5",
+      "front": "Which Product Owner accountability covers the Product Goal?",
+      "back": "Developing and explicitly communicating the Product Goal. It is the first of the four Product Backlog management bullets.",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m04c6",
+      "front": "What must multiple Scrum Teams on one product share?",
+      "back": "The same Product Goal, the same Product Backlog, and the same Product Owner. They must also mutually define and comply with the same Definition of Done.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04c7",
+      "front": "What does the Guide say an Increment is, relative to the Product Goal?",
+      "back": "A concrete stepping stone toward the Product Goal. Each Increment is additive to all prior Increments, thoroughly verified, and must be usable.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04c8",
+      "front": "Three shapes that are NOT a Product Goal",
+      "back": "A feature list with a quarter attached, a launch date, and a slogan. The tell is that none of them can ever be proven wrong.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04c9",
+      "front": "One-sentence test for a draft Product Goal",
+      "back": "If we achieved this, what would be true that is not true today, and who would notice? If the answer is a shipping list, it is not a goal yet.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m04c10",
+      "front": "Discovery contradicts your company's own positioning. What moves first?",
+      "back": "The Product Goal. It describes a future state, not a technology you already chose, so it is the cheapest thing to change when evidence arrives. Scrum is founded on empiricism.",
+      "tag": "empiricism"
+    },
+    {
+      "id": "m04c11",
+      "front": "Why draw a product boundary deliberately?",
+      "back": "The boundary decides who your stakeholders are, what counts as an improvement, and which complaints you are obliged to hear. It is a decision, not a description.",
+      "tag": "artifacts"
+    }
+  ]
+}

@@ -1,0 +1,462 @@
+{
+  "id": "m06",
+  "num": 6,
+  "week": 2,
+  "title": "Backlog Items schreiben, die man bauen kann",
+  "subtitle": "Fast nichts davon ist Scrum. Du brauchst trotzdem jedes bisschen davon.",
+  "minutes": 30,
+  "why": "Ein schlecht geschriebenes Item fällt im Review nicht auf. Es wird genau so gebaut, wie es dasteht.\n\nUnd in der Gemeindefinanz kann ein korrekt umgesetztes falsches Item in einem Audit Package landen.",
+  "objectives": [
+    "Trennen, was der Scrum Guide übers Schreiben von Items sagt, und was das Handwerk ist, das alle drumherum unterrichten",
+    "Card, Conversation, Confirmation als Arbeitsmodell nutzen, nicht als Slogan",
+    "Bewusst zwischen User Story und Job Story wählen und sagen, warum",
+    "Acceptance Criteria schreiben, die eine fremde Person prüfen könnte - auch solche, die rechtliche oder fachliche Bedeutung abbilden",
+    "Ein Item vertikal slicen, damit der Sprint etwas produziert, worauf jemand wirklich reagieren kann"
+  ],
+  "beats": [
+    {
+      "type": "hook",
+      "body": "In der Ledgerline-Konsole kam Sorting zu siebzehn Tabellen dazu. Sechs Tabellen blieben absichtlich unsortierbar, und jeder Ausschluss hat eine schriftliche Begründung.\n\nSortierst du die Resultate von Ask the Ledger, wird die Query darüber zur Lüge über die Zeilen darunter. Sortierst du die Sample-Tabelle des Auditors, hast du die Sampling-Methode zerstört. Denn die Reihenfolge der Zeilen ist die Methode.\n\nHätte das Item einfach gesagt: add sorting to all tables, dann hätte eine völlig korrekte Implementierung einen Defect in ein Audit Package geliefert. Wie du ein Item schreibst, entscheidet, was gebaut wird."
+    },
+    {
+      "type": "teach",
+      "title": "Sag das Unausgesprochene zuerst",
+      "body": "Fast alles in diesem Modul ist nicht Scrum. Das hier ist die gesamte Anweisung, die der Scrum Guide zum Schreiben von Backlog Items gibt: creating and clearly communicating Product Backlog items. Acht Wörter.\n\nEr sagt nie user story. Er sagt nie acceptance criteria, epic, theme, INVEST oder persona. Kein einziges Mal.\n\nWarum also ein ganzes Modul dafür? Zwei Gründe. Deine Certified Scrum Product Owner Prüfung testet diesen Stoff tatsächlich. Und noch wichtiger: So arbeiten kompetente Product-Leute wirklich.\n\nHalt einfach eine Mauer im Kopf aufrecht. Alles unten Markierte ist Handwerk, das du lernen sollst. Zitier es aber nie in einer PSPO-I-Frage, als wäre es Framework.",
+      "callout": {
+        "kind": "warn",
+        "text": "[[PRACTICE]] User Stories, Job Stories, Acceptance Criteria, INVEST und Personas liegen alle ausserhalb des Scrum Guide. Die meisten davon kommen aus Extreme Programming."
+      }
+    },
+    {
+      "type": "guide",
+      "quote": "The Product Owner is also accountable for effective Product Backlog management, which includes: Developing and explicitly communicating the Product Goal; Creating and clearly communicating Product Backlog items; Ordering Product Backlog items; and, Ensuring that the Product Backlog is transparent, visible and understood.",
+      "cite": "Scrum Guide 2020, Product Owner",
+      "gloss": "Dein ganzes Schreib-Briefing ist der zweite Bullet, und der vierte Bullet bewertet es. Understood ist das Wort, auf das es ankommt: Ein Item, das niemand versteht, wurde nicht kommuniziert."
+    },
+    {
+      "type": "guide",
+      "quote": "Various processes, techniques and methods can be employed within the framework. Scrum wraps around existing practices or renders them unnecessary.",
+      "cite": "Scrum Guide 2020, Scrum Definition",
+      "gloss": "Das ist dein Erlaubnisschein. Alles in diesem Modul passt in Scrum hinein, ohne Scrum zu sein. Der Guide sagt das absichtlich, weil das Framework bewusst unvollständig ist."
+    },
+    {
+      "type": "analogy",
+      "title": "Der Zettel am Kühlschrank",
+      "body": "Ein Zettel mit wegen dem Dach-Ding anrufen ist als Spezifikation nutzlos. Und perfekt für das, was er wirklich ist: eine Erinnerung, dass du und wer auch immer ihn geschrieben hat, miteinander reden müsst. Niemand würde diesen Zettel einem Handwerker geben und eine Offerte zurück erwarten.\n\nDas ist eine Card. Sie hält einen Platz in der Reihenfolge und verspricht eine Conversation.\n\nDer Failure Mode ist nicht, dass der Zettel kurz ist. Der Failure Mode ist, einen neunseitigen Zettel zu schreiben und dann die Conversation zu überspringen. Denn zu einem Dokument, das komplett aussieht, stellt niemand Fragen."
+    },
+    {
+      "type": "teach",
+      "title": "Card, Conversation, Confirmation",
+      "body": "[[PRACTICE]] Ron Jeffries' drei C's - und die nützlichste Idee in diesem Modul.\n\nDie Card ist das kurze geschriebene Item. Sie ist ein Platzhalter für die Conversation, kein Ersatz dafür. In der Conversation findest du mit den Developers heraus, was wirklich gebraucht wird. Dort entsteht der Grossteil des Value. Die Confirmation ist, woran ihr beide merkt, dass es done ist. In der Praxis heisst das: die Acceptance Criteria.\n\nSchreib alle drei, und du hast ein Item. Schreib nur die Card, und du hast einen Wunsch. Schreib nur eine Spezifikation, und du hast eine Conversation durch ein Dokument ersetzt. Das ist genau der Fehler, den Scrum korrigieren soll."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m06k1",
+        "kind": "mcq",
+        "stem": "Your engineer says an item is too vague to start. It reads: as an AP clerk, I want to resolve a flagged transaction from the ledger row, so that I catch a duplicate before it posts. Under the three C's, what is the intended next step?",
+        "options": [
+          "Rewrite the card as a detailed specification so he can work without interrupting you.",
+          "Have the conversation. The card is a placeholder for a conversation, and the confirmation, meaning the acceptance criteria, comes out of that conversation.",
+          "Split it into three smaller cards and size them again.",
+          "Raise it with the Scrum Master, since an unclear item is an impediment."
+        ],
+        "answer": 1,
+        "explain": "[[PRACTICE]] Card, Conversation, Confirmation is Ron Jeffries' model, not Scrum, and it is the most practically useful thing here. The card exists to hold a place in the order and to promise a conversation. Option 1 is the classic failure: a longer document does not create shared understanding, it just removes everyone's reason to ask. Option 3 might well follow the conversation, but splitting before you understand the need is guessing with extra steps. Option 4 outsources product clarification, when the Scrum Master's actual service here is helping the Scrum Team understand the need for clear and concise Product Backlog items.",
+        "cite": "Scrum Guide 2020, Scrum Master",
+        "tag": "backlog"
+      }
+    },
+    {
+      "type": "teach",
+      "title": "Zwei Templates, ein echter Unterschied",
+      "body": "[[PRACTICE]] Die User Story: as a WHO, I want WHAT, so that WHY. Die Job Story: when SITUATION, I want MOTIVATION, so I can OUTCOME.\n\nSchau zuerst, was sie gemeinsam haben. Beide behalten WHAT und WHY. Das WHY ist der Teil, den Leute zuerst löschen und am meisten vermissen. Denn nur er sagt einem Developer, welche von fünf plausiblen Implementierungen die richtige ist. Löschst du ihn, hast du eine Anweisung übergeben. Behältst du ihn, hast du ein Problem übergeben.\n\nSie unterscheiden sich in genau einem Slot: dem ersten. Eine User Story verankert sich an einer Person. Eine Job Story verankert sich an einem Moment."
+    },
+    {
+      "type": "civic",
+      "title": "Angela an der Tastatur",
+      "body": "Angela tippt eine Rechnung ein. Sie sieht das Duplicate-Vendor-Flag bei der zweiten Schreibweise eines Treibstofflieferanten - und kann es nur anschauen.\n\nAls User Story: as an accounts payable clerk, I want to resolve a flagged transaction from the ledger row, so that I catch a duplicate before it posts. Als Job Story: when a flag appears on a transaction I am keying, I want to recode it, attach the invoice, or mark it resolved with a note, so the flag does not survive into the auditor's sample.\n\nGleiches Bedürfnis, zwei Anker. Die Job Story ist hier besser, aus einem konkreten Grund. Und dieser Grund ist der nächste Beat."
+    },
+    {
+      "type": "teach",
+      "title": "WHO versus WHEN, ehrlich betrachtet",
+      "body": "In einer Gemeinde mit fünftausend Einwohnern ist dieselbe Person oft Finance Director und Treasurer. Der Clerk macht auch noch die Payroll, und Purchasing Officer ist, wer gerade Zeit hatte. Das Staatsrecht erlaubt, dass eine Person sowohl das Amt des Treasurer als auch das des Tax Collector innehat.\n\nWenn du also as a Treasurer schreibst, hast du einen Hut benannt, keine Person. Und die Person trägt vier davon.\n\nEine Job Story umgeht das, indem sie sich am Trigger verankert: when a flag appears on a transaction I am keying. Der Trigger bleibt wahr, egal welcher Hut gerade auf ist. [[PRACTICE]] Nimm eine User Story, wenn die Persona die Antwort wirklich verändert. Nimm eine Job Story, wenn die Situation es tut.",
+      "callout": {
+        "kind": "why",
+        "text": "Das ist keine Stilfrage. Die Discovery hat one person, many hats als eine der vier benannten Design Tensions von Ledgerline aufgeführt. Und das hat ein sauberes Persona-Modell beim ersten Kontakt mit einer echten Gemeinde gesprengt."
+      }
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m06k2",
+        "kind": "mcq",
+        "stem": "You are writing an item about resolving a flagged transaction for a town where the same person is Finance Director and Treasurer, and where the Clerk also runs payroll. Which framing holds up better, and why?",
+        "options": [
+          "A user story, because naming the role is what makes an item concrete.",
+          "A job story, because it anchors on the triggering situation, which stays true no matter which of that person's four hats is on.",
+          "Neither. In Scrum the item has to be written as a technical task.",
+          "A user story, because the Scrum Guide requires a persona in every item."
+        ],
+        "answer": 1,
+        "explain": "[[PRACTICE]] Both templates keep WHAT and WHY and differ only in the first slot: user stories anchor on WHO, job stories anchor on WHEN. When one human wears four hats, the hat is a weak anchor and the trigger is a strong one. Option 1 is not wrong in general, it is weaker here specifically, which is the honest version of this tradeoff. Option 3 imports a rule from a different methodology entirely. Option 4 is simply false: the Guide says nothing about item format and never mentions personas.",
+        "cite": "Scrum Guide 2020, Product Owner",
+        "tag": "backlog"
+      }
+    },
+    {
+      "type": "teach",
+      "title": "Acceptance Criteria oder Conditions of Satisfaction",
+      "body": "[[PRACTICE]] Zwei Namen für dasselbe. Sie beantworten eine Frage: Woran merken wir beide, dass das done ist?\n\nSie erfüllen fünf Jobs. Sie definieren Acceptance. Sie klären das Item - so entdeckst du nämlich, dass sich das Item selbst widersprochen hat. Sie sagen einem Tester, was zu testen ist. Sie dokumentieren die Entscheidung, damit niemand sie im April neu aufrollt.\n\nUnd der fünfte, am wenigsten offensichtlich und am nützlichsten: Sie splitten Items. Braucht etwas acht Criteria, sind es wahrscheinlich zwei Items, und die Naht sieht man in der Liste.\n\nSchreib sie als Bullets, als Given, When, Then oder als I know this is done when. Das Format ist viel weniger wichtig als die Frage, ob eine fremde Person jede Zeile prüfen könnte."
+    },
+    {
+      "type": "trap",
+      "myth": "Acceptance Criteria sind Scrum, und der Product Owner akzeptiert oder lehnt fertige Stories am Ende des Sprints ab.",
+      "truth": "Der Scrum Guide 2020 hat keine Acceptance Criteria und keinen Acceptance-Schritt. Er hat die Definition of Done - das ist das Commitment des Increment. Und er sagt: Arbeit kann nicht als Teil eines Increment gelten, wenn sie die Definition of Done nicht erfüllt.\n\nErfüllt ein Item sie nicht, kann es weder released noch im Sprint Review überhaupt präsentiert werden. Es geht zurück ins Product Backlog for future consideration.",
+      "why": "[[PRACTICE]] Acceptance Criteria gelten pro Item, und du gestaltest sie zusammen mit den Developers. Die Definition of Done gilt für jedes Item und gehört dem Scrum Team. Oder der Organisation, wenn diese einen Standard setzt, den das Team als Minimum erfüllen muss.\n\nDie Prüfung liebt Distraktoren rund um einen Product Owner, der absegnet, genehmigt oder akzeptiert. So ein Gate gibt es nirgends im Guide."
+    },
+    {
+      "type": "check",
+      "q": {
+        "id": "m06k3",
+        "kind": "sort",
+        "stem": "Acceptance criteria and the Definition of Done get confused constantly, and the exam knows it. Sort each statement.",
+        "buckets": [
+          "Acceptance criteria (practice)",
+          "Definition of Done (Scrum)"
+        ],
+        "items": [
+          {
+            "text": "Specific to one Product Backlog item.",
+            "bucket": "Acceptance criteria (practice)"
+          },
+          {
+            "text": "Applies to every item the Scrum Team works on.",
+            "bucket": "Definition of Done (Scrum)"
+          },
+          {
+            "text": "Not mentioned anywhere in the Scrum Guide 2020.",
+            "bucket": "Acceptance criteria (practice)"
+          },
+          {
+            "text": "A commitment for the Increment.",
+            "bucket": "Definition of Done (Scrum)"
+          },
+          {
+            "text": "Work cannot be considered part of an Increment unless it meets this.",
+            "bucket": "Definition of Done (Scrum)"
+          },
+          {
+            "text": "Often used to discover that an item is really two items.",
+            "bucket": "Acceptance criteria (practice)"
+          },
+          {
+            "text": "Where the organization sets a standard, all Scrum Teams must follow it as a minimum.",
+            "bucket": "Definition of Done (Scrum)"
+          },
+          {
+            "text": "The Product Owner is commonly said to own these, though the Scrum Guide never says so.",
+            "bucket": "Acceptance criteria (practice)"
+          }
+        ],
+        "explain": "The right-hand column is quoted or paraphrased straight from the Definition of Done section. The left-hand column is Certified Scrum Product Owner and general product practice. The distinction that matters in the exam room: one is per item and outside the framework, the other is per Increment and is a Scrum Team commitment. In real life you need both, and you need to know which one you are arguing about.",
+        "cite": "Scrum Guide 2020, Commitment: Definition of Done",
+        "tag": "artifacts"
+      }
+    },
+    {
+      "type": "civic",
+      "title": "Der Report, der nicht sortierbar sein darf",
+      "body": "Sorting wurde über siebzehn Tabellen ausgeliefert. Sechs wurden absichtlich ausgeschlossen, jede mit schriftlich festgehaltenem Grund.\n\nAsk the Ledger druckt die ausgeführte Query über den Resultaten. Sortierst du diese Resultate, wird die gedruckte Query zur Lüge über die Zeilen darunter. Bei der Sample-Tabelle des Auditors ist die Zeilenreihenfolge die Sampling-Methode. Und genau diese Reihenfolge steckt im exportierten Audit Package. Das gedruckte Board Packet und der Antwortbrief auf die Public-Records-Anfrage sind eingefrorene Dokumente, deren Text listed below sagt.\n\nStell dir jetzt vor, du schreibst die Acceptance Criteria für dieses Item. Add sorting to every table wäre ein Defect gewesen. Die Regel, die wirklich gilt, ist enger. Und es gibt sie nur, weil jemand wusste, was die Tabellen bedeuten."
+    },
+    {
+      "type": "analogy",
+      "title": "Ein funktionierendes Badezimmer",
+      "body": "Renovierst du ein Haus Schicht für Schicht, kannst du in jedem Raum die Rohinstallation machen und zu jeder Wand Kabel ziehen. Und dir trotzdem nicht die Hände waschen. Alles ist zu dreissig Prozent fertig, und nichts funktioniert.\n\nRenovierst du Raum für Raum, hast du nach der ersten Woche ein fertiges Badezimmer: hässliche Plättli, funktionierendes WC, warmes Wasser. Du kannst es benutzen. Du kannst auch daraus lernen, denn jetzt weisst du, wie diese Plättli nachts aussehen.\n\nDas ist ein Vertical Slice: dünn, unspektakulär, quer durch jede Schicht vom Wasserhahn bis zum Abfluss. Ein Item, das bei der API aufhört, ist eine Rohinstallation. Und eine Rohinstallation kann niemand inspizieren."
+    },
+    {
+      "type": "guide",
+      "quote": "An Increment is a concrete stepping stone toward the Product Goal. Each Increment is additive to all prior Increments and thoroughly verified, ensuring that all Increments work together. In order to provide value, the Increment must be usable.",
+      "cite": "Scrum Guide 2020, Increment",
+      "gloss": "Usable ist das Wort, das Vertical Slicing nötig macht. Eine Schicht ist nicht usable. Also produziert eine Schicht nichts, was jemand inspizieren könnte oder worauf jemand reagieren könnte."
+    },
+    {
+      "type": "teach",
+      "title": "Warum der Slice durch alle Schichten schneiden muss",
+      "body": "[[PRACTICE]] Vertical Slicing ist Handwerk, nicht Framework. Aber das Framework ist der Grund, warum es Vertical Slicing überhaupt gibt. Wenn ein Item nur eine Datenbanktabelle liefert, ist nichts usable. Also gibt es kein Increment, das man inspecten kann. Also hat das Sprint Review nichts Echtes, worauf es reagieren kann - und empiricism bleibt für einen Sprint still und leise stehen.\n\nBei Ledgerline ist der ehrliche Slice der Reconciliation nicht: bau die Reconciliation Engine. Sondern: ein Konto, ein Monat, abgeglichen mit Corvus und der Bank. Dazu der As-of-Timestamp auf dem Screen und ein Difference Report, den Dana lesen kann. Klein, end to end, und etwas, bei dem sie sich laut irren kann."
+    },
+    {
+      "type": "civic",
+      "title": "Der Warrant, den du nicht ersetzen darfst",
+      "body": "Priya will das Zusammenstellen und den Sign-off des Warrants direkt im Produkt. Das State Law verlangt, dass das Select Board über einen Warrant abstimmt und ihn unterschreibt, bevor der Treasurer auszahlen darf. Die Boards arbeiten Teilzeit und treffen sich typischerweise zweimal im Monat.\n\nDie dreissig Tage, die Vendors warten und die dein Pitch angreift, sind also keine Nachlässigkeit. Das ist Gesetz. Deine eigene Evidence Base zieht den Schluss: Jede Lösung für schnellere Zahlungen muss innerhalb des Warrant-Workflows sitzen, nicht drumherum. Und Select Boards werden sich gegen alles wehren, was danach aussieht, als würde man ihre eigene gesetzliche Befugnis umgehen.\n\nDieser Satz ist kein Kontext für das Item. Er ist ein Acceptance Criterion, und er ist nicht verhandelbar."
+    },
+    {
+      "type": "teach",
+      "title": "Beschreib das Problem - ausser wenn die Lösung das Requirement ist",
+      "body": "Standardmässig gilt: Probleme beschreiben. Ein Item, das sagt, es brauche einen Modal Dialog, hat schon jede günstigere Antwort weggeworfen, die die Developers hätten finden können. Genau deshalb überlässt der Guide das Wie der Arbeit allein ihrem Ermessen.\n\nDann schau, wo die Regel wirklich bricht. Manchmal IST die Lösung das Requirement: Ein Gesetz schreibt den Workflow vor, ein Accessibility-Standard schreibt das Verhalten vor, der Export eines Auditors hat eine fixe Form, oder das Scrum Team hat den Entscheid schon getroffen und festgehalten.\n\nIn diesen Fällen ist es kein Übergriff, die Lösung zu benennen - es ist transparency. Der Test: Kannst du sagen, wer entschieden hat und wo es aufgeschrieben ist?"
+    },
+    {
+      "type": "write",
+      "prompt": "Schreib ein Product Backlog Item für einen echten Ledgerline-Bedarf, plus drei bis fünf Acceptance Criteria. Wähl eins davon: den Corvus-Feed, der ausfällt, ohne dass es jemandem gesagt wird; Angela, die nicht auf ein Flag reagieren kann, das sie gerade anschaut; oder Margarets Haustür für Public Records. Du kannst jedes der beiden Templates nehmen. Prüf deine eigenen Criteria gegen die Rubric, bevor du dir das Modell anschaust.",
+      "starter": "Card, User Story: As a ____, I want ____, so that ____.\nCard, Job Story: When ____, I want ____, so I can ____.\n\nAcceptance Criteria:\n- Ich weiss, dass es done ist, wenn ____\n- Ich weiss, dass es done ist, wenn ____\n- Ich weiss, dass es done ist, wenn ____\n\nBewusst out of Scope: ____",
+      "rubric": [
+        "Das WHY nennt ein Outcome für einen echten Menschen, keine Wiederholung des WHAT. Wenn du den So-that-Teil löschen kannst, ohne Information zu verlieren, hast du keinen geschrieben.",
+        "Jedes Criterion ist prüfbar für jemanden, der es nicht geschrieben hat. Diese Person kann aufs laufende Produkt zeigen und Ja oder Nein sagen. Wörter wie intuitive, robust, seamless und properly disqualifizieren eine Zeile auf den ersten Blick.",
+        "Das Item beschreibt ein Problem oder ein Outcome, keine Implementierung. Wenn das WHAT einen Screen, eine Component, eine Library oder eine Tabelle nennt, schreib es um: als das, was die Person tun können muss. Die einzige Ausnahme ist eine Lösung, die wirklich das Requirement ist. Dann sagst du, wer entschieden hat.",
+        "Mindestens ein Criterion bildet etwas Spezifisches aus der Gemeindefinanz ab: eine gesetzliche Anforderung, eine Rollentrennung, ein Audit-Artefakt, einen As-of-Timestamp oder ein Dokument, dessen Reihenfolge oder Wortlaut fix ist.",
+        "Das Ganze könnte plausibel innerhalb eines Sprints von einem einzigen Engineer Done sein. Und es ist ein Vertical Slice, kein Layer. Wenn es mehr als etwa fünf Criteria braucht, split es und benenne die Naht."
+      ],
+      "model": "Job Story. Wenn der Corvus-Sync fehlschlägt oder null Records zurückgibt, will ich, dass die Leute, die von diesen Zahlen abhängen, informiert werden, ohne einen Tab öffnen zu müssen. So kann ich verhindern, dass eine veraltete Zahl in einem Board Packet landet.\n\nAcceptance Criteria:\n- Ich weiss, dass es done ist, wenn ein Sync, der fehlschlägt oder null Records zurückgibt, eine Notification an die konfigurierten Empfänger auslöst. Diese Notification nennt die Connection, die Zeit des letzten erfolgreichen Syncs und die Anzahl Records.\n- Ich weiss, dass es done ist, wenn jeder Screen, der auf dieser Connection aufbaut, eine As-of-Zeit für die neusten Daten dahinter zeigt - nicht die Zeit, zu der die Seite geladen wurde.\n- Ich weiss, dass es done ist, wenn das Board Packet nicht stillschweigend aus veralteten Daten generiert werden kann. Stattdessen druckt es den As-of-Timestamp sichtbar auf sich drauf.\n- Ich weiss, dass es done ist, wenn das Admin Audit Log jeden Sync-Fehler und jede gesendete Notification festhält und der read-only Workspace des Auditors dieses Log lesen kann.\n\nBewusst out of Scope: automatische Retry- und Re-Sync-Policy. Das ist ein zweites Item, und wenn du es hier mit reinpackst, versteckst du es.\n\nWarum das besteht: Das WHY ist ein Outcome (eine veraltete Zahl landet nie in einem Board Packet). Jedes Criterion kann ein Fremder an einem laufenden System verifizieren. Nichts nennt eine Component oder eine Library. Zwei Criteria bilden Domain-Bedeutung ab (den As-of-Timestamp und das Log des Auditors). Und die Scope-Notiz hält eine Dependency sichtbar im Backlog, statt sie in einem anderen Item zu vergraben."
+    },
+    {
+      "type": "keypoints",
+      "points": [
+        "Der Scrum Guide sagt nur: creating and clearly communicating Product Backlog items. User Stories, Job Stories, Acceptance Criteria und INVEST sind alles Practice.",
+        "Die Card ist ein Versprechen, ein Gespräch zu führen, keine Spezifikation. Über die Confirmation wisst ihr beide, wann es done ist.",
+        "User Stories verankern sich am WHO, Job Stories am WHEN. Wenn eine Person vier Hüte trägt, ist der Trigger der stärkere Anker.",
+        "Acceptance Criteria gelten pro Item und liegen ausserhalb des Frameworks. Die Definition of Done gilt für jedes Item und ist ein Commitment des Scrum Teams.",
+        "Slice vertikal, weil der Guide sagt, dass das Increment usable sein muss - und ein Layer ist nicht usable.",
+        "Beschreib das Problem - ausser ein Gesetz, ein Standard oder ein festgehaltener Team-Entscheid bedeutet, dass die Lösung wirklich das Requirement ist."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "m06q1",
+      "kind": "mcq",
+      "stem": "A colleague tells you that Scrum requires backlog items to be written as user stories with acceptance criteria. What does the Scrum Guide 2020 actually specify about the form of a Product Backlog item?",
+      "options": [
+        "Items must follow the As a, I want, So that format and carry at least three acceptance criteria.",
+        "Nothing about form. It says the Product Owner is accountable for creating and clearly communicating Product Backlog items, and that refinement adds details such as a description, order, and size.",
+        "Items must be written as user stories at the Sprint level and as epics above that.",
+        "The Scrum Master defines the required format as part of establishing Scrum in the organization."
+      ],
+      "answer": 1,
+      "explain": "The Guide's whole instruction on writing items is one bullet: creating and clearly communicating Product Backlog items. It also mentions what refinement adds, namely a description, order, and size, and notes that attributes often vary with the domain of work. It never uses the words user story, epic, theme, or acceptance criteria. [[PRACTICE]] Options 1 and 3 describe real, widely used practice from Extreme Programming, which is precisely why they make good distractors. Option 4 invents a Scrum Master power: the Scrum Master serves by helping the Scrum Team understand the need for clear and concise Product Backlog items, not by mandating a template.",
+      "cite": "Scrum Guide 2020, Product Owner and Product Backlog",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06q2",
+      "kind": "tf",
+      "stem": "The Scrum Guide 2020 never mentions user stories.",
+      "answer": true,
+      "explain": "Correct. The words user story appear nowhere in the Scrum Guide 2020, and neither do acceptance criteria, epic, theme, persona, or INVEST. [[PRACTICE]] Stories come from Extreme Programming and are taught in Certified Scrum Product Owner courses as craft. They are entirely compatible with Scrum, which states that various processes, techniques and methods can be employed within the framework and that Scrum wraps around existing practices. They are simply not part of the framework's own definition, and PSPO I grades the framework.",
+      "cite": "Scrum Guide 2020, Scrum Definition",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06q3",
+      "kind": "mcq",
+      "stem": "An item reads: add column sorting to every table in the console, for consistency. Refinement reveals that sorting the Ask the Ledger results would make the query printed above them a lie, and that the auditor's sample table's row order is the sampling method and is what the exported audit package contains. What is the best rewrite?",
+      "options": [
+        "Keep it as written. Consistency across a product is a legitimate quality goal, and the exceptions can be handled as bugs later.",
+        "Change the item to state the outcome and let the criteria carry the domain meaning: rows can be reordered where row order carries no meaning, and tables whose row order is itself evidence stay fixed, with each exclusion named and its reason recorded.",
+        "Delete the item. A rule that cannot be applied everywhere should not be applied anywhere.",
+        "Split it into seventeen items, one per table, ordered by table size."
+      ],
+      "answer": 1,
+      "explain": "This is the whole module in one question. The original states a solution (add sorting) and a false universal (every table), and a perfectly correct implementation of it would have shipped a defect into an audit package. Option 2 states the outcome and puts the domain knowledge where somebody can check it. Option 1 treats a trust failure in an audit artifact as a later bug, in a product whose entire value proposition is that the numbers can be trusted. Option 3 throws away real value across the other eleven tables. Option 4 confuses splitting with slicing: seventeen items ordered by table size is administration, not a decision about value.",
+      "cite": "Scrum Guide 2020, Product Owner",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06q4",
+      "kind": "mcq",
+      "stem": "In a town of five thousand people the same person is often Finance Director and Treasurer, and state law lets one person hold both the treasurer's and the tax collector's office. You are writing an item about resolving a flagged transaction. Which framing holds up better?",
+      "options": [
+        "A user story, because naming the role is what makes an item concrete.",
+        "A job story, because it anchors on the triggering situation, which stays true no matter which of that person's four hats is on.",
+        "Neither. In Scrum the item must be written as a technical task.",
+        "A user story, because the Scrum Guide requires a persona in every item."
+      ],
+      "answer": 1,
+      "explain": "[[PRACTICE]] Both templates keep WHAT and WHY and differ only in the first slot: user stories anchor on WHO, job stories anchor on WHEN. When one human wears four hats, the hat is a weak anchor and the trigger is a strong one. Option 1 is not wrong in general and is weaker here specifically, which is the honest shape of this tradeoff rather than a rule. Option 3 imports a rule from a different methodology. Option 4 is false twice over: the Guide says nothing about item format and never mentions personas at all.",
+      "cite": "Scrum Guide 2020, Product Owner",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06q5",
+      "kind": "multi",
+      "stem": "Select the TWO accurate statements about acceptance criteria.",
+      "options": [
+        "They define how the Product Owner and the Developers will both know an item is done.",
+        "They are a Scrum artifact, listed alongside the Product Backlog and the Increment.",
+        "A long list of them often reveals that an item is really two items, and shows where the seam is.",
+        "They replace the Definition of Done for items selected into the Sprint.",
+        "They must be written in Given, When, Then form."
+      ],
+      "answer": [
+        0,
+        2
+      ],
+      "explain": "[[PRACTICE]] Acceptance criteria are practice, not Scrum. Scrum has exactly three artifacts, the Product Backlog, the Sprint Backlog, and the Increment, so option 2 is wrong. Option 4 collapses two different things: the Definition of Done applies to every item and is a Scrum Team commitment, while acceptance criteria are specific to one item. Option 5 elevates one format, and the format is the least important part: bullets, Given When Then, or I know this is done when all work, provided each line is something a stranger could check. Splitting is the least obvious purpose and the most useful one.",
+      "cite": "Scrum Guide 2020, Scrum Artifacts",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m06q6",
+      "kind": "mcq",
+      "stem": "An item meets every one of its acceptance criteria, but the Definition of Done requires accessibility checks that were never run. What happens, according to the Scrum Guide 2020?",
+      "options": [
+        "The Product Owner may accept it anyway, since acceptance criteria are the Product Owner's to define.",
+        "It is not part of the Increment. Work cannot be considered part of an Increment unless it meets the Definition of Done, and it returns to the Product Backlog for future consideration.",
+        "It ships, and the accessibility work becomes a new item, since the acceptance criteria were satisfied.",
+        "The Scrum Master decides whether to grant an exception."
+      ],
+      "answer": 1,
+      "explain": "The Guide is unambiguous: work cannot be considered part of an Increment unless it meets the Definition of Done, and an item that fails it cannot be released or even presented at the Sprint Review, returning instead to the Product Backlog. Options 1 and 3 both describe a Product Owner override that does not exist, and they matter because they describe what most organizations actually do. Option 4 invents an exception power. [[PRACTICE]] Acceptance criteria are per item and are practice; the Definition of Done applies to every item and is a Scrum Team commitment, or an organizational standard the team must meet as a minimum.",
+      "cite": "Scrum Guide 2020, Commitment: Definition of Done",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m06q7",
+      "kind": "mcq",
+      "stem": "Priya, the Treasurer, wants warrant assembly and sign-off inside the product. State law requires the Select Board to vote and sign a warrant before the treasurer may disburse, and boards are part-time and meet twice monthly. Which acceptance criterion belongs on this item?",
+      "options": [
+        "A payment may be released once the Treasurer approves it in the product, with the Select Board notified afterwards.",
+        "No disbursement can be initiated from the product without a recorded affirmative vote and the signatures of a majority of the Select Board attached to that warrant.",
+        "Payments release the same day, and the warrant is generated automatically from the payments already made.",
+        "The Select Board may delegate signing authority to the Town Manager in the product settings."
+      ],
+      "answer": 1,
+      "explain": "A statute is not a preference you can design around, and your own evidence base is explicit that any faster-payment solution must sit inside the warrant workflow, not around it. Options 1 and 3 both invert the legal order by paying first and documenting after. Option 4 quietly writes a change to municipal law into a settings screen. The deeper lesson is about who resists and why: select boards will push back on anything that appears to bypass their statutory authority, and they are the elected volunteers who approve the budget that buys your product. Speed has to come from removing waiting inside the warrant cycle, not from removing the warrant.",
+      "cite": "Scrum Guide 2020, Product Owner",
+      "tag": "stakeholders"
+    },
+    {
+      "id": "m06q8",
+      "kind": "mcq",
+      "stem": "Reconciliation to Corvus and the bank is too large for one Sprint. Which option is the thinnest vertical slice, in the sense that somebody can inspect it and react?",
+      "options": [
+        "Build the reconciliation data model and the ingest tables.",
+        "One account, one month, tied out to Corvus and the bank, with the as-of timestamp on screen and a difference report the finance director can read.",
+        "Write the reconciliation service, with the user interface to follow next Sprint.",
+        "Spike the Corvus API and write up the findings."
+      ],
+      "answer": 1,
+      "explain": "A vertical slice cuts through every layer so that something is usable at the end of it. The Guide says an Increment must be usable and is a concrete stepping stone toward the Product Goal, so options 1 and 3 produce nothing anyone can inspect at a Sprint Review no matter how much real work they contain. Option 4 is a legitimate thing to do and it is research, not a slice: it produces knowledge rather than a usable Increment, and the honest move is to label it that way rather than count it as progress toward the gate. [[PRACTICE]] Vertical slicing is craft, and usable is the framework reason it exists.",
+      "cite": "Scrum Guide 2020, Increment",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m06q9",
+      "kind": "mcq",
+      "stem": "You generally write items as problems rather than solutions. In which case is naming the solution inside the item actually correct?",
+      "options": [
+        "You have a strong opinion about which library your engineer should use.",
+        "The constraint is external and non-negotiable: a law, an accessibility standard, a fixed export format an auditor's package must match, or a decision the Scrum Team already made and recorded.",
+        "The stakeholder phrased their request as a solution, so you pass it along as written.",
+        "The item is small, so the extra thinking is not worth it."
+      ],
+      "answer": 1,
+      "explain": "The point of stating a problem is that it leaves the Developers free to find a cheaper or better answer than the one you happened to think of, which is why the Guide keeps how the chosen work gets done at the sole discretion of the Developers. The rule genuinely breaks when the solution IS the requirement: a statute prescribes the workflow, a standard prescribes the behaviour, or an external artifact has a fixed shape. Option 1 is preference dressed as a requirement. Option 3 is a translation failure and the most common source of solution-shaped items in the wild. Option 4 is how small items become the untestable ones.",
+      "cite": "Scrum Guide 2020, Sprint Planning",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06q10",
+      "kind": "mcq",
+      "stem": "Your engineer keeps saying items are unclear. Where does that land, according to the Scrum Guide 2020?",
+      "options": [
+        "With the Developers, since they are accountable for the Sprint Backlog.",
+        "With the Product Owner, who is accountable for creating and clearly communicating Product Backlog items and for ensuring the Product Backlog is transparent, visible and understood, while the Scrum Master serves by helping the team understand the need for clear and concise items.",
+        "With the Scrum Master, who is accountable for the clarity of the Product Backlog.",
+        "Nowhere in particular. Clarity emerges through refinement and is not anyone's accountability."
+      ],
+      "answer": 1,
+      "explain": "Two of the four Product Backlog management bullets are about being understood, not just about content: creating and clearly communicating Product Backlog items, and ensuring that the Product Backlog is transparent, visible and understood. The word understood is doing the work. An item you wrote that nobody understands has not been communicated. Option 1 confuses the Sprint Backlog, a plan by and for the Developers, with the Product Backlog. Option 3 upgrades a Scrum Master service into an accountability. Option 4 hides behind refinement, which is how clarity gets built and not a reason nobody answers for it. You may delegate the writing and you remain accountable.",
+      "cite": "Scrum Guide 2020, Product Owner and Scrum Master",
+      "tag": "accountabilities"
+    },
+    {
+      "id": "m06q11",
+      "kind": "mcq",
+      "stem": "A stakeholder hands you a fully specified twelve-page requirements document for the public-records front door and asks that it go into the backlog as written. What is the strongest Product Owner response?",
+      "options": [
+        "Put it in as written. A more detailed item removes ambiguity and reduces rework.",
+        "Reject it. Scrum forbids written requirements.",
+        "Keep it as reference material, then write items that state the outcomes it is reaching for, and hold the conversation with the Developers about how. The document is an input, not the item.",
+        "Ask the Scrum Master to convert it into user stories before it enters the backlog."
+      ],
+      "answer": 2,
+      "explain": "A document is a legitimate input, and a stakeholder who wrote twelve pages is telling you something real about what they need. What it cannot do is replace the conversation, which is where the Developers get to propose a cheaper or better answer than page seven. Option 1 is the failure Scrum was built in reaction to, and it also quietly locks in solutions. Option 2 is false: the Guide forbids nothing of the kind and says Scrum wraps around existing practices. Option 4 delegates a Product Owner activity to the Scrum Master and, worse, delegates it to someone who was not in the room with the stakeholder.",
+      "cite": "Scrum Guide 2020, Product Owner and Scrum Definition",
+      "tag": "backlog"
+    }
+  ],
+  "cards": [
+    {
+      "id": "m06c1",
+      "front": "What does the Scrum Guide 2020 say about how to write a backlog item?",
+      "back": "One bullet: creating and clearly communicating Product Backlog items. No format, no template. Refinement adds details such as a description, order, and size.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06c2",
+      "front": "Card, Conversation, Confirmation",
+      "back": "[[PRACTICE]] The card is a placeholder promising a conversation. The conversation is where the real understanding is built. The confirmation is how you both know it is done, in practice the acceptance criteria.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06c3",
+      "front": "The user story template",
+      "back": "[[PRACTICE]] As a WHO, I want WHAT, so that WHY. Anchors on a person. From Extreme Programming, not from the Scrum Guide.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06c4",
+      "front": "The job story template",
+      "back": "[[PRACTICE]] When SITUATION, I want MOTIVATION, so I can OUTCOME. Anchors on the triggering moment rather than a persona.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06c5",
+      "front": "User story or job story: how do you choose?",
+      "back": "Both keep WHAT and WHY and differ only in the first slot. Use WHO when the persona changes the answer. Use WHEN when the situation does, especially where one person wears several hats.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06c6",
+      "front": "What are acceptance criteria for?",
+      "back": "[[PRACTICE]] Defining acceptance, clarifying the item, guiding testing, documenting the decision, and splitting an item. The last one is the least obvious: eight criteria usually means two items.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06c7",
+      "front": "Acceptance criteria versus Definition of Done",
+      "back": "Acceptance criteria are per item and are practice. The Definition of Done applies to every item, is the Increment's commitment, and belongs to the Scrum Team or to an organizational standard.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m06c8",
+      "front": "Does the Product Owner accept or reject stories in Scrum?",
+      "back": "No such step exists in the Guide. Work is not part of an Increment unless it meets the Definition of Done, and an item that fails it returns to the Product Backlog for future consideration.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m06c9",
+      "front": "What is a vertical slice?",
+      "back": "[[PRACTICE]] An item thin enough to finish and complete enough to use, cutting through every layer. One account, one month, tied out and visible on screen, rather than the data model alone.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06c10",
+      "front": "Why must a slice cut through every layer?",
+      "back": "The Guide says the Increment must be usable and is a concrete stepping stone toward the Product Goal. A layer is not usable, so it gives the Sprint Review nothing to react to and empiricism stalls.",
+      "tag": "artifacts"
+    },
+    {
+      "id": "m06c11",
+      "front": "Problem or solution in a backlog item?",
+      "back": "Problem by default, because how the work gets done is at the sole discretion of the Developers. Name the solution only when it is the requirement: a statute, a standard, a fixed export, or a recorded team decision.",
+      "tag": "backlog"
+    },
+    {
+      "id": "m06c12",
+      "front": "The sorting lesson",
+      "back": "A consistency rule applied blindly can be a defect. Six Ledgerline tables stay unsortable because row order is evidence: the printed query, the auditor's sample, and two frozen documents. Acceptance criteria carry domain meaning.",
+      "tag": "backlog"
+    }
+  ]
+}
