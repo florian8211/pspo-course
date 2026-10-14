@@ -46,7 +46,8 @@ spec: |
        [[PRACTICE]] marker if the module has one, else change a check beat) -> build exits non-zero each time.
      - browser test on file:// index.html with headless chromium: with no localStorage the module m01 renders
        the DE title from content/de/m01.json; clicking #langbtn shows the EN title; reload keeps EN (persisted);
-       m02 (no DE file unless one exists) falls back to English without errors; picking a sim choice in DE then
+       m02 falls back to English without errors when its DE file is absent (test this in a temp copy of the
+       repo with content/de/m02.json removed and rebuilt); picking a sim choice in DE then
        switching to EN keeps the choice selected (shared key); no console errors.
 affected_paths:
   - build.py
