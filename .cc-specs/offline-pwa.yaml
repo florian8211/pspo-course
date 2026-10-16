@@ -1,0 +1,85 @@
+spec: |
+  Make the self-hosted course installable as a Progressive Web App on Android (Chrome "Install app") and usable
+  offline, WITHOUT changing the course engine (app/*, content/*, build.py, index.html stay untouched). Everything
+  lives in the existing self-hosting layer under server/ (serve.py, runtime.js). Python standard library only, no
+  npm packages. The site is served both at the root (http://127.0.0.1:3140/) and under a path prefix
+  (https://lhsystems.io/p/<token>/ via a reverse proxy), so EVERY URL in the manifest, the injected tags, runtime.js
+  and sw.js must be RELATIVE (no leading slash).
+
+  1. server/make_icons.py - stdlib-only PNG writer (zlib + struct, RGBA or RGB, 8 bit). Generates
+     server/static/icon-192.png (192x192), server/static/icon-512.png (512x512) and
+     server/static/icon-maskable-512.png (512x512). Design: solid background #0F5567; mark = three white horizontal
+     bars, left-aligned, decreasing length (100%, 75%, 50% of the mark width), like an ordered list. For the normal
+     icons the mark spans the central ~62% of the canvas; for the maskable icon it must stay inside the central 50%
+     (safe zone). Commit the generated PNGs. Running the script again must produce byte-identical files.
+  2. server/static/manifest.webmanifest - JSON: name "PSPO I - Owner's Manual", short_name "PSPO I",
+     start_url "./", scope "./", display "standalone", background_color "#F7F6F2", theme_color "#0F5567",
+     icons: icon-192.png (192x192, purpose "any"), icon-512.png (512x512, purpose "any"),
+     icon-maskable-512.png (512x512, purpose "maskable"), all type image/png and relative src.
+  3. server/sw.js - service worker (plain JS). Cache name constant "pspo-v1" (old caches deleted on activate,
+     clients.claim(), skipWaiting() on install). Install precaches: "./", "runtime.js", "manifest.webmanifest",
+     "icon-192.png", "icon-512.png", "icon-maskable-512.png" (resolved against the SW scope via
+     new URL(x, self.registration.scope)). Fetch handler:
+       - non-GET requests: not handled (no respondWith).
+       - same-origin URLs whose pathname contains "/api/": not handled (network only, never cached).
+       - fonts.googleapis.com and fonts.gstatic.com: cache-first, store the response (opaque is fine) on miss.
+       - other same-origin GET: network-first with a 4 s timeout; on success put a clone into the cache; on
+         failure/timeout serve the cached copy; for navigation requests (request.mode === "navigate") fall back to
+         the cached "./" entry. Ignore the query string when matching navigations (cache.match with
+         ignoreSearch:true).
+       - anything else: not handled.
+  4. server/serve.py changes:
+     - New GET routes: /sw.js (application/javascript; charset=utf-8, Cache-Control: no-cache),
+       /manifest.webmanifest (application/manifest+json), /icon-192.png, /icon-512.png, /icon-maskable-512.png
+       (image/png) served from server/static/ (sw.js from server/). Unknown paths stay 404.
+     - Injection after the opening <head ...> tag becomes, in this order:
+       <link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0F5567">
+       <link rel="apple-touch-icon" href="icon-192.png"><script src="runtime.js"></script>
+       The runtime script must still come before every other <script in the page.
+  5. server/runtime.js changes (keep the existing window.claude contract exactly):
+     - Register the service worker: if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js")
+       after the window "load" event; swallow errors.
+     - Offline-safe db: the engine keeps its own localStorage copy, but on boot it merges the SERVER state over the
+       local one, which would revert progress made while offline. Fix inside runtime.js:
+         * doc(path).set(obj): first store JSON.stringify(obj) in localStorage under "pspo.pending:" + path, then
+           PUT; on 2xx remove that key and resolve; otherwise keep it and reject.
+         * doc(path).get(): if a pending entry exists for path, PUT it first; on 2xx remove the key and resolve
+           {exists: true, data: () => <pending object>} (the unsynced local state is newer than the server); if that
+           PUT fails reject (the engine then stays on its local copy). Without a pending entry behave as before.
+         * on window "online": PUT every pending entry silently (remove each on 2xx).
+       localStorage access must be wrapped in try/catch (private mode).
+  6. Tests (gate). Extend server/tests/test_serve.py: manifest served with the right content type, valid JSON with
+     the fields above, start_url/scope "./" and all icon src relative; each icon served as image/png whose IHDR
+     width/height matches the manifest; /sw.js served as JavaScript with Cache-Control no-cache and its text contains
+     "/api/" exclusion logic and "pspo-v1"; injected tags present in the order above, all href/src relative, runtime
+     script before any other <script; make_icons.py is deterministic (run into a temp dir, compare bytes).
+     Add server/tests/runtime_test.mjs - a node script (node >= 22, no packages) that loads runtime.js in a
+     vm context with fake window/navigator/localStorage/fetch and asserts: set() while fetch fails -> rejects and
+     pending key stored; set() success -> pending removed; get() with pending -> PUTs pending, resolves exists true
+     with the pending data and removes the key; get() with pending while offline -> rejects and keeps the key;
+     get() without pending -> returns the server data; "online" event flushes pending. Exit code non-zero on failure.
+     Add a unittest in test_serve.py that runs `node server/tests/runtime_test.mjs` and requires exit code 0
+     (fail, do not skip, if node is missing).
+  7. README.md: extend the self-hosting section with two sentences on install/offline (coach and grading need a
+     connection; progress made offline syncs on the next connection, the offline device wins).
+affected_paths:
+  - server/make_icons.py
+  - server/static/icon-192.png
+  - server/static/icon-512.png
+  - server/static/icon-maskable-512.png
+  - server/static/manifest.webmanifest
+  - server/sw.js
+  - server/serve.py
+  - server/runtime.js
+  - server/tests/test_serve.py
+  - server/tests/runtime_test.mjs
+  - README.md
+acceptance:
+  - "python3 -m unittest discover -s server/tests -v passes (includes the node runtime test)"
+  - "manifest + 3 icons + sw.js served; all URLs relative; injected tags in order, runtime before other scripts"
+  - "sw.js never caches /api/, network-first for pages with cached fallback, cache-first for Google Fonts"
+  - "runtime.js: pending-state logic for set/get/online exactly as specified; window.claude contract unchanged"
+  - "no changes under app/, content/, build.py, index.html; stdlib only"
+gate: "python3 -m unittest discover -s server/tests -v"
+trivial: false
+max_repair_rounds: 1
