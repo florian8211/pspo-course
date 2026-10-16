@@ -1,5 +1,5 @@
 /* Self-hosted runtime for the PSPO course. Loaded before the engine by serve.py.
-   Provides window.claude.use(name) backed by /api/sample and /api/db. */
+   Provides window.claude.use(name) backed by /api/sample and /api/db, and registers sw.js. */
 (function () {
   "use strict";
 
@@ -71,10 +71,67 @@
     return "api/db?path=" + encodeURIComponent(path);
   }
 
+  // Offline-safe progress: a doc is kept under PENDING + path until the server has
+  // accepted it, so the engine's boot-time merge never reverts offline progress.
+  var PENDING = "pspo.pending:";
+
+  function readPending(path) {
+    try { return window.localStorage.getItem(PENDING + path); } catch (e) { return null; }
+  }
+
+  function writePending(path, json) {
+    try { window.localStorage.setItem(PENDING + path, json); } catch (e) { /* private mode */ }
+  }
+
+  function clearPending(path) {
+    try { window.localStorage.removeItem(PENDING + path); } catch (e) { /* private mode */ }
+  }
+
+  function pendingPaths() {
+    var paths = [];
+    try {
+      var store = window.localStorage;
+      for (var i = 0; i < store.length; i++) {
+        var key = store.key(i);
+        if (key && key.indexOf(PENDING) === 0) paths.push(key.slice(PENDING.length));
+      }
+    } catch (e) { /* private mode */ }
+    return paths;
+  }
+
+  // PUT a serialized doc; on 2xx the pending entry is removed, otherwise it stays and this rejects.
+  function put(path, json) {
+    return fetch(dbUrl(path), {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: json
+    }).then(function (res) {
+      if (!res.ok) throw fail("HTTP " + res.status);
+      clearPending(path);
+    }, function (err) {
+      throw fail(err && err.message ? err.message : "network error");
+    });
+  }
+
+  function flushPending() {
+    pendingPaths().forEach(function (path) {
+      var json = readPending(path);
+      if (json != null) put(path, json).catch(function () {});
+    });
+  }
+
   var db = {
     doc: function (path) {
       return {
         get: function () {
+          var pending = readPending(path);
+          if (pending != null) {
+            // The unsynced local state is newer than the server copy: push it, then report it.
+            return put(path, pending).then(function () {
+              var data = JSON.parse(pending);
+              return { exists: true, data: function () { return data; } };
+            });
+          }
           return fetch(dbUrl(path), { cache: "no-store" }).then(function (res) {
             if (!res.ok) throw fail("HTTP " + res.status);
             return res.json();
@@ -84,17 +141,23 @@
           });
         },
         set: function (obj) {
-          return fetch(dbUrl(path), {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(obj)
-          }).then(function (res) {
-            if (!res.ok) throw fail("HTTP " + res.status);
-          });
+          var json = JSON.stringify(obj);
+          writePending(path, json);
+          return put(path, json);
         }
       };
     }
   };
+
+  window.addEventListener("online", flushPending);
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      try {
+        navigator.serviceWorker.register("sw.js").catch(function () {});
+      } catch (e) { /* unsupported or blocked */ }
+    });
+  }
 
   window.claude = {
     use: function (name) {

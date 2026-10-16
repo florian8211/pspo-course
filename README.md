@@ -91,6 +91,8 @@ python3 server/serve.py        # then open http://127.0.0.1:3140
 | `PSPO_MAX_CONCURRENT` | `2` | Parallel model calls; more get HTTP 429 |
 | `PSPO_MODEL_CMD` | unset | Replace the whole model command (used by the tests) |
 
+The served course is a Progressive Web App: Chrome on Android offers "Install app", and once loaded it keeps working offline, except for the AI coach and grading of written answers, which need a connection. Progress made offline is kept on the device and synced on the next connection, where the offline device's state wins over the copy on the server.
+
 `server/pspo-course.service` is a `systemd --user` unit for running it permanently. Tests: `python3 -m unittest discover -s server/tests -v`.
 
 **Only expose this server on a private network** (loopback, a VPN, Tailscale). There is no login: anyone who can reach it can spend the operator's model quota and overwrite the stored progress.

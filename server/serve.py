@@ -37,7 +37,14 @@ SYSTEM_PROMPT = "You are a precise Scrum tutor for the PSPO I exam."
 MAX_PROMPT_CHARS = 60_000
 MAX_DB_BYTES = 2 * 1024 * 1024
 DB_PATH_RE = re.compile(r"^[a-z0-9_-]+/[a-z0-9_-]+$")
-RUNTIME_TAG = b'<script src="runtime.js"></script>'
+STATIC = HERE / "static"
+HEAD_TAGS = (
+    b'<link rel="manifest" href="manifest.webmanifest">'
+    b'<meta name="theme-color" content="#0F5567">'
+    b'<link rel="apple-touch-icon" href="icon-192.png">'
+    b'<script src="runtime.js"></script>'
+)
+ICONS = ("/icon-192.png", "/icon-512.png", "/icon-maskable-512.png")
 
 log = logging.getLogger("pspo")
 slots = threading.BoundedSemaphore(MAX_CONCURRENT)
@@ -55,12 +62,12 @@ def model_command():
 
 
 def inject_runtime(html: bytes) -> bytes:
-    """Put the runtime script tag before every other script in the page."""
+    """Put the PWA head tags and the runtime script tag before every other script in the page."""
     m = re.search(rb"<head(\s[^>]*)?>", html, re.IGNORECASE)
     if not m:
         # No explicit <head>: go right after a leading doctype/<html>, else at the very start.
         m = re.match(rb"\s*(<!doctype[^>]*>\s*)?(<html[^>]*>)?", html, re.IGNORECASE)
-    return html[: m.end()] + RUNTIME_TAG + html[m.end():]
+    return html[: m.end()] + HEAD_TAGS + html[m.end():]
 
 
 def db_file(path: str) -> Path:
@@ -106,12 +113,12 @@ class Handler(BaseHTTPRequestHandler):
     def send_json(self, status, obj):
         self.send_body(status, json.dumps(obj).encode(), "application/json")
 
-    def send_file(self, path: Path, ctype):
+    def send_file(self, path: Path, ctype, extra=None):
         try:
             data = path.read_bytes()
         except FileNotFoundError:
             return self.send_json(404, {"error": "not found"})
-        self.send_body(200, data, ctype)
+        self.send_body(200, data, ctype, extra)
 
     def read_body(self, limit):
         """Return the raw body, or None after answering 413 when it exceeds limit."""
@@ -146,6 +153,13 @@ class Handler(BaseHTTPRequestHandler):
                            {"Cache-Control": "no-store"})
         elif path == "/runtime.js":
             self.send_file(HERE / "runtime.js", "application/javascript; charset=utf-8")
+        elif path == "/sw.js":
+            self.send_file(HERE / "sw.js", "application/javascript; charset=utf-8",
+                           {"Cache-Control": "no-cache"})
+        elif path == "/manifest.webmanifest":
+            self.send_file(STATIC / "manifest.webmanifest", "application/manifest+json")
+        elif path in ICONS:
+            self.send_file(STATIC / path[1:], "image/png")
         elif path == "/og-image.png":
             self.send_file(REPO / "og-image.png", "image/png")
         elif path == "/api/health":

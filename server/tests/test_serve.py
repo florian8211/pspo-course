@@ -3,8 +3,11 @@
 import http.client
 import json
 import os
+import re
 import shlex
+import shutil
 import socket
+import struct
 import subprocess
 import sys
 import tempfile
@@ -17,6 +20,12 @@ TESTS = Path(__file__).resolve().parent
 SERVER = TESTS.parent
 REPO = SERVER.parent
 RUNTIME_TAG = '<script src="runtime.js"></script>'
+HEAD_TAGS = (
+    '<link rel="manifest" href="manifest.webmanifest">'
+    '<meta name="theme-color" content="#0F5567">'
+    '<link rel="apple-touch-icon" href="icon-192.png">'
+    + RUNTIME_TAG
+)
 
 
 def free_port():
@@ -65,6 +74,11 @@ class ServeTest(unittest.TestCase):
 
     @classmethod
     def request(cls, method, path, body=None, raw=False):
+        status, _, data = cls.request_full(method, path, body, raw)
+        return status, data
+
+    @classmethod
+    def request_full(cls, method, path, body=None, raw=False):
         conn = http.client.HTTPConnection("127.0.0.1", cls.port, timeout=15)
         try:
             if body is not None and not raw:
@@ -72,7 +86,7 @@ class ServeTest(unittest.TestCase):
             headers = {"Content-Type": "application/json"} if body is not None else {}
             conn.request(method, path, body=body, headers=headers)
             res = conn.getresponse()
-            return res.status, res.read()
+            return res.status, res.headers, res.read()
         finally:
             conn.close()
 
@@ -83,17 +97,88 @@ class ServeTest(unittest.TestCase):
 
     # -- static ----------------------------------------------------------
 
-    def test_index_has_runtime_injected_before_any_script(self):
+    def test_index_has_head_tags_injected_before_any_script(self):
         on_disk = (REPO / "index.html").read_bytes()
         for path in ("/", "/index.html"):
             status, body = self.request("GET", path)
             self.assertEqual(status, 200)
             html = body.decode("utf-8")
-            first = html.find("<script")
-            self.assertEqual(html.find(RUNTIME_TAG), first)
-            self.assertEqual(html.count(RUNTIME_TAG), 1)
-            self.assertEqual(body.replace(RUNTIME_TAG.encode(), b"", 1), on_disk)
+            # Right after <head ...>; without one, after a leading doctype/<html> (else at the start).
+            head = (re.search(r"<head(\s[^>]*)?>", html, re.IGNORECASE)
+                    or re.match(r"\s*(<!doctype[^>]*>\s*)?(<html[^>]*>)?", html, re.IGNORECASE))
+            self.assertEqual(html.find(HEAD_TAGS), head.end())
+            self.assertEqual(html.count(HEAD_TAGS), 1)
+            self.assertEqual(html.find(RUNTIME_TAG), html.find("<script"))
+            self.assertEqual(body.replace(HEAD_TAGS.encode(), b"", 1), on_disk)
         self.assertEqual((REPO / "index.html").read_bytes(), on_disk)
+
+    def test_injected_urls_are_relative(self):
+        for url in re.findall(r'(?:href|src)="([^"]*)"', HEAD_TAGS):
+            self.assertFalse(url.startswith("/") or "://" in url, url)
+
+    # -- PWA -------------------------------------------------------------
+
+    def manifest(self):
+        status, headers, body = self.request_full("GET", "/manifest.webmanifest")
+        self.assertEqual(status, 200)
+        self.assertEqual(headers["Content-Type"], "application/manifest+json")
+        return json.loads(body)
+
+    def test_manifest_fields(self):
+        m = self.manifest()
+        self.assertEqual(m["name"], "PSPO I - Owner's Manual")
+        self.assertEqual(m["short_name"], "PSPO I")
+        self.assertEqual(m["start_url"], "./")
+        self.assertEqual(m["scope"], "./")
+        self.assertEqual(m["display"], "standalone")
+        self.assertEqual(m["background_color"], "#F7F6F2")
+        self.assertEqual(m["theme_color"], "#0F5567")
+        self.assertEqual(
+            [(i["src"], i["sizes"], i["type"], i["purpose"]) for i in m["icons"]],
+            [("icon-192.png", "192x192", "image/png", "any"),
+             ("icon-512.png", "512x512", "image/png", "any"),
+             ("icon-maskable-512.png", "512x512", "image/png", "maskable")])
+        for icon in m["icons"]:
+            self.assertFalse(icon["src"].startswith("/") or "://" in icon["src"], icon["src"])
+
+    def test_icons_are_png_matching_manifest_sizes(self):
+        for icon in self.manifest()["icons"]:
+            status, headers, body = self.request_full("GET", "/" + icon["src"])
+            self.assertEqual(status, 200, icon["src"])
+            self.assertEqual(headers["Content-Type"], "image/png")
+            self.assertEqual(body[:8], b"\x89PNG\r\n\x1a\n")
+            self.assertEqual(body[12:16], b"IHDR")
+            width, height = struct.unpack(">II", body[16:24])
+            self.assertEqual(f"{width}x{height}", icon["sizes"], icon["src"])
+
+    def test_service_worker_served_uncached_with_api_exclusion(self):
+        status, headers, body = self.request_full("GET", "/sw.js")
+        self.assertEqual(status, 200)
+        self.assertEqual(headers["Content-Type"], "application/javascript; charset=utf-8")
+        self.assertEqual(headers["Cache-Control"], "no-cache")
+        text = body.decode("utf-8")
+        self.assertIn('"pspo-v1"', text)
+        self.assertRegex(text, r'pathname\.indexOf\("/api/"\) !== -1\) return;')
+        precache = json.loads(re.search(r"PRECACHE = (\[[^\]]*\])", text).group(1))
+        self.assertIn("./", precache)
+        for url in precache:
+            self.assertFalse(url.startswith("/") or "://" in url, url)
+        # The only absolute-looking string is the "/api/" pathname match, not a URL.
+        self.assertEqual(re.findall(r'"/[^"]*"', text), ['"/api/"'])
+
+    def test_make_icons_is_deterministic(self):
+        with tempfile.TemporaryDirectory() as out:
+            subprocess.run([sys.executable, str(SERVER / "make_icons.py"), out], check=True)
+            for name in ("icon-192.png", "icon-512.png", "icon-maskable-512.png"):
+                self.assertEqual((Path(out) / name).read_bytes(),
+                                 (SERVER / "static" / name).read_bytes(), name)
+
+    def test_runtime_js_node_unit_tests(self):
+        node = shutil.which("node")
+        self.assertIsNotNone(node, "node >= 22 is required for server/tests/runtime_test.mjs")
+        res = subprocess.run([node, str(TESTS / "runtime_test.mjs")], cwd=REPO,
+                             capture_output=True, text=True, timeout=60)
+        self.assertEqual(res.returncode, 0, res.stdout + res.stderr)
 
     def test_runtime_js_defines_window_claude(self):
         status, body = self.request("GET", "/runtime.js")
